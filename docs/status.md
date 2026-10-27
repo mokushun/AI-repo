@@ -27,7 +27,7 @@
 | （基準）常に0.5 | 0.250 |
 
   期間中の上昇日は60%。まだ優劣は言えない
-- Museの試行: 平日7:30（JST）に `collect_inputs.py --slot close` → `run_judgment.py --dry-run --show-prompt` を実行させ、結果をチャットに報告させる設定済み（初回10/27 7:30）。オプションDBが無いので7/8セクション
+- Museの試行: 平日7:30（JST）にMuseのVMで collect_inputs.py --slot close を実行し、結果を判断させてチャットに報告させている（初回10/27成功、bullish・p_up=0.55）。Museはリポジトリをcloneしてgitで同期する（読み取り専用）。オプションDBは、MuseのVMで collect_spx.py（projects/spx-collector）を回して持たせる予定で、それまでは7/8セクション。判断結果はMuseのVM内にだけ残り、VPSへの持ち込みは当面手動。オプションが揃うまでは入力条件がVPSの3モデルと違うため、採点では別枠として扱う
 
 ## 次にやること
 
@@ -35,7 +35,7 @@
 2. 11/2頃: 無料枠の状況（Claude・GPT系は11/2頃まで）を確認し、使うモデルを決める
 3. 20日分前後たまったら、AIなしの単純な基準との比較を `evaluate.py` に足す
 4. 日経225ミニ（`collect_nkopmini.py`）を来週から新VPSで再開するか決める
-5. 判断の収集はMuseにやらせ、結果をVPS側で取得する方向を検討
+5. 判断の収集はMuseにやらせ、結果をVPS側で取得する方向を検討5. Museの判断結果をVPSの採点（evaluate.py）にどう取り込むか決める（手動コピー → 慣れたらMuseにpushさせる）。MuseのVMでオプション収集が動くか確認する
 
 ## 注意
 
@@ -47,3 +47,5 @@
 - 2026-10-27: ナレッジのファイルを削除し、GitHub共有に移行。AI用リポジトリを作成
 - 2026-10-22: `collect_spx.py` の集計で期限切れ満期を除外するよう修正
 - 2026-10-21: WTI・BRENT・XAUUSD・NATGASを `update.py` に追加（OANDA側）
+
+- Museの試行: 平日7:30（JST）にMuseのVMで collect_inputs.py --slot close を実行し、結果を判断させてチャットに報告させている（初回10/27成功、bullish・p_up=0.55）。Museはリポジトリをcloneしてgitで同期する（読み取り専用）。オプションDBは、MuseのVMで collect_spx.py（projects/spx-collector）を回して持たせる予定で、それまでは7/8セクション。判断結果はMuseのVM内にだけ残り、VPSへの持ち込みは当面手動。オプションが揃うまでは入力条件がVPSの3モデルと違うため、採点では別枠として扱う
