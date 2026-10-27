@@ -42,3 +42,7 @@
 
 - 各ディレクトリの `config.ini` / `keys.ini`（`.gitignore` 済み）。リポジトリには入れない
 - Museのキーは Muse側の `keys.ini`（FRED・Finnhubのみ）
+
+## Muse VM
+- collect_spx.py: 15分おきに時刻判定スクリプトが起動し、平日22:00〜翌6:59 JSTの間だけ本体を実行（失敗時のみAIを起動して報告）。DBは ~/spx_data（リポジトリ外）
+- 毎朝7:30 JST: git pull → collect_inputs.py（SPX_OPTIONS_DB指定）→判断→チャット報告。リポジトリは読み取り専用
