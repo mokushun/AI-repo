@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-20T22:30:23+00:00",
+    "jst_date": "2026-10-21",
+    "slot": "close",
+    "input_file": "2026-10-21_close.md",
+    "input_sha256": "8437556a283faf96f5246d7c1cfc1331f6a595c4d4a8081088a4a2ea590e02ca",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 48.1,
+    "quota_before_pct": {
+      "gemini": 64.0,
+      "claude_gpt": 89.0
+    },
+    "quota_after_pct": {
+      "gemini": 64.0,
+      "claude_gpt": 86.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-21",
+    "bias": "neutral",
+    "p_up": 0.52,
+    "confidence": 0.32,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース: META・TSLA両社が引け後に決算発表、投資家の事前ポジション調整で方向感が出にくい",
+      "市場数値: VIX -6.1%（17.31、10/20 16:15ET）・原油小幅安が前日のリスクオン継続を示唆",
+      "オプション: GEX近似 前回比 -288億（ネガティブガンマ拡大）、マックスペイン7,725で現値より下",
+      "価格の動き: 10年債5.15%・2年債4.77%（ともに上昇、10/19時点）が株価の上値を抑える可能性"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "10年債・2年債利回りの当日（2026-10-20）値がない（FREDは1日遅延で10/19時点）",
+      "前回スナップショット時のGEX絶対値が不明なため、変化の起点水準が判断できない",
+      "META・TSLAの決算予想コンセンサスや事前株価動向が入力にない"
+    ]
+  }
+}

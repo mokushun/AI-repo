@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-21T22:30:14+00:00",
+    "jst_date": "2026-10-22",
+    "slot": "close",
+    "input_file": "2026-10-22_close.md",
+    "input_sha256": "3df5b8653c08b3966bc286d00a35fa2c704ba88f4e316073273334b2f909b262",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 35.2,
+    "quota_before_pct": {
+      "gemini": 63.0,
+      "claude_gpt": 83.0
+    },
+    "quota_after_pct": {
+      "gemini": 62.0,
+      "claude_gpt": 83.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-22",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.35,
+    "event_risk": "mid",
+    "key_factors": [
+      "オプション：前回比でGEX近似+1,123億、ATM IV-0.9pt、PC建玉-0.13と改善［10-21］",
+      "市場数値：VIXは16.68で前日比-0.63（-3.6%）へ低下［2026-10-21T16:15 ET］",
+      "価格の動き：S&P500終値は7,766.2（+0.21%）だが現在の未確定足は-0.30%反落",
+      "ニュース：Metaの自社株分割やTesla決算、ウクライナ巡る3者平和協議合意など報道"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "米2年債利回りおよび米10年債利回り（取得失敗）",
+      "今後5営業日の経済指標の発表予定（取得失敗）",
+      "確定終値（2026-10-21）と時間外の未確定足との時点不揃い"
+    ]
+  }
+}

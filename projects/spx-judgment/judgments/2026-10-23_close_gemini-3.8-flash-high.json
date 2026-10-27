@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-10-22T22:30:23+00:00",
+    "jst_date": "2026-10-23",
+    "slot": "close",
+    "input_file": "2026-10-23_close.md",
+    "input_sha256": "d9be2351a7b0835ccbfa7915842769369ee439936b0941a6f1c2974dbe50f8dc",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 32.9,
+    "quota_before_pct": {
+      "gemini": 61.0,
+      "claude_gpt": 75.0
+    },
+    "quota_after_pct": {
+      "gemini": 60.0,
+      "claude_gpt": 75.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-23",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.7,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIXは19.03で前日比+2.35（+14.1%）［2026-10-22T16:15:01 ET］",
+      "オプション: 前回比でATM IV平均変化+3.2pt、GEX近似変化-281億",
+      "価格の動き: S&P500終値-1.21%、Nasdaq100終値-3.07%［2026-10-22］",
+      "ニュース: ホルムズ海峡タンカー被害報道や原油上昇で米先物下落とリスクオフ"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米債利回り（2年債・10年債）の2026-10-22時点データ（入力は10-21時点）",
+      "2026-10-23当日の米国経済指標発表予定"
+    ]
+  }
+}

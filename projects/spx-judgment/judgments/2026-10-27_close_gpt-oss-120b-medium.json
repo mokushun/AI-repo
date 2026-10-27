@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-26T22:30:21+00:00",
+    "jst_date": "2026-10-27",
+    "slot": "close",
+    "input_file": "2026-10-27_close.md",
+    "input_sha256": "2268c0685bbf1bd63aa72348e41570ae1b1f94f8dbbab6be49a154fb7c4cf5ab",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 49.6,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 98.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 98.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-27",
+    "bias": "bullish",
+    "p_up": 0.62,
+    "confidence": 0.71,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 未確定足で7,691.6、前日終値7,685を上回り小幅上昇",
+      "オプション: GEXが前回比+7億で改善、プット/コール比‑0.09で弱気減少",
+      "市場数値: VIX 18.39へ‑5.4%下落、ボラティリティ低下が上昇材料",
+      "経済指標: 10/28 FOMC利上げ決定、10/29 GDP等発表でリスク中程度"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "当日の始値や出来高などリアルタイム取引情報"
+    ]
+  }
+}

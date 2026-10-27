@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-10-25T22:30:17+00:00",
+    "jst_date": "2026-10-26",
+    "slot": "close",
+    "input_file": "2026-10-26_close.md",
+    "input_sha256": "b80471377247ca447a06a1abdfbf5734f73eee4201ca9f47ec26c5ce7551b903",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 45.4,
+    "quota_before_pct": {
+      "gemini": 100.0,
+      "claude_gpt": 72.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 72.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-26",
+    "bias": "bearish",
+    "p_up": 0.4,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "オプション: 前回比でGEX近似変化-101億、10-26満期のput/call建玉1.53。",
+      "価格の動き: S&P500終値7,640.0［2026-10-23］は20日線比-1.3%、20日レンジ10%。",
+      "市場数値: VIX［2026-10-23T16:15:01 ET］は19.45（前日比+0.42/+2.2%）と上昇。",
+      "ニュース: サウジ・フーシ戦闘やイランの米軍無人機撃墜報道など中東情勢緊迫化。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年債・10年債利回りが2026-10-22時点で前営業日10-23のデータがない点",
+      "2026-10-26当日の米国経済指標発表予定の記載がない点"
+    ]
+  }
+}

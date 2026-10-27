@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-22T00:54:22+00:00",
+    "jst_date": "2026-10-22",
+    "slot": "close",
+    "input_file": "2026-10-22_close.md",
+    "input_sha256": "fe7e5acc70c64edf396ffe243e47d15c47552db68e495759026bf1f97a6dc4a0",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 50.9,
+    "quota_before_pct": {
+      "gemini": 62.0,
+      "claude_gpt": 79.0
+    },
+    "quota_after_pct": {
+      "gemini": 61.0,
+      "claude_gpt": 79.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-22",
+    "bias": "neutral",
+    "p_up": 0.49,
+    "confidence": 0.4,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き:21日終値7,766.2(+0.21%)に対し、現在の未確定足は7,735.0(-0.40%)に反落。",
+      "オプション:前回比でGEX近似変化+127億、ATM IV変化-0.7pt、P/C変化-0.18。",
+      "市場数値:VIXは16.68(前日比-0.63/-3.8%)と低下[2026-10-21T16:15:01 ET]。",
+      "ニュース:サウジ攻撃や米外交官退避報道による中東供給懸念・原油高が上値を圧迫。"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "米2年債利回りおよび米10年債利回りのデータ取得失敗",
+      "経済指標発表予定の最新データ（2026-10-21取得分で代行のため変更の可能性あり）",
+      "確定値データ（2026-10-21引け）と未確定足・最新ニュース（2026-10-22午前）の時点不一致"
+    ]
+  }
+}

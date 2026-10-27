@@ -1,0 +1,1 @@
+{"target_date":"2026-10-19","bias":"bearish","p_up":0.45,"confidence":0.35,"event_risk":"mid","key_factors":["価格の動き: 前日比 -1.07%・未確定足 +0.80%","オプション: put/call 1.42、GEX -84億（短期）","市場数値: VIX 19.99 (+17.7%) 上昇","ニュース: 油価格下落で市場支援期待"],"stand_aside":false,"missing_data":["前日の終値（2026-10-18）のデータが欠如"]}

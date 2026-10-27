@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-26T22:30:21+00:00",
+    "jst_date": "2026-10-27",
+    "slot": "close",
+    "input_file": "2026-10-27_close.md",
+    "input_sha256": "2268c0685bbf1bd63aa72348e41570ae1b1f94f8dbbab6be49a154fb7c4cf5ab",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 19.2,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 100.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 98.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 2.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-27",
+    "bias": "neutral",
+    "p_up": 0.52,
+    "confidence": 0.28,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き／SPX前日+0.59%・翌日足未確定+0.09%、20日レンジ下位29%・20日MA比-0.7%と弱い地合い",
+      "オプション／当日満期GEX近似-77億（前回比+7億）、マックスペイン7,700（現値+0.3%上方）、put/call建玉0.99とニュートラル",
+      "ニュース／FOMC2日前・GOOGL/MSFT決算翌日発表控え、AnthropicIPO申請でAI株押し上げと報道",
+      "市場数値／VIX 18.39（前日比-5.4%）[2026-10-26 16:15ET]、リスクオフ後退示唆も水準は依然中程度"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年・10年債利回りは2026-10-23時点で最新値との時点ズレあり",
+      "SPXオプションデータは2026-10-26引け直後のスナップショットで当日朝時点の需給変化は不明",
+      "当日（2026-10-27）寄り付き前の指数先物・夜間の追加ニュースが未取得"
+    ]
+  }
+}

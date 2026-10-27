@@ -1,0 +1,1 @@
+{"target_date":"2026-10-19","bias":"neutral","confidence":0.3,"event_risk":"mid","key_factors":["価格の動き: 現在足が前日終値比+0.80%で上昇傾向","市場数値: VIX急上昇+17.7%（高ボラティリティ）","市場数値: 米10年債利回り小幅低下で株価支援","ニュース: 油安改善報道でリスク低減期待"],"stand_aside":false,"missing_data":["2026-10-19 S&P500 closing price"]}

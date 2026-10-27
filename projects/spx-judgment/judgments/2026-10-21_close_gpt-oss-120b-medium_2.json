@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-10-21T00:27:11+00:00",
+    "jst_date": "2026-10-21",
+    "slot": "close",
+    "input_file": "2026-10-21_close.md",
+    "input_sha256": "5b3ec9446c7160599a89a0d68a434714a39878cb9c0057565ea85f152a574b97",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 12.4,
+    "quota_before_pct": {
+      "gemini": 63.0,
+      "claude_gpt": 83.0
+    },
+    "quota_after_pct": {
+      "gemini": 63.0,
+      "claude_gpt": 83.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-21",
+    "bias": "neutral",
+    "p_up": 0.52,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き／5日間の上昇トレンドと20日・50日平均線上回り",
+      "市場数値／VIXが前日比‑6.1%で低下、リスクオフ緩和",
+      "オプション／短期GEX近似‑50億で前回より下降、弱気材料",
+      "金利／米10年債利回りが0.06ポイント上昇、株価抑制要因"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-10-21の終値",
+      "当日未確定足の確定値"
+    ]
+  }
+}

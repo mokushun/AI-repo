@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "created_utc": "2026-10-22T00:57:07+00:00",
+    "jst_date": "2026-10-22",
+    "slot": "close",
+    "input_file": "2026-10-22_close.md",
+    "input_sha256": "fe7e5acc70c64edf396ffe243e47d15c47552db68e495759026bf1f97a6dc4a0",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [
+      "JSONの閉じ括弧などを補った"
+    ],
+    "recovered_from_raw": "2026-10-22_close_gpt-oss-120b-medium_2.txt"
+  },
+  "judgment": {
+    "target_date": "2026-10-22",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 現在足は前日終値比-0.40%で下落傾向",
+      "オプション: GEX近似が前日比+127億で上昇、買い側支援",
+      "市場数値: VIXが-0.63(-3.8%)下落、リスク感覚低下",
+      "ニュース: 中東情勢と米国外交緊張が不安材料"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年・10年債利回りが取得失敗",
+      "今後経済指標の取得失敗"
+    ]
+  }
+}

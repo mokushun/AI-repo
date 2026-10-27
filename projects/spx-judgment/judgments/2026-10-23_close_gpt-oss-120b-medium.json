@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-22T22:30:23+00:00",
+    "jst_date": "2026-10-23",
+    "slot": "close",
+    "input_file": "2026-10-23_close.md",
+    "input_sha256": "d9be2351a7b0835ccbfa7915842769369ee439936b0941a6f1c2974dbe50f8dc",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 20.8,
+    "quota_before_pct": {
+      "gemini": 60.0,
+      "claude_gpt": 72.0
+    },
+    "quota_after_pct": {
+      "gemini": 60.0,
+      "claude_gpt": 72.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-23",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXが前日比+14.1%で19.03に上昇、リスク上昇",
+      "オプション: GEX近似が-281億変化、プット偏りで下落圧力",
+      "価格の動き: 前日比-1.21%で下落、20日平均線下",
+      "ニュース: AI株下落・ナスダック急落など負の材料多数"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "実際のS&P500指数の前日終値、当日の開場価格、詳細な当日経済指標データ"
+    ]
+  }
+}

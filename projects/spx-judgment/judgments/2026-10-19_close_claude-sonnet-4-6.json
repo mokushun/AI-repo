@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-10-19T08:37:18+00:00",
+    "jst_date": "2026-10-19",
+    "slot": "close",
+    "input_file": "2026-10-19_close.md",
+    "input_sha256": "022af712d85e1aab9cf52f5661393771fd6e81dc0c19a3e6c80db35bb8609ecd",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 49.3,
+    "quota_before_pct": {
+      "gemini": 66.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 66.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-19",
+    "bias": "neutral",
+    "p_up": 0.53,
+    "confidence": 0.35,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: SPX未確定足+0.80%で反発局面、前週5日-2.03%下落後・20日レンジ下位18%",
+      "市場数値: VIX 19.99・前日比+17.7%（2026-10-16ET）でボラ急上昇、下方リスク残存",
+      "オプション: 10/19満期マックスペイン7,750（現値比+約85pt）・P/C建玉1.42で上方引力あり",
+      "ニュース: Brent原油$109付近・中東緊張継続、AIジッターで市場不安（Bloomberg 10/18）"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "GEX前回スナップショット比なし（絶対値のみのため方向判断に不使用）",
+      "ドル指数は9日前（2026-10-09）のデータで当日値不明",
+      "WTI原油は4日前（2026-10-14）のデータで当日値不明",
+      "米2年・10年債利回りは2026-10-15時点で当日値不明"
+    ]
+  }
+}

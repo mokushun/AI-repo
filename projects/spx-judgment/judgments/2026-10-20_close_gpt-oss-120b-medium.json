@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-19T22:31:37+00:00",
+    "jst_date": "2026-10-20",
+    "slot": "close",
+    "input_file": "2026-10-20_close.md",
+    "input_sha256": "45279d002f78c63995e779413029e0ba5f435960ae473ebcf98bc83db3edb8c4",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 62.9,
+    "quota_before_pct": {
+      "gemini": 65.0,
+      "claude_gpt": 89.0
+    },
+    "quota_after_pct": {
+      "gemini": 65.0,
+      "claude_gpt": 89.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-20",
+    "bias": "bullish",
+    "p_up": 0.62,
+    "confidence": 0.64,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 前日比+0.53%で上昇、未確定足も+0.06%",
+      "市場数値: VIX 前日比-7.8%低下、ボラティリティ減少",
+      "オプション: put/call比1.85、やや弱気だがGEX変化なし",
+      "ニュース: Tech株がオーバーソールド反発、AI懸念緩和"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "次の日の米国株式市場の取引時間帯の取引情報、主要経済指標（例：CPI、雇用統計）の最新数値"
+    ]
+  }
+}

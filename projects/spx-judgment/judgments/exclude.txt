@@ -1,0 +1,8 @@
+# 2026-10-21 07:30の判断: 入力のGEX前回比が誤っていた（朝枠と比較した）→ 再実行した _2 を採点に使う
+2026-10-21_close_gemini-3.8-flash-high.json
+2026-10-21_close_claude-sonnet-4-6.json
+2026-10-21_close_gpt-oss-120b-medium.json
+# 2026-10-22 07:30の判断: FRED障害(予定・利回りが欠落)と、期限切れ満期を含むGEX前回比(+1123億)が入った入力で行った。再実行した _2 を採点に使う
+2026-10-22_close_gemini-3.8-flash-high.json
+2026-10-22_close_claude-sonnet-4-6.json
+2026-10-22_close_gpt-oss-120b-medium.json

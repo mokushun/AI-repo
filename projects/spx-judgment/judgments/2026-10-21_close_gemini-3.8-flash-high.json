@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-20T22:30:23+00:00",
+    "jst_date": "2026-10-21",
+    "slot": "close",
+    "input_file": "2026-10-21_close.md",
+    "input_sha256": "8437556a283faf96f5246d7c1cfc1331f6a595c4d4a8081088a4a2ea590e02ca",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 33.0,
+    "quota_before_pct": {
+      "gemini": 65.0,
+      "claude_gpt": 89.0
+    },
+    "quota_after_pct": {
+      "gemini": 64.0,
+      "claude_gpt": 89.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-21",
+    "bias": "bullish",
+    "p_up": 0.55,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXが17.31へ前日比-6.1%と大幅低下し警戒感が後退［10-20］",
+      "価格の動き: S&P500は+0.58%反発し20日線・50日線を上抜け2日続伸［10-20］",
+      "オプション: GEX近似が前回比-288億となり価格変動の増幅リスクが残る",
+      "ニュース: 原油安や米株上昇が伝わるも引け後にMETAやTSLA決算を控える"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年債利回りおよび米10年債利回りのデータが2026-10-19観測で10-20時点の数値がない"
+    ]
+  }
+}

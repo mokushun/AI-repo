@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-21T00:27:11+00:00",
+    "jst_date": "2026-10-21",
+    "slot": "close",
+    "input_file": "2026-10-21_close.md",
+    "input_sha256": "5b3ec9446c7160599a89a0d68a434714a39878cb9c0057565ea85f152a574b97",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 45.4,
+    "quota_before_pct": {
+      "gemini": 64.0,
+      "claude_gpt": 86.0
+    },
+    "quota_after_pct": {
+      "gemini": 63.0,
+      "claude_gpt": 86.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-21",
+    "bias": "bullish",
+    "p_up": 0.56,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXは17.31（前日比-6.1%）と低下[2026-10-20T16:15:01 ET]",
+      "価格の動き: S&P500は10-20終値7,750.2（+0.58%）と反発し20日平均線上回る",
+      "オプション: 前回比でATM IVが-1.1pt、put/call建玉が-0.22と低下",
+      "ニュース: 米イラン外交への期待や好決算が相場反転要因として報じられている"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年債利回りおよび米10年債利回りが2026-10-19時点の数値で直近データが欠落している点"
+    ]
+  }
+}

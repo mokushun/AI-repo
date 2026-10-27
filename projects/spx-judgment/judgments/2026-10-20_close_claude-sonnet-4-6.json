@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-19T22:31:37+00:00",
+    "jst_date": "2026-10-20",
+    "slot": "close",
+    "input_file": "2026-10-20_close.md",
+    "input_sha256": "45279d002f78c63995e779413029e0ba5f435960ae473ebcf98bc83db3edb8c4",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 45.3,
+    "quota_before_pct": {
+      "gemini": 65.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 65.0,
+      "claude_gpt": 89.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 5.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-20",
+    "bias": "neutral",
+    "p_up": 0.54,
+    "confidence": 0.42,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 前日SPX+0.53%/NQ+1.27%と反発、事前場+0.06%小幅続伸。ただし5日で-1.42%の下落トレンド内",
+      "市場数値: VIX -7.8%（18.44）と急低下しリスク後退を示唆[2026-10-19 16:15ET]",
+      "オプション: マックスペイン7,740（現値比約+0.6%上方）、P/C建玉1.64で下方ヘッジ優位",
+      "ニュース: AI信用不安後退(CNBC)の一方、Aramco攻撃報道・Hormuz輸送リスクで原油高継続(WSJ)"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "GEX近似の前回スナップショット比が提供されていないため方向性判断に不使用",
+      "米国債利回りデータが2026-10-16時点で3営業日分の遅れあり（最新動向不明）",
+      "10/20通常取引開始後の価格・出来高データなし"
+    ]
+  }
+}

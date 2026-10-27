@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-20T22:30:23+00:00",
+    "jst_date": "2026-10-21",
+    "slot": "close",
+    "input_file": "2026-10-21_close.md",
+    "input_sha256": "8437556a283faf96f5246d7c1cfc1331f6a595c4d4a8081088a4a2ea590e02ca",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 18.5,
+    "quota_before_pct": {
+      "gemini": 64.0,
+      "claude_gpt": 86.0
+    },
+    "quota_after_pct": {
+      "gemini": 64.0,
+      "claude_gpt": 86.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-21",
+    "bias": "bearish",
+    "p_up": 0.45,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 前日終値比 +0.58%で上昇、未確定足は -0.02%で微減",
+      "オプション: GEX近似が-50億・-288億でプット側圧力増加（ベアリッシュ）",
+      "市場数値: VIX 17.31 前日比 -6.1%で低下、リスク回避感が減少（ブルリッシュ）",
+      "ニュース: Meta・TSLAの決算が引け後に予定、結果不透明でリスク中"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-10-21の実際の終値データが欠如"
+    ]
+  }
+}

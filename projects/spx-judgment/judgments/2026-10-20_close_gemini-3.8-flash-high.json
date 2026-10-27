@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-10-19T22:31:37+00:00",
+    "jst_date": "2026-10-20",
+    "slot": "close",
+    "input_file": "2026-10-20_close.md",
+    "input_sha256": "45279d002f78c63995e779413029e0ba5f435960ae473ebcf98bc83db3edb8c4",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 38.7,
+    "quota_before_pct": {
+      "gemini": 66.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 65.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-20",
+    "bias": "bullish",
+    "p_up": 0.54,
+    "confidence": 0.5,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXは18.44（前日比-1.55／-7.8%）と大幅低下［2026-10-19T16:15:01 ET］",
+      "価格の動き: S&P500は7,705.6で1日+0.53%反発、Nasdaq100も+1.27%上昇［2026-10-19］",
+      "ニュース: サウジ攻撃報道で原油高が警戒される一方、AI懸念後退で株価反発",
+      "オプション: 全満期合算マックスペイン7,740が現値7,690.7を上回る［2026-10-19］"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-10-19時点の米2年債利回りおよび米10年債利回り（観測日が2026-10-16と不揃い）",
+      "GEX近似の前回スナップショットとの比較データ"
+    ]
+  }
+}

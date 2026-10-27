@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-10-21T22:30:14+00:00",
+    "jst_date": "2026-10-22",
+    "slot": "close",
+    "input_file": "2026-10-22_close.md",
+    "input_sha256": "3df5b8653c08b3966bc286d00a35fa2c704ba88f4e316073273334b2f909b262",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 43.0,
+    "quota_before_pct": {
+      "gemini": 62.0,
+      "claude_gpt": 83.0
+    },
+    "quota_after_pct": {
+      "gemini": 62.0,
+      "claude_gpt": 79.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 4.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-22",
+    "bias": "bearish",
+    "p_up": 0.43,
+    "confidence": 0.32,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: SPX先物7,743.2（確定終値比-0.30%）・NQ先物-0.57%と小幅安で寄り付き示唆",
+      "オプション: GEX近似が前スナップ比+1,123億と大幅改善、マックスペイン7,740付近で先物推移し引力あり",
+      "市場数値: VIX 16.68（前日比-3.6%）と低下しリスクオフ圧力は限定的［2026-10-21T16:15ET］",
+      "ニュース: 利回り急騰による債券売り遅延報告・サウジアラビアへの外交官退避命令で地政学リスク継続"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年・10年債利回り（FRED取得失敗）",
+      "今後5営業日の経済指標発表予定（FRED取得失敗）",
+      "META・TSLA決算発表後の具体的な株価反応（引け後のため未確定）",
+      "タイムスタンプのずれ: SPXオプションデータは16:14ET時点、VIXも16:15ET時点で時点は概ね揃うが債券利回りが欠落"
+    ]
+  }
+}

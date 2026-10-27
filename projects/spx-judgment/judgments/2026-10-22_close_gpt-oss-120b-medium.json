@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-21T22:30:14+00:00",
+    "jst_date": "2026-10-22",
+    "slot": "close",
+    "input_file": "2026-10-22_close.md",
+    "input_sha256": "3df5b8653c08b3966bc286d00a35fa2c704ba88f4e316073273334b2f909b262",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 19.2,
+    "quota_before_pct": {
+      "gemini": 62.0,
+      "claude_gpt": 79.0
+    },
+    "quota_after_pct": {
+      "gemini": 62.0,
+      "claude_gpt": 79.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-22",
+    "bias": "bearish",
+    "p_up": 0.45,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 現在の足が前日終値比‑0.30%で下落",
+      "市場数値: VIX‑3.6%低下でリスク感度低下",
+      "オプション: GEX近似 前回比＋1,123億で買い圧力増",
+      "ニュース: 燃料コスト上昇・地政学的緊張などのネガティブ要因"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年債利回り",
+      "米10年債利回り",
+      "今後5営業日の経済指標"
+    ]
+  }
+}
