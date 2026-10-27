@@ -1,0 +1,97 @@
+nas_only TP150/SL20 hold180m: trades=533 total=-3115 winrate=9.4% PF=0.68 avg=-5.8
+   2020: n=23 pnl=-38 winrate=13.0%
+   2021: n=79 pnl=-0 winrate=13.9%
+   2022: n=96 pnl=+90 winrate=13.5%
+   2023: n=93 pnl=-707 winrate=9.7%
+   2024: n=91 pnl=-800 winrate=6.6%
+   2025: n=80 pnl=-240 winrate=10.0%
+   2026: n=71 pnl=-1420 winrate=0.0%
+nas_only TP150/SL20 hold351m: trades=533 total=-3220 winrate=9.2% PF=0.67 avg=-6.0
+   2020: n=23 pnl=-50 winrate=13.0%
+   2021: n=79 pnl=-58 winrate=12.7%
+   2022: n=96 pnl=+78 winrate=13.5%
+   2023: n=93 pnl=-730 winrate=9.7%
+   2024: n=91 pnl=-800 winrate=6.6%
+   2025: n=80 pnl=-240 winrate=10.0%
+   2026: n=71 pnl=-1420 winrate=0.0%
+nas_only TP150/SL30 hold180m: trades=533 total=-3376 winrate=14.6% PF=0.75 avg=-6.3
+   2020: n=23 pnl=+122 winrate=21.7%
+   2021: n=79 pnl=-140 winrate=17.7%
+   2022: n=96 pnl=+419 winrate=21.9%
+   2023: n=93 pnl=-837 winrate=15.1%
+   2024: n=91 pnl=-1290 winrate=8.8%
+   2025: n=80 pnl=-60 winrate=16.2%
+   2026: n=71 pnl=-1590 winrate=4.2%
+nas_only TP120/SL25 hold180m: trades=533 total=-3331 winrate=13.5% PF=0.71 avg=-6.2
+   2020: n=23 pnl=+92 winrate=21.7%
+   2021: n=79 pnl=-63 winrate=17.7%
+   2022: n=96 pnl=-270 winrate=16.7%
+   2023: n=93 pnl=-85 winrate=17.2%
+   2024: n=91 pnl=-1115 winrate=8.8%
+   2025: n=80 pnl=-260 winrate=15.0%
+   2026: n=71 pnl=-1630 winrate=1.4%
+nas_only TP150/SL25 hold351m: trades=533 total=-3155 winrate=12.2% PF=0.73 avg=-5.9
+   2020: n=23 pnl=+200 winrate=21.7%
+   2021: n=79 pnl=-53 winrate=15.2%
+   2022: n=96 pnl=+63 winrate=16.7%
+   2023: n=93 pnl=-465 winrate=15.1%
+   2024: n=91 pnl=-1225 winrate=6.6%
+   2025: n=80 pnl=-75 winrate=13.8%
+   2026: n=71 pnl=-1600 winrate=1.4%
+nas_only TP120/SL30 hold351m: trades=533 total=-3815 winrate=15.9% PF=0.72 avg=-7.2
+   2020: n=23 pnl=-10 winrate=21.7%
+   2021: n=79 pnl=-238 winrate=19.0%
+   2022: n=96 pnl=-40 winrate=21.9%
+   2023: n=93 pnl=-317 winrate=18.3%
+   2024: n=91 pnl=-1230 winrate=11.0%
+   2025: n=80 pnl=-300 winrate=17.5%
+   2026: n=71 pnl=-1680 winrate=4.2%
+all3 TP150/SL20 hold180m: trades=168 total=+225 winrate=13.1% PF=1.08 avg=+1.3
+   2020: n=6 pnl=+220 winrate=33.3%
+   2021: n=25 pnl=+180 winrate=16.0%
+   2022: n=25 pnl=-160 winrate=8.0%
+   2023: n=34 pnl=+15 winrate=14.7%
+   2024: n=31 pnl=+230 winrate=16.1%
+   2025: n=22 pnl=+240 winrate=18.2%
+   2026: n=25 pnl=-500 winrate=0.0%
+all3 TP150/SL20 hold351m: trades=168 total=+220 winrate=13.1% PF=1.08 avg=+1.3
+   2020: n=6 pnl=+220 winrate=33.3%
+   2021: n=25 pnl=+180 winrate=16.0%
+   2022: n=25 pnl=-160 winrate=8.0%
+   2023: n=34 pnl=+10 winrate=14.7%
+   2024: n=31 pnl=+230 winrate=16.1%
+   2025: n=22 pnl=+240 winrate=18.2%
+   2026: n=25 pnl=-500 winrate=0.0%
+all3 TP150/SL30 hold180m: trades=168 total=+57 winrate=17.9% PF=1.01 avg=+0.3
+   2020: n=6 pnl=+360 winrate=50.0%
+   2021: n=25 pnl=+150 winrate=20.0%
+   2022: n=25 pnl=+2 winrate=20.0%
+   2023: n=34 pnl=+85 winrate=20.6%
+   2024: n=31 pnl=-30 winrate=16.1%
+   2025: n=22 pnl=+240 winrate=22.7%
+   2026: n=25 pnl=-750 winrate=0.0%
+all3 TP120/SL25 hold180m: trades=168 total=-483 winrate=16.1% PF=0.86 avg=-2.9
+   2020: n=6 pnl=+285 winrate=50.0%
+   2021: n=25 pnl=-45 winrate=16.0%
+   2022: n=25 pnl=-163 winrate=16.0%
+   2023: n=34 pnl=+85 winrate=20.6%
+   2024: n=31 pnl=-50 winrate=16.1%
+   2025: n=22 pnl=+30 winrate=18.2%
+   2026: n=25 pnl=-625 winrate=0.0%
+all3 TP150/SL25 hold351m: trades=168 total=+217 winrate=16.1% PF=1.06 avg=+1.3
+   2020: n=6 pnl=+375 winrate=50.0%
+   2021: n=25 pnl=+75 winrate=16.0%
+   2022: n=25 pnl=-73 winrate=16.0%
+   2023: n=34 pnl=+215 winrate=20.6%
+   2024: n=31 pnl=+100 winrate=16.1%
+   2025: n=22 pnl=+150 winrate=18.2%
+   2026: n=25 pnl=-625 winrate=0.0%
+all3 TP120/SL30 hold351m: trades=168 total=-735 winrate=17.9% PF=0.82 avg=-4.4
+   2020: n=6 pnl=+270 winrate=50.0%
+   2021: n=25 pnl=+0 winrate=20.0%
+   2022: n=25 pnl=-118 winrate=20.0%
+   2023: n=34 pnl=-47 winrate=20.6%
+   2024: n=31 pnl=-180 winrate=16.1%
+   2025: n=22 pnl=+90 winrate=22.7%
+   2026: n=25 pnl=-750 winrate=0.0%
+DONE3
