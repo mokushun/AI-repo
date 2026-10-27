@@ -38,4 +38,6 @@ bash で、リポジトリのこのフォルダに移動して実行する。
 python3 scripts/verify_nikkei.py
 python3 scripts/analyze_skew.py
 
+`analyze_skew.py` は入力CSVと同じフォルダに `skew_series_bot.csv` を生成し、`run_skewbot_repro.py` はそれを使う（なければ `outputs/skew_series_bot.csv` を参照する）。skew 系を回すときはこの順で実行すること。
+
 前提: python3 + pandas + numpy。データパスが違う環境では `M1_DB_PATH` / `N225_CSV_PATH` を指定する。
