@@ -116,7 +116,7 @@ D1_SYMBOLS = [
 ]
 D1_STALE_HOURS = 3        # d1.json の更新がこれより古ければ警告する
 # オプション集計: collect_spx.py のDB（読み取り専用で開く）
-OPTIONS_DB = "/home/aitrader/work/spx_codex/spx_data/spx_options.sqlite3"
+OPTIONS_DB = os.environ.get("SPX_OPTIONS_DB", "/home/aitrader/work/spx_codex/spx_data/spx_options.sqlite3")
 OPTIONS_STALE_DAYS = 4    # データ時点がこの日数以上前なら注記する
 
 CBOE_VIX_URL = "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
