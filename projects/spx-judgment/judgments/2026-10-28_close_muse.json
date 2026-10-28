@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-10-27T22:31:34+00:00",
+    "jst_date": "2026-10-28",
+    "slot": "close",
+    "input_file": "2026-10-28_close.md",
+    "input_sha256": "c5383f679b7d3e0b99314665392ad7ef89b23d19a1feb4ca531ff80b5040f5a8",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-10-28_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bullish",
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：S&P500は前日+0.56%、Nasdaq100は+1.16%と反発",
+      "市場数値：VIXは17.52へ前日比-4.7%と低下し警戒感が後退",
+      "経済指標：10/28にFOMC政策金利の発表があり不確実性が高い",
+      "ニュース：AIモメンタム回復でウォール街は上昇して終了"
+    ],
+    "missing_data": [
+      "FOMC発表の内容と市場の反応は事前には不明"
+    ],
+    "p_up": 0.55,
+    "stand_aside": false,
+    "target_date": "2026-10-28"
+  }
+}

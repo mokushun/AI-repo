@@ -1,0 +1,1 @@
+{"bias":"bullish","confidence":0.45,"event_risk":"high","key_factors":["価格の動き：S&P500は前日+0.56%、Nasdaq100は+1.16%と反発","市場数値：VIXは17.52へ前日比-4.7%と低下し警戒感が後退","経済指標：10/28にFOMC政策金利の発表があり不確実性が高い","ニュース：AIモメンタム回復でウォール街は上昇して終了"],"missing_data":["FOMC発表の内容と市場の反応は事前には不明"],"p_up":0.55,"stand_aside":false,"target_date":"2026-10-28"}
