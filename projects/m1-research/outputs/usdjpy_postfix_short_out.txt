@@ -1,0 +1,64 @@
+=== SHORT ENTRY x EXIT (all Mon-Fri) ===
+IN 09:54 -> OUT 10:00 exec: n=1571 mean=-0.98pip PF=0.679 win=40.3% std=7.3 t=-5.36
+    (mid gross): n=1571 mean=+0.66pip PF=1.303 win=52.9% std=7.3 t=3.61
+IN 09:54 -> OUT 10:30 exec: n=1571 mean=-0.49pip PF=0.911 win=47.4% std=15.0 t=-1.29
+    (mid gross): n=1571 mean=+1.16pip PF=1.250 win=53.6% std=15.0 t=3.07
+IN 09:54 -> OUT 11:00 exec: n=1571 mean=-0.46pip PF=0.930 win=47.4% std=18.5 t=-0.98
+    (mid gross): n=1571 mean=+1.19pip PF=1.207 win=53.7% std=18.5 t=2.54
+IN 09:54 -> OUT 12:00 exec: n=1570 mean=-1.43pip PF=0.833 win=45.9% std=23.4 t=-2.41
+    (mid gross): n=1570 mean=+0.21pip PF=1.027 win=51.3% std=23.4 t=0.35
+IN 09:54 -> OUT 15:00 exec: n=1570 mean=-1.38pip PF=0.884 win=46.7% std=34.6 t=-1.58
+    (mid gross): n=1570 mean=+0.24pip PF=1.022 win=49.7% std=34.6 t=0.28
+IN 09:55 -> OUT 10:00 exec: n=1571 mean=-0.61pip PF=0.749 win=39.9% std=6.0 t=-4.06
+    (mid gross): n=1571 mean=+1.07pip PF=1.682 win=55.8% std=6.0 t=7.10
+IN 09:55 -> OUT 10:30 exec: n=1571 mean=-0.11pip PF=0.978 win=49.1% std=14.2 t=-0.32
+    (mid gross): n=1571 mean=+1.57pip PF=1.371 win=55.9% std=14.2 t=4.38
+IN 09:55 -> OUT 11:00 exec: n=1571 mean=-0.08pip PF=0.987 win=49.8% std=17.9 t=-0.18
+    (mid gross): n=1571 mean=+1.59pip PF=1.295 win=56.2% std=17.9 t=3.53
+IN 09:55 -> OUT 12:00 exec: n=1570 mean=-1.05pip PF=0.872 win=46.2% std=22.9 t=-1.82
+    (mid gross): n=1570 mean=+0.61pip PF=1.083 win=51.8% std=22.9 t=1.06
+IN 09:55 -> OUT 15:00 exec: n=1570 mean=-1.00pip PF=0.914 win=47.6% std=34.1 t=-1.16
+    (mid gross): n=1570 mean=+0.65pip PF=1.060 win=50.6% std=34.2 t=0.75
+IN 09:56 -> OUT 10:00 exec: n=1571 mean=-1.27pip PF=0.463 win=33.0% std=4.6 t=-10.98
+    (mid gross): n=1571 mean=+0.37pip PF=1.262 win=52.2% std=4.6 t=3.23
+IN 09:56 -> OUT 10:30 exec: n=1571 mean=-0.77pip PF=0.848 win=46.3% std=13.5 t=-2.28
+    (mid gross): n=1571 mean=+0.87pip PF=1.204 win=53.9% std=13.5 t=2.57
+IN 09:56 -> OUT 11:00 exec: n=1571 mean=-0.74pip PF=0.883 win=48.4% std=17.4 t=-1.69
+    (mid gross): n=1571 mean=+0.90pip PF=1.162 win=53.9% std=17.4 t=2.05
+IN 09:56 -> OUT 12:00 exec: n=1570 mean=-1.71pip PF=0.797 win=45.5% std=22.6 t=-3.01
+    (mid gross): n=1570 mean=-0.08pip PF=0.989 win=50.3% std=22.6 t=-0.14
+IN 09:56 -> OUT 15:00 exec: n=1570 mean=-1.66pip PF=0.859 win=46.1% std=34.0 t=-1.94
+    (mid gross): n=1570 mean=-0.05pip PF=0.996 win=49.8% std=34.0 t=-0.06
+
+=== MAIN SPEC: IN 09:56 -> OUT 11:00 ===
+ALL: n=1571 mean=-0.74pip PF=0.883 win=48.4% std=17.4 t=-1.69
+-- by weekday (Mon=0) --
+dow0: n=312 mean=-0.48pip PF=0.929 win=48.1% std=19.0 t=-0.45
+dow1: n=316 mean=-0.92pip PF=0.839 win=49.1% std=14.7 t=-1.11
+dow2: n=314 mean=-1.28pip PF=0.795 win=46.5% std=18.4 t=-1.23
+dow3: n=315 mean=+0.37pip PF=1.061 win=51.1% std=17.6 t=0.38
+dow4: n=314 mean=-1.40pip PF=0.794 win=47.1% std=16.9 t=-1.47
+-- gotobi --
+gotobi: n=303 mean=+0.90pip PF=1.172 win=50.8% std=15.9 t=0.99
+non-gotobi: n=1268 mean=-1.13pip PF=0.828 win=47.8% std=17.7 t=-2.28
+-- halves --
+2020-10..2023: n=842 mean=-0.25pip PF=0.952 win=50.1% std=15.0 t=-0.49
+2024..2026-10: n=729 mean=-1.31pip PF=0.827 win=46.4% std=19.7 t=-1.79
+-- by year --
+2020: n=65 mean=-0.03pip PF=0.989 win=52.3% std=6.4 t=-0.03
+2021: n=260 mean=-0.44pip PF=0.857 win=50.4% std=7.3 t=-0.98
+2022: n=259 mean=+0.80pip PF=1.119 win=50.2% std=19.3 t=0.66
+2023: n=258 mean=-1.17pip PF=0.827 win=49.2% std=17.2 t=-1.10
+2024: n=260 mean=-1.11pip PF=0.862 win=46.5% std=23.3 t=-0.76
+2025: n=259 mean=-0.90pip PF=0.888 win=49.4% std=19.5 t=-0.75
+2026: n=210 mean=-2.05pip PF=0.677 win=42.4% std=14.7 t=-2.03
+
+=== REFERENCE: EA SELL LEG IN 09:54 -> OUT 11:00 ===
+ALL: n=1571 mean=-0.46pip PF=0.930 win=47.4% std=18.5 t=-0.98
+dow0: n=312 mean=-0.31pip PF=0.957 win=46.8% std=20.4 t=-0.26
+dow1: n=316 mean=-1.29pip PF=0.796 win=44.9% std=15.9 t=-1.44
+dow2: n=314 mean=-1.30pip PF=0.803 win=46.8% std=19.4 t=-1.19
+dow3: n=315 mean=+0.95pip PF=1.159 win=49.8% std=18.5 t=0.91
+dow4: n=314 mean=-0.34pip PF=0.949 win=48.7% std=18.0 t=-0.33
+
+DONE (price only; swap NOT included)
