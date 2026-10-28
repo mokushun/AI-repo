@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-27T22:30:22+00:00",
+    "jst_date": "2026-10-28",
+    "slot": "close",
+    "input_file": "2026-10-28_close.md",
+    "input_sha256": "b5c8fcf609a59883eaa9b3a1cb31f6ad62229c83714faf9bf1ff25c64381e9b3",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 15.8,
+    "quota_before_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 98.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 96.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 2.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-28",
+    "bias": "neutral",
+    "p_up": 0.52,
+    "confidence": 0.35,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース／GOOGL・MSFT引け後決算＋FOMC当日発表：結果次第で大幅変動のリスク",
+      "価格の動き／SPX前日+0.56%・5日-0.28%で20日レンジ47%位置、方向感乏しい",
+      "市場数値／VIX 17.52（前日比-4.7%）：恐怖は後退傾向も10年債5%は重石 [2026-10-27ET]",
+      "オプション／GEX近似+181億（前回比）でディーラーがロング方向、下支え示唆"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "FOMC声明・記者会見内容（当日発表のため取得時点では不明）",
+      "GOOGL・MSFT決算実績（引け後のため未反映）",
+      "SPXオプション当日満期の偏り影響（GEX注記あり）"
+    ]
+  }
+}

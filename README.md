@@ -24,6 +24,7 @@ docs/
   infra.md           VPS・cron・ディレクトリ
 projects/
   spx-judgment/      S&P500のAI判断シミュレーション
+  n225option/        日経225のオプション収集（collect_nkopmini.py など）
 handoff/             AI同士の引き継ぎメモ（日付_AI名_内容.md）
 ```
 

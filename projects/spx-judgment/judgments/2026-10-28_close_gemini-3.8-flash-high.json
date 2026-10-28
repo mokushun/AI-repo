@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-27T22:30:22+00:00",
+    "jst_date": "2026-10-28",
+    "slot": "close",
+    "input_file": "2026-10-28_close.md",
+    "input_sha256": "b5c8fcf609a59883eaa9b3a1cb31f6ad62229c83714faf9bf1ff25c64381e9b3",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 45.8,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 98.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 98.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-28",
+    "bias": "neutral",
+    "p_up": 0.52,
+    "confidence": 0.4,
+    "event_risk": "high",
+    "key_factors": [
+      "経済指標: 2026-10-28にFOMC政策金利発表を控え、結果次第で相場急変のリスクが高い",
+      "オプション: 前回比でGEX近似が+181億、ATM IV平均が-0.3ptと需給環境は安定化",
+      "市場数値: VIXは17.52（前日比-0.87／-4.7%）[2026-10-27T16:15:01 ET]と低下",
+      "価格の動き: S&P500は終値7,728.2［2026-10-27］で1日+0.56%と2日続伸"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "米2年債利回りおよび米10年債利回りの2026-10-27時点のデータ（2026-10-26時点のみで1日遅れ）"
+    ]
+  }
+}

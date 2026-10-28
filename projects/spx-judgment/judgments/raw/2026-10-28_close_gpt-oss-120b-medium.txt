@@ -1,0 +1,1 @@
+{"target_date":"2026-10-28","bias":"bullish","p_up":0.65,"confidence":0.70,"event_risk":"mid","key_factors":["オプション: GEX近似 前回比 +181億（コール上押し）","市場数値: VIX 17.52 前日比 -0.87（-4.7%）","価格の動き: 前日終値7,728.2 (+0.56%) 現在足+0.03%","ニュース: AI関連好材料（Robinhood収益12%上昇）"],"stand_aside":false,"missing_data":["FOMC金利決定結果","主要経済指標（インフレ・雇用）"]}
