@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "created_utc": "2026-10-28T22:30:22+00:00",
+    "jst_date": "2026-10-29",
+    "slot": "close",
+    "input_file": "2026-10-29_close.md",
+    "input_sha256": "a9b0ad9f1ff2c3f2a786621e07d5ed8bd658052fb657e855415bd12eeb8d38c7",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 31.3,
+    "quota_before_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 96.0
+    },
+    "quota_after_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 96.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-29",
+    "bias": "neutral",
+    "p_up": 0.48,
+    "confidence": 0.4,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース: Googleが決算発表後に時間外取引で10%下落と報道",
+      "市場数値: VIXは16.91（前日比-3.5%）へ低下［10/28］",
+      "オプション: 前回比でGEX近似が+78億、ATM IVが-0.8pt低下",
+      "経済指標: 当日に米GDPや個人所得・支出など重要指標の発表を控える"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "米2年債および10年債利回りのデータが2026-10-27付で最新日（10-28）が欠落している"
+    ]
+  }
+}

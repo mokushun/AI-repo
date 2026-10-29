@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-10-28T22:30:22+00:00",
+    "jst_date": "2026-10-29",
+    "slot": "close",
+    "input_file": "2026-10-29_close.md",
+    "input_sha256": "a9b0ad9f1ff2c3f2a786621e07d5ed8bd658052fb657e855415bd12eeb8d38c7",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 123.0,
+    "quota_before_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 92.0
+    },
+    "quota_after_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 92.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-29",
+    "bias": "bullish",
+    "p_up": 0.58,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "オプション: GEX近似が前日比+78億増でコール側が優勢、上昇圧力示唆",
+      "市場数値: VIXが-3.5%下落しリスク低下、株価上昇材料",
+      "価格の動き: 前日比+0.04%の小幅上昇だが未確定足は-0.10%で横ばい",
+      "ニュース: Fedが金利据え置きで市場は安定感、地政学的リスクが混在"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-10-29のSPX実際の終値",
+      "当日の主要経済指標（GDP等）の結果"
+    ]
+  }
+}

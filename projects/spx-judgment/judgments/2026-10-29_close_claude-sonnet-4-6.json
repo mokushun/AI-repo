@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-28T22:30:22+00:00",
+    "jst_date": "2026-10-29",
+    "slot": "close",
+    "input_file": "2026-10-29_close.md",
+    "input_sha256": "a9b0ad9f1ff2c3f2a786621e07d5ed8bd658052fb657e855415bd12eeb8d38c7",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "effort": null,
+    "elapsed_sec": 45.7,
+    "quota_before_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 96.0
+    },
+    "quota_after_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 92.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 4.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-29",
+    "bias": "bearish",
+    "p_up": 0.42,
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース: Alphabet決算がウォール街予想を下回りGOOGL株価-10%、S&P500主要構成銘柄への下押し圧力",
+      "経済指標: 当日にGDP・個人所得・週次失業保険申請が集中、LLY寄り前・AMZN引け後決算も重なりイベント密度高",
+      "市場数値: VIX 16.91（前日比-3.5%）[10/28 16:15ET]で恐怖感後退、FOMC据え置き＋市場上昇は前日終値に織り込み済み",
+      "オプション: GEX近似+78億増加・ATM IV -0.8pt低下で需給は改善方向、ただし当日満期で偏り注意"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "MSFT決算（10/28引け後）の結果が見出しに明示されておらず、テック全体への波及度が不明",
+      "10/29寄り前の先物・プレマーケット動向が未確定足以外に確認できない",
+      "原油高（WTI+11.3%/20日）がインフレ懸念に与える影響を判断する追加指標なし"
+    ]
+  }
+}
