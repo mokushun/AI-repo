@@ -1,0 +1,18 @@
+== trade returns (mid, log bp) ==
+USD_JPY: n=1253 mean=+3.91bp std=28.3bp t=4.90
+GBP_JPY: n=1253 mean=+4.04bp std=29.1bp t=4.91
+EUR_JPY: n=1243 mean=+3.18bp std=26.0bp t=4.32
+AUD_JPY: n=1253 mean=+3.08bp std=37.4bp t=2.91
+CHF_JPY: n=1251 mean=+3.47bp std=23.0bp t=5.34
+
+== non-JPY leg during the same window (mid, log bp) ==
+GBP_USD: n=1250 mean=+0.15bp std=26.4bp t=0.20
+EUR_USD: n=1406 mean=-0.48bp std=24.4bp t=-0.74
+AUD_USD: n=1233 mean=-1.04bp std=35.6bp t=-1.02
+USD_CHF: n=1214 mean=+0.43bp std=26.1bp t=0.57
+
+== decomposition: cross = USD/JPY leg +/- XXX/USD leg (common dates) ==
+GBP_JPY: corr with USD_JPY = 0.577 | identity residual mean=-0.032bp | leg contribution (GBP_USD) mean=+0.12bp t=0.16
+EUR_JPY: corr with USD_JPY = 0.606 | identity residual mean=-0.054bp | leg contribution (EUR_USD) mean=-0.76bp t=-1.11
+AUD_JPY: corr with USD_JPY = 0.448 | identity residual mean=+0.003bp | leg contribution (AUD_USD) mean=-1.04bp t=-1.02
+CHF_JPY: corr with USD_JPY = 0.509 | identity residual mean=-0.009bp | leg contribution (USD_CHF) mean=-0.44bp t=-0.58

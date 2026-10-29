@@ -21,7 +21,7 @@ OANDA 1分足データベース `m1.db` を唯一の検証材料として、投�
 
 | データ | 置き場所（Muse VM） | 内容 |
 |---|---|---|
-| `m1.db` | `~/workspace/oanda_json/m1.db`（環境変数 `M1_DB_PATH` で変更可） | SQLite、約1.27GB。テーブル `m1`（inst, t=epoch秒, bid/ask OHLC）。6銘柄（JP225_USD, NAS100_USD, SPX500_USD, USD_JPY, WTICO_USD, XAU_USD）、2020-10-01〜2026-10-22 UTC、12,740,048行 |
+| `m1.db` | `~/workspace/oanda_json/m1.db`（環境変数 `M1_DB_PATH` で変更可） | SQLite、約4.6GB。テーブル `m1`（inst, t=epoch秒, bid/ask OHLC）。21銘柄（旧6銘柄＋AUD_CHF, AUD_JPY, AUD_USD, CHF_JPY, EUR_AUD, EUR_CHF, EUR_GBP, EUR_JPY, EUR_USD, GBP_AUD, GBP_CHF, GBP_JPY, GBP_USD, NATGAS_USD, USD_CHF）、2020-10-01〜2026-10-29 UTC（EUR_USD・XAU_USD は 2020-01-01 から）、46,002,239行。2026-10-29 に差し替え、旧版は `m1_2026-10-22.db` として保持（USD/JPY 重複期間は完全一致を確認） |
 | `n225mini_options_master.csv` | `~/workspace/oanda_json/`（環境変数 `N225_CSV_PATH`） | 日経225ミニオプション（金曜限月）の時間毎スナップショット。手元の写しは 2026-09-02〜10-05 分まで（776回）。VPS側マスターとは別物かもしれない点に注意 |
 
 ## 構成
