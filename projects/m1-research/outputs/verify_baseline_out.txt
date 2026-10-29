@@ -1,7 +1,0 @@
-none TP150/SL20: trades=1563 total=-14500 winrate=7.4% PF=0.50 avg=-9.3
-none TP150/SL30: trades=1563 total=-16502 winrate=12.1% PF=0.60 avg=-10.6
-none TP100/SL40: trades=1563 total=-16606 winrate=21.4% PF=0.66 avg=-10.6
-nas TP150/SL20: trades=533 total=-3115 winrate=9.4% PF=0.68 avg=-5.8
-nas TP150/SL30: trades=533 total=-3376 winrate=14.6% PF=0.75 avg=-6.3
-nas TP100/SL40: trades=533 total=-3974 winrate=23.8% PF=0.75 avg=-7.5
-DONE-BASE
