@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-10-29T22:30:19+00:00",
+    "jst_date": "2026-10-30",
+    "slot": "close",
+    "input_file": "2026-10-30_close.md",
+    "input_sha256": "f767521cdf0fa367136a708a29911a5699e4ee13ad509fd4771ad3931cb5cb18",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "effort": null,
+    "elapsed_sec": 37.6,
+    "quota_before_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 89.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 89.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-30",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.6,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: 10/29終値-0.61%下落、未確定足-0.11%継続下降",
+      "オプション: GEX近似-283億（前日比-333億）でプット側圧力増大",
+      "市場数値: VIX当日17.2(+1.7%)でリスク回避感上昇",
+      "ニュース: 中東緊張（イラン・イエメン）等でリスク上昇"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "当日の終値データが未取得",
+      "GDP・個人所得等主要経済指標の結果が不明"
+    ]
+  }
+}

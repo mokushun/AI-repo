@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-10-29T22:30:19+00:00",
+    "jst_date": "2026-10-30",
+    "slot": "close",
+    "input_file": "2026-10-30_close.md",
+    "input_sha256": "f767521cdf0fa367136a708a29911a5699e4ee13ad509fd4771ad3931cb5cb18",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "effort": null,
+    "elapsed_sec": 34.0,
+    "quota_before_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 92.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 92.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-10-30",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "ニュース: AMZN決算未達による株安報道やAlphabet安でハイテク軟調［10/30］",
+      "価格の動き: S&P500終値7,684.4で1日-0.61%、未確定足も軟調［10-29］",
+      "オプション: 前回比でGEX近似変化-333億、全満期P/C建玉変化+0.03［10-29］",
+      "市場数値: VIXは17.2（前日比+0.29/+1.7%）［10-29］"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年債・10年債利回りが2026-10-28付で1日遅れている点",
+      "2026-10-29発表予定のGDP等の経済指標結果の記載がない点",
+      "2026-10-30当日の経済指標発表予定の記載がない点"
+    ]
+  }
+}
