@@ -1,0 +1,1 @@
+{"bias":"bearish","confidence":0.45,"event_risk":"mid","key_factors":["価格の動き：Nasdaq100前日-1.77%、SPX-0.61%と下落","ニュース：Alphabet決算ミスでAI投資懸念再燃、米株は下落","オプション：put/call建玉1.15、GEX近似は前回比-303億と悪化","市場数値：VIX17.2へ前日比+1.7%上昇"],"missing_data":["米2年債・10年債利回りは2026-10-28時点と1日古い"],"p_up":0.45,"stand_aside":false,"target_date":"2026-10-30"}
