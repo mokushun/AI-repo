@@ -19,7 +19,8 @@ collect_inputs.py（改善版ドラフト。リポジトリ外で作成 2026-10-
      落ちないように）、(b) 経済指標の実績は FRED /series の last_updated が発表日以降の
      ときだけ出す（取れない場合は最短の遅れのみ許容。前月分の実績誤表示を防ぐ）、
      (c) 企業名は語境界で照合（Pineapple→apple 等の誤爆防止）、「wall street」単独の+1を廃止、
-     (d) 過去日で epsActual が無い決算はログに残す
+     (d) 過去日で epsActual が無い決算はログに残す、(e) 決算は過去分と今後分を別々に取得
+     （広い範囲を1回で取ると過去日の実績が返らなかったため）
 セクション数（8）と文字数上限（6,000字）は本家と同じ。
 
   python3 collect_inputs.py --slot close            # 通常実行（引け後）
@@ -907,13 +908,31 @@ def sec_earnings(ctx):
     today = ctx.today_et
     end = today + timedelta(days=EARNINGS_DAYS)
     start = today - timedelta(days=EARNINGS_LOOKBACK_DAYS)
-    text = fetch(ctx, "finnhub_earnings", f"{FINNHUB_URL}/calendar/earnings",
-                 {"from": start.isoformat(), "to": end.isoformat(),
-                  "token": ctx.secrets.get("finnhub", "")},
-                 sample="finnhub_earnings.json")
-    items = load_json(text, "earnings").get("earningsCalendar")
-    if not isinstance(items, list):
-        raise RuntimeError("earningsCalendarが無い")
+
+    def _get(name, frm, to, sample):
+        text = fetch(ctx, name, f"{FINNHUB_URL}/calendar/earnings",
+                     {"from": frm.isoformat(), "to": to.isoformat(), "token": ctx.secrets.get("finnhub", "")},
+                     sample=sample)
+        got = load_json(text, "earnings").get("earningsCalendar")
+        if not isinstance(got, list):
+            raise RuntimeError("earningsCalendarが無い")
+        return got
+
+    # 過去分（実績）と今後分（予定）は別々に取る。1回で start〜end を広く取ると、決算ピーク期に
+    # 過去日の行が返らなかった（2026-10-31 実測）。範囲を絞ると過去日の epsActual も返る
+    items = _get("finnhub_earnings", today, end, "finnhub_earnings.json")
+    try:
+        past = _get("finnhub_earnings_past", start, today, "finnhub_earnings_past.json")
+    except RuntimeError as e:
+        logger.warning("決算の過去分の取得失敗（予定のみで続行）: %s", e)
+        past = []
+    logger.info("決算カレンダー: 今後分%d件・過去分%d件", len(items), len(past))
+    merged = {}
+    for it in past + items:
+        key = (it.get("symbol"), it.get("date"))
+        if key not in merged or (merged[key].get("epsActual") is None and it.get("epsActual") is not None):
+            merged[key] = it
+    items = list(merged.values())
     hours = {"bmo": "寄り前", "amc": "引け後", "dmh": "場中"}
     rows, actuals = [], []
     for it in items:
