@@ -1,8 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-collect_inputs.py
+collect_inputs.py（改善版ドラフト。リポジトリ外で作成 2026-10-31）
 毎日のAI判断（SPX/US100）に渡す入力ファイルを作る。標準ライブラリのみ。AIは使わない。
+
+本家 collect_inputs.py からの変更点（仕様: spx-news-filter-spec-2026-10-31.md とその追補）
+  1. 予定と結果の明確化: 予定セクションの見出しに「未発表の予定であり結果ではない」と明記し、
+     各行に「予定:」を前置。実績行は「実績:」で分離（FOMCの未発表を結果と誤読する事故の対策）
+  2. 利回りの日付ズレ解消: 米財務省の日次パーイールド（キー不要）を優先し、FREDより
+     新しい観測日のときだけ採用。前日比は同一ソース内で計算し、取得元を併記する
+  3. ニュースのスコア制選別: キーワードの重みで選別し、除外リスト→スコア0→テーマ上限→
+     件数上限の順で落とす。Finnhub と Google News をまたいだ重複除去（スコア優先）。
+     落とした見出しは logs/news_dropped_<日付>_<slot>.log に理由・スコア付きで残す
+  4. 実績の追加: 経済指標の実績（FRED系列。PPI=PPIFIS、小売売上=RSAFS、GDPは速報/改定/
+     確報の別を発表タイミングから推定して併記）と、決算の実績（Finnhub決算カレンダーの
+     epsActual / revenueActual を表示。追加のAPIコールなし）
+  5. 2026-10-31 レビュー反映: (a) 財務省の表は月初に前月の表も読む（月初の実行日にFREDへ
+     落ちないように）、(b) 経済指標の実績は FRED /series の last_updated が発表日以降の
+     ときだけ出す（取れない場合は最短の遅れのみ許容。前月分の実績誤表示を防ぐ）、
+     (c) 企業名は語境界で照合（Pineapple→apple 等の誤爆防止）、「wall street」単独の+1を廃止、
+     (d) 過去日で epsActual が無い決算はログに残す
+セクション数（8）と文字数上限（6,000字）は本家と同じ。
 
   python3 collect_inputs.py --slot close            # 通常実行（引け後）
   python3 collect_inputs.py --slot open             # 寄り前の補正用
@@ -119,6 +137,79 @@ D1_STALE_HOURS = 3        # d1.json の更新がこれより古ければ警告�
 OPTIONS_DB = os.environ.get("SPX_OPTIONS_DB", "/home/aitrader/work/spx_codex/spx_data/spx_options.sqlite3")
 OPTIONS_STALE_DAYS = 4    # データ時点がこの日数以上前なら注記する
 
+# --- 改善版の追加設定 -------------------------------------------------
+# 米財務省の日次パーイールド（無料・キー不要）。月ごとに表ページがある
+TREASURY_YIELD_URL = ("https://home.treasury.gov/resource-center/data-chart-center/"
+                      "interest-rates/TextView?type=daily_treasury_yield_curve"
+                      "&field_tdr_date_value_month={yyyymm}")
+
+# ニュース選別（スコア制）。重みは情勢で変わるので、月1回程度 logs/news_dropped_*.log を
+# 見て見直す前提の表。照合前に見出しの ’ ‘ を ' に、 “ ” を " に正規化する
+NEWS_FINNHUB_MAX = 10     # Finnhub側の上限（本家の NEWS_MAX は使わなくなった）
+NEWS_GNEWS_MAX = 12       # Google News 3検索を統合した上限
+NEWS_THEME_MAX_PER_SECTION = 2
+NEWS_THEME_MAX_TOTAL = 3
+NEWS_SCORE_RULES = [
+    # (正規表現, 重み)。見出しを小文字化して照合する
+    (r"s&p 500|nasdaq|dow jones|stock market|wall street (ends|closes|closed|fell|fall|"
+     r"rallied|slid|dropped|gained|surges|tumbles)", 3),
+    (r"\bfed\b|fomc|federal reserve|rate (cut|hike|decision|pause|hold)|holds rates|"
+     r"leaves rates|treasury yields?|bond yields?|inflation|\bcpi\b|\bpce\b|jobs report|"
+     r"unemployment|retail sales", 3),
+    (r"oil (prices|futures|holds|eases|falls|rises|ends|settles|drops|gains)|\bcrude\b|"
+     r"\bopec\b|hormuz|refiner|\blng\b|natural gas futures", 3),
+    (r"stocks? (rise|fall|rose|fell|end|ends|closed|slide|slid|jump|drop|gain|higher|lower)|"
+     r"shares (rise|fall|rose|fell|slide|slid|jump|drop|gain|slip|sink|slump)", 2),
+    (r"powell|warsh|central banks?|rate decision", 2),
+    (r"earnings|revenue|guidance|quarterly (profit|revenue|results)|beat-and-raise|"
+     r"profit (rises|falls|rose|fell|jumps|drops|climbs)", 2),
+    (r"(iran|middle east|houthi|hormuz).*(mediation|diplomacy|diplomatic|ceasefire|"
+     r"blockade|tanker|missile|attack|escalat)|(mediation|diplomacy|ceasefire).*(iran|"
+     r"middle east)", 2),
+    (r"tariffs?|trade (deal|war)|treasury market|government shutdown", 2),
+    (r"anthropic.*(ipo|filing|files)|\bipo\b.*(anthropic|\bai\b)", 2),
+    (r"\b(alphabet|google|microsoft|amazon|apple|nvidia|meta|tesla|jpmorgan|broadcom|"
+     r"oracle|eli lilly|walmart|netflix|anthropic)\b", 1),
+    (r"ai (capex|spending|trade|boom|chips|debt|investment)|\bcapex\b|data center", 1),
+]
+NEWS_EXCLUDE_PATTERNS = [
+    r"print edition",
+    r"401\(k\)|my wife|am i wrong",
+    r"we're (adding|downgrading|buying|selling)",
+    r"jim cramer|cramer says|cramer:",
+    r"podcast:",
+    r"playing her greatest role|all-you-can-eat|buffet",
+]
+NEWS_THEME_NAMES = ["alphabet", "google", "microsoft", "amazon", "apple", "nvidia",
+                    "meta", "tesla", "jpmorgan", "broadcom", "oracle", "eli lilly",
+                    "walmart", "netflix", "anthropic"]
+
+# 経済指標の実績（仕様B）。発表予定（FRED_RELEASE_KEYWORDS の一致）に対して、発表済みの
+# 実績を FRED 系列から作る。kind: mom=前月比%、diff=前観測との差、level=水準そのまま。
+# lag_months: 発表月から見て「実績」と認める対象月の遅れ（発表月 - 対象月）の許容範囲。
+# 系列の定義は FRED 公式ページで確認済み（PPIFIS=最終需要、RSAFS=小売+外食）
+ACTUAL_SERIES = [
+    # (リリース名に含まれる文字列, [(系列ID, 表示名, kind, 単位換算)], lag許容)
+    ("consumer price index",
+     [("CPIAUCSL", "CPI総合", "mom", 1.0), ("CPILFESL", "CPIコア", "mom", 1.0)], (1, 2)),
+    ("producer price index",
+     [("PPIFIS", "PPI最終需要", "mom", 1.0)], (1, 2)),
+    ("personal income and outlays",
+     [("PCEPI", "PCE総合", "mom", 1.0), ("PCEPILFE", "PCEコア", "mom", 1.0)], (1, 2)),
+    ("employment situation",
+     [("PAYEMS", "非農業雇用者数 変化", "diff_k", 1.0), ("UNRATE", "失業率", "level_pct", 1.0)], (1, 2)),
+    ("unemployment insurance weekly claims",
+     [("ICSA", "新規失業保険申請", "level_claims", 1.0)], (0, 0)),
+    ("advance monthly sales for retail",
+     [("RSAFS", "小売売上高", "mom", 1.0)], (1, 2)),
+    ("gross domestic product",
+     [("A191RL1Q225SBEA", "実質GDP", "level_pct", 1.0)], (0, 0)),
+    ("job openings and labor turnover",
+     [("JTSJOL", "求人件数", "level_k", 1.0)], (1, 2, 3)),
+]
+ACTUAL_LOOKBACK_DAYS = 6   # 実績として拾う発表日の遡り幅（暦日。週末またぎを吸収）
+EARNINGS_LOOKBACK_DAYS = 3  # 決算の実績として拾う遡り幅（暦日）
+
 CBOE_VIX_URL = "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
 CBOE_HEADERS = {"Referer": "https://www.cboe.com/", "Accept": "application/json"}
 FRED_URL = "https://api.stlouisfed.org/fred"
@@ -144,6 +235,8 @@ class Ctx:
         self.now_utc = now_utc
         self.raw = {}                   # 取得した生データ（保存用）
         self.seen_titles = set()        # ニュース見出しの重複判定用
+        self.dropped = []               # 選別で落とした見出し (source, score, reason, title)
+        self.news_ok = {"news": True, "gnews": True}  # ニュース2セクションの成否
         self.options_db = OPTIONS_DB
         self.last_request = 0.0
 
@@ -269,6 +362,97 @@ def fmt_date(d):
 # ------------------------------------------------------------------
 # セクションごとの取得
 # ------------------------------------------------------------------
+class _TableParser:
+    """HTMLの表を行×セルのテキストに分解する（標準ライブラリのみ）"""
+
+    def __init__(self):
+        from html.parser import HTMLParser
+
+        outer = self
+
+        class P(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.tables, self._t, self._r, self._c = [], None, None, None
+
+            def handle_starttag(self, tag, attrs):
+                if tag == "table":
+                    self._t = []
+                elif tag == "tr" and self._t is not None:
+                    self._r = []
+                elif tag in ("td", "th") and self._r is not None:
+                    self._c = []
+
+            def handle_data(self, data):
+                if self._c is not None:
+                    self._c.append(data)
+
+            def handle_endtag(self, tag):
+                if tag in ("td", "th") and self._c is not None:
+                    self._r.append(re.sub(r"\s+", " ", "".join(self._c)).strip())
+                    self._c = None
+                elif tag == "tr" and self._r is not None:
+                    if self._t is not None and self._r:
+                        self._t.append(self._r)
+                    self._r = None
+                elif tag == "table" and self._t is not None:
+                    self.tables.append(self._t)
+                    self._t = None
+
+        self._parser = P()
+
+    def tables(self, html_text):
+        self._parser.feed(html_text)
+        return self._parser.tables
+
+
+def _parse_treasury_rows(text):
+    """財務省の表のHTMLから (日付, 2年, 10年) の列を返す。列は見出しで特定する"""
+    rows = []
+    for table in _TableParser().tables(text):
+        if not table:
+            continue
+        head = [c.lower() for c in table[0]]
+        if "date" not in head or "2 yr" not in head or "10 yr" not in head:
+            continue
+        di, i2, i10 = head.index("date"), head.index("2 yr"), head.index("10 yr")
+        for r in table[1:]:
+            try:
+                d = datetime.strptime(r[di], "%m/%d/%Y").date()
+                rows.append((d, float(r[i2]), float(r[i10])))
+            except (ValueError, IndexError):
+                continue
+    return rows
+
+
+def fetch_treasury_yields(ctx):
+    """米財務省の日次パーイールド表から (日付, 2年, 10年) の列を新しい順に返す。
+    列は見出し（"2 Yr" / "10 Yr"）で特定する。当日分は夕方ETの掲載のため、
+    07:30 JST 実行では前営業日分までしか無い日もある（呼び出し側で日付を見て判断）。
+    月初は当月の表がまだ空か1行だけのことがあるため、有効な行が2件未満なら前月の表も読む
+    （前日比を同一ソースで計算するため）。"""
+    today = ctx.today_et
+    prev_month_day = today.replace(day=1) - timedelta(days=1)
+    rows, errors = {}, []
+    for i, d in enumerate((today, prev_month_day)):
+        url = TREASURY_YIELD_URL.format(yyyymm=d.strftime("%Y%m"))
+        name = "treasury_yield" if i == 0 else "treasury_yield_prev"
+        sample = "treasury_yield.html" if i == 0 else "treasury_yield_prev.html"
+        try:
+            text = fetch(ctx, name, url, None, sample=sample)
+            for r in _parse_treasury_rows(text):
+                rows[r[0]] = r
+        except RuntimeError as e:
+            errors.append(str(e))
+            continue
+        if len([k for k in rows if k <= today]) >= 2:
+            break
+    out = sorted((r for k, r in rows.items() if k <= today), reverse=True)
+    if not out:
+        raise RuntimeError("財務省の利回り表を読めない" + (f"（{errors[0]}）" if errors else ""))
+    return out
+
+
 def sec_market(ctx):
     """VIXはCboeの当日値。他はFRED（直近2つの有効な観測値と前回差）"""
     lines = []
@@ -292,8 +476,45 @@ def sec_market(ctx):
         vix_done = True
     except (RuntimeError, KeyError, TypeError, ValueError) as e:
         logger.warning("Cboe VIXの取得失敗（FREDの値で代用）: %s", e)
+    # 利回り（DGS2/DGS10）は、米財務省のパーイールドに当日分があればそちらを優先する。
+    # FREDは観測日が1〜2日遅れるのが常態で、判断側の missing_data の常連だった。
+    # 前日比は同一ソース内でのみ計算し、取得元と観測日を必ず併記する
+    yield_done = set()
+    try:
+        t_rows = fetch_treasury_yields(ctx)
+    except Exception as e:  # サンプルが無い場合も含め、失敗時はFREDのみ
+        logger.warning("財務省利回りの取得失敗（FREDで代用）: %s", e)
+        t_rows = None
+    if t_rows:
+        t_date, t_2y, t_10y = t_rows[0]
+        t_prev = t_rows[1] if len(t_rows) > 1 else None
+        for sid, label, t_val, t_pv in (("DGS2", "米2年債利回り(%)", t_2y, t_prev[1] if t_prev else None),
+                                        ("DGS10", "米10年債利回り(%)", t_10y, t_prev[2] if t_prev else None)):
+            try:
+                text = fetch(ctx, f"fred_{sid}", f"{FRED_URL}/series/observations",
+                             {"series_id": sid, "api_key": ctx.secrets.get("fred", ""), "file_type": "json",
+                              "sort_order": "desc", "limit": 10},
+                             sample=f"fred_{sid.lower()}.json")
+                obs = load_json(text, sid).get("observations")
+                valid = []
+                for o in obs:
+                    try:
+                        valid.append((o["date"], float(o["value"])))
+                    except (KeyError, ValueError, TypeError):
+                        continue
+                if not valid:
+                    continue
+                f_date = date.fromisoformat(valid[0][0])
+                if t_date > f_date:
+                    chg = f"（前日比 {t_val - t_pv:+.2f}）" if t_pv is not None else ""
+                    lines.append(f"{label}: {t_val:g}{chg}[{t_date.isoformat()}]（米財務省パーイールド）")
+                    yield_done.add(sid)
+            except RuntimeError:
+                continue
     for sid, label in FRED_SERIES:
         if sid == "VIXCLS" and vix_done:
+            continue
+        if sid in yield_done:
             continue
         try:
             text = fetch(ctx, f"fred_{sid}", f"{FRED_URL}/series/observations",
@@ -512,7 +733,7 @@ def sec_events(ctx):
     try:
         text = fetch(ctx, "fred_release_dates", f"{FRED_URL}/releases/dates",
                      {"api_key": ctx.secrets.get("fred", ""), "file_type": "json",
-                      "realtime_start": today.isoformat(),
+                      "realtime_start": (today - timedelta(days=10)).isoformat(),
                       "realtime_end": (today + timedelta(days=10)).isoformat(),
                       "include_release_dates_with_no_data": "true",
                       "order_by": "release_date", "sort_order": "asc", "limit": 1000},
@@ -547,41 +768,215 @@ def sec_events(ctx):
             low = name.lower()
             if any(k in low for k in FRED_RELEASE_KEYWORDS) and not any(x in low for x in FRED_RELEASE_EXCLUDE):
                 found.add((d, clean_text(name, 80)))
-        lines = [f"{fmt_date(d)} {name}" for d, name in sorted(found)][:15]
+        lines = [(f"本日発表: {fmt_date(d)} {name}（結果は上の実績行を参照。無い場合は未取得）" if d == today
+                  else f"予定: {fmt_date(d)} {name}") for d, name in sorted(found)][:15]
         if not lines:
             lines = [f"{fmt_date(today)}〜{fmt_date(end)}: 主要な経済指標の発表予定なし"]
+        # 発表済みの実績を、予定より前に「実績:」で分けて出す（予定と結果の誤読対策）
+        actuals = _actual_lines(ctx, items, today)
+        lines = actuals + lines
     if note:
         lines.insert(0, note)
     for s in FOMC_DECISION_DATES:
         d = date.fromisoformat(s)
         if 0 <= (d - today).days <= FOMC_LOOKAHEAD_DAYS:
-            lines.append(f"{fmt_date(d)} FOMC政策金利の発表（あと{(d - today).days}日）")
+            if (d - today).days == 0:
+                lines.append(f"本日発表: {fmt_date(d)} FOMC政策金利の発表（結果はFRB欄・ニュースを参照）")
+            else:
+                lines.append(f"予定: {fmt_date(d)} FOMC政策金利の発表（結果は未発表。あと{(d - today).days}日）")
     return lines
+
+
+def _fred_obs(ctx, sid, limit=5):
+    """FRED系列の有効な観測を新しい順に [(日付, 値)] で返す"""
+    text = fetch(ctx, f"fred_{sid}", f"{FRED_URL}/series/observations",
+                 {"series_id": sid, "api_key": ctx.secrets.get("fred", ""), "file_type": "json",
+                  "sort_order": "desc", "limit": limit},
+                 sample=f"fred_{sid.lower()}.json")
+    obs = load_json(text, sid).get("observations")
+    if not isinstance(obs, list):
+        raise RuntimeError("observationsが無い")
+    valid = []
+    for o in obs:
+        try:
+            valid.append((date.fromisoformat(o["date"]), float(o["value"])))
+        except (KeyError, ValueError, TypeError):
+            continue
+    if not valid:
+        raise RuntimeError("有効な値が無い")
+    return valid
+
+
+def _fred_last_updated(ctx, sid):
+    """FREDの系列メタ情報の last_updated（日付）。取れなければ None（呼び出し側で厳しい側に倒す）"""
+    try:
+        text = fetch(ctx, f"fred_meta_{sid}", f"{FRED_URL}/series",
+                     {"series_id": sid, "api_key": ctx.secrets.get("fred", ""), "file_type": "json"},
+                     sample=f"fred_meta_{sid.lower()}.json")
+        s = load_json(text, sid).get("seriess")
+        return date.fromisoformat(str(s[0]["last_updated"])[:10])
+    except (RuntimeError, KeyError, IndexError, TypeError, ValueError):
+        return None
+
+
+def _actual_lines(ctx, items, today):
+    """直近に発表があった主要指標の実績を FRED から作る。
+    発表の有無は予定表（release_dates）で判定し、系列の最新観測が発表に対応する
+    対象期間でなければ「未反映」として値を出さない（古い観測の誤読を防ぐ）"""
+    past = {}
+    for it in items:
+        try:
+            d = date.fromisoformat(it["date"])
+            name = str(it["release_name"])
+        except (KeyError, ValueError, TypeError):
+            continue
+        if today - timedelta(days=ACTUAL_LOOKBACK_DAYS) <= d <= today:
+            low = name.lower()
+            if any(k in low for k in FRED_RELEASE_KEYWORDS) and not any(x in low for x in FRED_RELEASE_EXCLUDE):
+                if name not in past or d > past[name]:
+                    past[name] = d
+    lines = []
+    for keyword, series_list, lag_ok in ACTUAL_SERIES:
+        target = [(n, d) for n, d in past.items() if keyword in n.lower()]
+        if not target:
+            continue
+        name, rdate = max(target, key=lambda x: x[1])
+        parts = []
+        stale = False
+        for sid, label, kind, _scale in series_list:
+            try:
+                obs = _fred_obs(ctx, sid)
+            except RuntimeError:
+                continue
+            d0, v0 = obs[0]
+            # 系列が発表日より前にしか更新されていなければ、最新観測は前回分 = 未反映
+            lu = _fred_last_updated(ctx, sid)
+            if lu is not None and lu < rdate:
+                stale = True
+                continue
+            if sid == "A191RL1Q225SBEA":
+                # GDP: 対象四半期の開始月と発表月の差で 速報/改定/確報 を推定する
+                mdiff = (rdate.year * 12 + rdate.month) - (d0.year * 12 + d0.month)
+                vintage = {3: "速報値", 4: "第2推計", 5: "第3推計"}.get(mdiff)
+                if vintage is None:
+                    stale = True
+                    continue
+                prev = f"、前回 {obs[1][1]:+.1f}%" if len(obs) > 1 else ""
+                parts.append(f"{label} {v0:+.1f}%（前期比年率。{vintage}（発表時期からの推定）{prev}）")
+                continue
+            if kind == "level_claims":
+                if not (rdate - timedelta(days=10) <= d0 <= rdate):
+                    stale = True
+                    continue
+            else:
+                mdiff = (rdate.year * 12 + rdate.month) - (d0.year * 12 + d0.month)
+                # last_updated が取れない場合は、最短の遅れ（通常1か月）だけを実績と認める
+                if mdiff not in lag_ok or (lu is None and mdiff != min(lag_ok)):
+                    stale = True
+                    continue
+            if kind == "mom":
+                if len(obs) < 3:
+                    continue
+                chg = (v0 / obs[1][1] - 1) * 100
+                prev = (obs[1][1] / obs[2][1] - 1) * 100
+                parts.append(f"{label} 前月比 {chg:+.1f}%（前回 {prev:+.1f}%）[対象 {d0.strftime('%Y-%m')}]")
+            elif kind == "diff_k":
+                if len(obs) < 3:
+                    continue
+                chg = v0 - obs[1][1]
+                prev = obs[1][1] - obs[2][1]
+                parts.append(f"{label} {chg:+,.0f}千人（前回 {prev:+,.0f}千人）[対象 {d0.strftime('%Y-%m')}]")
+            elif kind == "level_pct":
+                prev = f"（前回 {obs[1][1]:g}%）" if len(obs) > 1 else ""
+                parts.append(f"{label} {v0:g}%{prev}[対象 {d0.strftime('%Y-%m')}]")
+            elif kind == "level_k":
+                prev = f"（前回 {obs[1][1] / 10:,.0f}万件）" if len(obs) > 1 else ""
+                parts.append(f"{label} {v0 / 10:,.0f}万件{prev}[対象 {d0.strftime('%Y-%m')}]")
+            elif kind == "level_claims":
+                prev = f"（前回 {obs[1][1] / 1000:,.0f}千件）" if len(obs) > 1 else ""
+                parts.append(f"{label} {v0 / 1000:,.0f}千件{prev}[対象週 {d0.isoformat()}]")
+        if parts:
+            lines.append(f"実績: {fmt_date(rdate)} {name}: " + "／".join(parts))
+        elif stale:
+            lines.append(f"実績: {fmt_date(rdate)} {name}: 取得時点でFRED未反映（値は出さない）")
+    return lines[:6]
 
 
 def sec_earnings(ctx):
     """Finnhub: ウォッチリストの決算予定"""
     today = ctx.today_et
     end = today + timedelta(days=EARNINGS_DAYS)
+    start = today - timedelta(days=EARNINGS_LOOKBACK_DAYS)
     text = fetch(ctx, "finnhub_earnings", f"{FINNHUB_URL}/calendar/earnings",
-                 {"from": today.isoformat(), "to": end.isoformat(),
+                 {"from": start.isoformat(), "to": end.isoformat(),
                   "token": ctx.secrets.get("finnhub", "")},
                  sample="finnhub_earnings.json")
     items = load_json(text, "earnings").get("earningsCalendar")
     if not isinstance(items, list):
         raise RuntimeError("earningsCalendarが無い")
     hours = {"bmo": "寄り前", "amc": "引け後", "dmh": "場中"}
-    rows = []
+    rows, actuals = [], []
     for it in items:
-        if it.get("symbol") in WATCHLIST and it.get("date"):
-            rows.append((it["date"], it["symbol"], hours.get(it.get("hour"), it.get("hour") or "時間不明")))
-    if not rows:
+        if it.get("symbol") not in WATCHLIST or not it.get("date"):
+            continue
+        h = hours.get(it.get("hour"), it.get("hour") or "時間不明")
+        # 発表済み（epsActual がある）のものは実績として分ける。同じ応答の項目を使うので
+        # 追加のAPIコールは無い。無料枠で過去分の actual が返らない場合は actuals が空になる
+        if it.get("epsActual") is not None and it["date"] <= today.isoformat():
+            eps_a, eps_e = it.get("epsActual"), it.get("epsEstimate")
+            txt = f"実績: {it['date']} {it['symbol']}（{h}）EPS {eps_a:g}"
+            if isinstance(eps_e, (int, float)) and eps_e:
+                txt += f"（予想 {eps_e:g}、{(eps_a - eps_e) / abs(eps_e) * 100:+.1f}%）"
+            rev_a, rev_e = it.get("revenueActual"), it.get("revenueEstimate")
+            if isinstance(rev_a, (int, float)):
+                txt += f" 売上 ${rev_a / 1e9:,.1f}B"
+                if isinstance(rev_e, (int, float)) and rev_e:
+                    txt += f"（予想 ${rev_e / 1e9:,.1f}B）"
+            actuals.append((it["date"], it["symbol"], txt))
+        elif it["date"] >= today.isoformat():
+            rows.append((it["date"], it["symbol"], h))
+        else:
+            logger.info("決算の実績が未反映（epsActualなし）: %s %s", it["date"], it["symbol"])
+    out = [t for _, _, t in sorted(actuals, reverse=True)][:5]
+    if rows:
+        out += [f"予定: {d} {sym}（{h}。結果は未発表）" for d, sym, h in sorted(rows)][:25]
+    elif not out:
         return [f"今後{EARNINGS_DAYS}日: ウォッチリストの決算予定なし"]
-    return [f"{d} {sym}（{h}）" for d, sym, h in sorted(rows)][:25]
+    return out
 
 
-def sec_news(ctx, limit):
-    """Finnhub: 一般ニュースの見出し（直近24時間、新しい順）"""
+def _news_normalize(title):
+    return (title.replace("\u2019", "'").replace("\u2018", "'")
+            .replace("\u201c", '"').replace("\u201d", '"'))
+
+
+def _news_score(title):
+    """(スコア, 除外理由) を返す。除外理由があればスコアは -99"""
+    t = _news_normalize(title).lower()
+    for pat in NEWS_EXCLUDE_PATTERNS:
+        if re.search(pat, t):
+            return -99, f"除外パターン: {pat}"
+    return sum(w for pat, w in NEWS_SCORE_RULES if re.search(pat, t)), None
+
+
+def _news_theme(title):
+    t = _news_normalize(title).lower()
+    if re.search(r"(wall street|stocks|shares|s&p 500|nasdaq).{0,40}(ends?|closed|closes)"
+                 r".{0,30}(higher|lower|steady|mixed|flat)|ends (higher|lower)", t):
+        return "close"   # 当日の引けサマリー。テーマ上限の対象外にする
+    for n in NEWS_THEME_NAMES:
+        if re.search(r"\b" + re.escape(n) + r"\b", t):
+            return n
+    if re.search(r"oil|crude|opec|hormuz|\blng\b", t):
+        return "oil"
+    if re.search(r"\bfed\b|fomc|treasury|yield|inflation|rate", t):
+        return "rates"
+    if re.search(r"s&p|nasdaq|wall street|stock", t):
+        return "market"
+    return "other"
+
+
+def _finnhub_candidates(ctx):
     text = fetch(ctx, "finnhub_news", f"{FINNHUB_URL}/news",
                  {"category": "general", "token": ctx.secrets.get("finnhub", "")},
                  sample="finnhub_news.json")
@@ -589,7 +984,7 @@ def sec_news(ctx, limit):
     if not isinstance(items, list):
         raise RuntimeError("ニュースの形式が想定と違う")
     cutoff = ctx.now_utc.timestamp() - NEWS_HOURS * 3600
-    rows, seen = [], set()
+    rows = []
     for it in items:
         try:
             ts = float(it["datetime"])
@@ -598,59 +993,119 @@ def sec_news(ctx, limit):
         src = clean_text(it.get("source"), 30)
         title = clean_text(it.get("headline"))
         if src and title.endswith(" - " + src):
-            title = title[: -len(" - " + src)]            # 末尾の「 - 媒体名」は重複するので除く
-        title = guard(title)
-        key = norm_title(title)
-        if ts < cutoff or not title or is_junk(title) or key in seen or key in ctx.seen_titles:
-            continue                                      # ctx.seen_titles は Google News で出した見出し
-        seen.add(key)
-        rows.append((ts, title, src))
-    rows.sort(reverse=True)
-    out = []
-    for ts, title, src in rows[:limit]:
-        t = datetime.fromtimestamp(ts, timezone.utc).astimezone(JST).strftime("%m/%d %H:%M")
-        out.append(f"[{t}JST] {title}（{src}）")
-    return out or ["直近24時間の見出しなし"]
+            title = title[: -len(" - " + src)]
+        if ts >= cutoff and title and not is_junk(title):
+            rows.append((ts, title, src))
+    return rows
 
 
-def sec_gnews(ctx):
-    """Google News RSS: 検索語ごとの見出し（直近24時間）。重複は除く"""
+def _gnews_candidates(ctx):
     cutoff = ctx.now_utc - timedelta(hours=NEWS_HOURS)
-    lines, failed = [], 0
-    for key, label, query in GNEWS_QUERIES:
+    rows, failed = [], 0
+    for key, _label, query in GNEWS_QUERIES:
         url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote_plus(query + " when:1d", safe=":")
                + "&hl=en-US&gl=US&ceid=US:en")
         try:
             text = fetch(ctx, f"gnews_{key}", url, None, sample=f"gnews_{key}.xml")
             root = ET.fromstring(text)
-        except (RuntimeError, ET.ParseError) as e:
-            lines.append(f"{label}: 取得失敗（{e if isinstance(e, RuntimeError) else 'XMLを読めない'}）")
+        except (RuntimeError, ET.ParseError):
             failed += 1
             continue
-        rows = []
         for item in root.iter("item"):
             title = clean_text(item.findtext("title"))
             src = clean_text(item.findtext("source"), 30)
             if src and title.endswith(" - " + src):
-                title = title[: -len(" - " + src)]          # 末尾の「 - 媒体名」は重複するので除く
-            title = guard(title)
+                title = title[: -len(" - " + src)]
             try:
                 dt = parsedate_to_datetime(item.findtext("pubDate") or "")
                 if dt.tzinfo is None:
                     dt = dt.replace(tzinfo=timezone.utc)
             except (TypeError, ValueError):
                 continue
-            k = norm_title(title)
-            if dt < cutoff or not title or is_junk(title) or k in ctx.seen_titles:
-                continue
-            ctx.seen_titles.add(k)
-            rows.append((dt, title, src))
-        rows.sort(reverse=True)
-        for dt, title, src in rows[:GNEWS_PER_QUERY]:
-            lines.append(f"[{label}][{dt.astimezone(JST).strftime('%m/%d %H:%M')}JST] {title}（{src}）")
+            if dt >= cutoff and title and not is_junk(title):
+                rows.append((dt.timestamp(), title, src))
     if failed == len(GNEWS_QUERIES):
         raise RuntimeError("全検索の取得に失敗")
-    return lines or ["直近24時間の見出しなし"]
+    return rows
+
+
+def _score_candidates(ctx, rows, source_name):
+    """候補にスコアとテーマを付け、(ts, title, src, score, theme, source) の列にする。
+    除外・スコア0はここで落として ctx.dropped に記録する"""
+    out, seen = [], set()
+    for ts, title, src in sorted(rows, key=lambda r: -r[0]):
+        if guard(title).startswith("［除外"):
+            ctx.dropped.append((source_name, -99, "指示文の疑い", title))
+            continue
+        k = norm_title(_news_normalize(title))
+        if k in seen:
+            ctx.dropped.append((source_name, -1, "重複（同一ソース内）", title))
+            continue
+        seen.add(k)
+        sc, why = _news_score(title)
+        if why:
+            ctx.dropped.append((source_name, sc, why, title))
+            continue
+        if sc <= 0:
+            ctx.dropped.append((source_name, sc, "スコア0", title))
+            continue
+        out.append((ts, title, src, sc, _news_theme(title), source_name))
+    return out
+
+
+def sec_news_all(ctx, finnhub_cap, gnews_cap):
+    """Finnhub と Google News を統合して選別する。
+    両ソースの候補を1列にし、スコア層→新しい順に、ソース別上限とテーマ上限を
+    守りながら割り当てる。正規化タイトルが同じ記事は、先に割り当てられた方だけが残る
+    （ソースをまたいだ重複除去。負けた側は次の候補で埋め戻される）。
+    戻り値: (Finnhubの行, Google Newsの行)。成否は ctx.news_ok に記録する"""
+    ctx.dropped = []
+    caps = {"news": finnhub_cap, "gnews": gnews_cap}
+    cands, failures = [], {}
+    for name, getter in (("gnews", _gnews_candidates), ("news", _finnhub_candidates)):
+        try:
+            rows = getter(ctx)
+            ctx.news_ok[name] = True
+            cands += _score_candidates(ctx, rows, name)
+        except RuntimeError as e:
+            ctx.news_ok[name] = False
+            failures[name] = str(e)
+    # スコア層（A>=3 → B=1〜2）の順に割り当て、各層内は新しい順
+    ordered = sorted([c for c in cands if c[3] >= 3], key=lambda c: -c[0]) + \
+              sorted([c for c in cands if 0 < c[3] < 3], key=lambda c: -c[0])
+    picked = {"news": [], "gnews": []}
+    used_keys, theme_total, per_theme = set(), {}, {"news": {}, "gnews": {}}
+    for ts, title, src, sc, th, name in ordered:
+        k = norm_title(_news_normalize(title))
+        if k in used_keys:
+            ctx.dropped.append((name, sc, "重複（他ソースを採用）", title))
+            continue
+        if len(picked[name]) >= caps[name]:
+            ctx.dropped.append((name, sc, "件数上限", title))
+            continue
+        if th != "close" and (per_theme[name].get(th, 0) >= NEWS_THEME_MAX_PER_SECTION
+                              or theme_total.get(th, 0) >= NEWS_THEME_MAX_TOTAL):
+            ctx.dropped.append((name, sc, f"テーマ上限: {th}", title))
+            continue
+        picked[name].append((ts, title, src, th))
+        used_keys.add(k)
+        per_theme[name][th] = per_theme[name].get(th, 0) + 1
+        theme_total[th] = theme_total.get(th, 0) + 1
+    out = {}
+    for name in ("news", "gnews"):
+        if name in failures:
+            out[name] = [f"取得失敗（{failures[name]}）"]
+            continue
+        rows = sorted(picked[name], key=lambda r: -r[0])
+        lines = []
+        for ts, title, src, th in rows:
+            tt = datetime.fromtimestamp(ts, timezone.utc).astimezone(JST).strftime("%m/%d %H:%M")
+            if name == "news":
+                lines.append(f"[{tt}JST] {title}（{src}）")
+            else:
+                lines.append(f"[{th}][{tt}JST] {title}（{src}）")
+        out[name] = lines or ["直近24時間で条件に合う見出しなし（落とした見出しはログ参照）"]
+    return out["news"], out["gnews"]
 
 
 def sec_fed(ctx):
@@ -661,19 +1116,28 @@ def sec_fed(ctx):
     except ET.ParseError:
         raise RuntimeError("RSSのXMLを読めない")
     cutoff = ctx.now_utc - timedelta(hours=NEWS_HOURS)
-    out = []
+    policy, others = [], 0
     for item in root.iter("item"):
         title = guard(clean_text(item.findtext("title")))
+        link = str(item.findtext("link") or "")
         try:
             dt = parsedate_to_datetime(item.findtext("pubDate") or "")
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
         except (TypeError, ValueError):
             continue
-        if dt >= cutoff and title:
-            out.append((dt, title))
-    out.sort(reverse=True)
-    lines = [f"[{dt.astimezone(JST).strftime('%m/%d %H:%M')}JST] {t}" for dt, t in out[:FED_MAX]]
+        if dt < cutoff or not title:
+            continue
+        # 金融政策系（FOMC声明・議事要旨・割引率など）だけを見出しで出し、
+        # 銀行の申請承認・執行関係などは件数に圧縮する（ノイズ除去）
+        if "/monetary" in link or re.search(r"FOMC|monetary policy|discount rate", title, re.I):
+            policy.append((dt, title))
+        else:
+            others += 1
+    policy.sort(reverse=True)
+    lines = [f"[{dt.astimezone(JST).strftime('%m/%d %H:%M')}JST] {t}" for dt, t in policy[:FED_MAX]]
+    if others:
+        lines.append(f"その他: 直近24時間に{others}件（申請承認・執行関係など、金融政策以外）")
     return lines or ["直近24時間の発表なし"]
 
 
@@ -701,14 +1165,14 @@ def build_markdown(ctx, slot, news_limit, sections):
         "",
     ]
     titles = [
-        ("market", "## 市場の数値（VIXはCboeの当日値。他はFRED。[ ]は観測日で、FREDは1日以上遅れる）"),
+        ("market", "## 市場の数値（VIXはCboeの当日値。利回りは米財務省、当日分が未公表ならFRED。[ ]は観測日）"),
         ("price", "## 価格の動き（OANDA CFDの日足。NY17時区切り。「現在」は未確定の足）"),
         ("options", "## SPXオプション（Cboe遅延データの自前集計。時刻はET）"),
-        ("events", f"## 今後{EVENT_BUSINESS_DAYS}営業日の経済指標の発表予定（米国日付）"),
-        ("earnings", "## 決算予定（ウォッチリストのみ）"),
-        ("news", f"## ニュース見出し（Finnhub・直近{NEWS_HOURS}時間・最大{news_limit}件）"),
-        ("gnews", f"## ニュース見出し（Google News・検索語別・直近{NEWS_HOURS}時間）"),
-        ("fed", f"## FRBの発表（直近{NEWS_HOURS}時間）"),
+        ("events", f"## 経済指標（米国日付。実績: は発表済みの結果、予定: は今後{EVENT_BUSINESS_DAYS}営業日の予定で未発表＝結果ではない）"),
+        ("earnings", "## 決算（ウォッチリストのみ。実績: は発表済みの結果、予定: の結果は未発表）"),
+        ("news", f"## ニュース見出し（Finnhub・関連度スコアで選別・直近{NEWS_HOURS}時間・最大{news_limit}件）"),
+        ("gnews", f"## ニュース見出し（Google News・関連度スコアで選別・直近{NEWS_HOURS}時間）"),
+        ("fed", f"## FRBの発表（直近{NEWS_HOURS}時間。金融政策系のみ見出し表示）"),
     ]
     body = []
     for key, title in titles:
@@ -777,22 +1241,39 @@ def main():
     results["events"] = safe(sec_events, ctx)
     results["earnings"] = safe(sec_earnings, ctx)
     results["fed"] = safe(sec_fed, ctx)
-    results["gnews"] = safe(sec_gnews, ctx)
 
-    # ニュースは、文字数の上限に収まるまで件数を減らす
-    news_limit = NEWS_MAX
+    # ニュースは2ソース統合で選別し、文字数の上限に収まるまで両方の上限を減らす
+    fh_cap, gn_cap = NEWS_FINNHUB_MAX, NEWS_GNEWS_MAX
     while True:
-        results["news"] = safe(sec_news, ctx, news_limit)
-        md = build_markdown(ctx, args.slot, news_limit, {k: v[0] for k, v in results.items()})
-        if len(md) <= MAX_CHARS or news_limit <= 3:
+        try:
+            fh_lines, gn_lines = sec_news_all(ctx, fh_cap, gn_cap)
+            results["news"] = (fh_lines, ctx.news_ok["news"])
+            results["gnews"] = (gn_lines, ctx.news_ok["gnews"])
+        except Exception:  # 想定外でも落とさない（safe と同じ扱い）
+            logger.exception("ニュース選別の想定外エラー")
+            results["news"] = (["取得失敗（想定外）"], False)
+            results["gnews"] = (["取得失敗（想定外）"], False)
+        md = build_markdown(ctx, args.slot, fh_cap, {k: v[0] for k, v in results.items()})
+        if len(md) <= MAX_CHARS or fh_cap <= 3:
             break
-        news_limit -= 2
+        fh_cap -= 2
+        gn_cap -= 2
+    news_limit = fh_cap
 
     ok = sum(1 for _, good in results.values() if good)
     jst_date = ctx.now_utc.astimezone(JST).date().isoformat()
     suffix = "_sample" if samples_dir else ""
     out_path = OUT_DIR / f"{jst_date}_{args.slot}{suffix}.md"
     write_text(out_path, md)
+
+    # 選別で落とした見出しを、理由・スコア付きで残す（キーワード表の見直し用）
+    if ctx.dropped:
+        drop_path = LOG_DIR / f"news_dropped_{jst_date}_{args.slot}{suffix}.log"
+        drop_lines = [f"# ニュース選別で落とした見出し: {len(ctx.dropped)}件（{jst_date} {args.slot}）",
+                      "# 形式: [source] score=.. reason=.. | 見出し"]
+        drop_lines += [f"[{s}] score={sc} reason={r} | {t}" for s, sc, r, t in ctx.dropped]
+        write_text(drop_path, "\n".join(drop_lines))
+        logger.info("選別ログ: %s（%d件）", drop_path, len(ctx.dropped))
 
     raw_path = RAW_DIR / f"{jst_date}_{args.slot}{suffix}.json.gz"
     RAW_DIR.mkdir(parents=True, exist_ok=True)
