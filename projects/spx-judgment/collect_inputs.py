@@ -19,8 +19,10 @@ collect_inputs.py（改善版ドラフト。リポジトリ外で作成 2026-10-
      落ちないように）、(b) 経済指標の実績は FRED /series の last_updated が発表日以降の
      ときだけ出す（取れない場合は最短の遅れのみ許容。前月分の実績誤表示を防ぐ）、
      (c) 企業名は語境界で照合（Pineapple→apple 等の誤爆防止）、「wall street」単独の+1を廃止、
-     (d) 過去日で epsActual が無い決算はログに残す、(e) 決算は過去分と今後分を別々に取得
-     （広い範囲を1回で取ると過去日の実績が返らなかったため）
+     (f) スコア層Aは「スコア高→新しい順」で割り当てる（テーマ上限で重要な見出しが落ちないように）、
+     中銀ルールは名指し（ECB・BOJ等）に絞る（スイス中銀の利益の見出し対策）
+  (d) 過去日で epsActual が無い決算はログに残す、(e) 決算は過去分と今後分を別々に取得
+     （広い範囲を1回で取ると1,500件で切られ、ウォッチリストの行が落ちるため。2日ずつの窓に区切る）
 セクション数（8）と文字数上限（6,000字）は本家と同じ。
 
   python3 collect_inputs.py --slot close            # 通常実行（引け後）
@@ -161,7 +163,7 @@ NEWS_SCORE_RULES = [
      r"\bopec\b|hormuz|refiner|\blng\b|natural gas futures", 3),
     (r"stocks? (rise|fall|rose|fell|end|ends|closed|slide|slid|jump|drop|gain|higher|lower)|"
      r"shares (rise|fall|rose|fell|slide|slid|jump|drop|gain|slip|sink|slump)", 2),
-    (r"powell|warsh|central banks?|rate decision", 2),
+    (r"powell|warsh|rate decision|\b(ecb|boj)\b|bank of (england|japan|canada)", 2),
     (r"earnings|revenue|guidance|quarterly (profit|revenue|results)|beat-and-raise|"
      r"profit (rises|falls|rose|fell|jumps|drops|climbs)", 2),
     (r"(iran|middle east|houthi|hormuz).*(mediation|diplomacy|diplomatic|ceasefire|"
@@ -210,6 +212,8 @@ ACTUAL_SERIES = [
 ]
 ACTUAL_LOOKBACK_DAYS = 6   # 実績として拾う発表日の遡り幅（暦日。週末またぎを吸収）
 EARNINGS_LOOKBACK_DAYS = 3  # 決算の実績として拾う遡り幅（暦日）
+EARNINGS_WINDOW_DAYS = 2    # 決算カレンダーを取る1回あたりの日数（1回の応答は1,500件で切られるため）
+EARNINGS_API_CAP = 1500     # Finnhub決算カレンダーの1応答の上限件数（実測）
 
 CBOE_VIX_URL = "https://cdn.cboe.com/api/global/delayed_quotes/quotes/_VIX.json"
 CBOE_HEADERS = {"Referer": "https://www.cboe.com/", "Accept": "application/json"}
@@ -916,13 +920,31 @@ def sec_earnings(ctx):
         got = load_json(text, "earnings").get("earningsCalendar")
         if not isinstance(got, list):
             raise RuntimeError("earningsCalendarが無い")
+        if len(got) >= EARNINGS_API_CAP:
+            logger.warning("決算カレンダーが上限%d件に達した（%s〜%s）。切られている可能性あり", EARNINGS_API_CAP, frm, to)
         return got
 
-    # 過去分（実績）と今後分（予定）は別々に取る。1回で start〜end を広く取ると、決算ピーク期に
-    # 過去日の行が返らなかった（2026-10-31 実測）。範囲を絞ると過去日の epsActual も返る
-    items = _get("finnhub_earnings", today, end, "finnhub_earnings.json")
+    def _get_range(prefix, frm, to, sample):
+        """Finnhubの決算カレンダーは1回の応答が1,500件で切られる（決算ピーク期は約6日で到達する）。
+        そのため EARNINGS_WINDOW_DAYS 日ずつに区切って取る。1窓でも成功すれば続行する"""
+        got, ok, err = [], 0, None
+        d = frm
+        while d <= to:
+            w_end = min(d + timedelta(days=EARNINGS_WINDOW_DAYS - 1), to)
+            try:
+                got += _get(f"{prefix}_{d.isoformat()}", d, w_end, sample)
+                ok += 1
+            except RuntimeError as e:
+                err = e
+            d = w_end + timedelta(days=1)
+        if ok == 0:
+            raise err if err else RuntimeError("決算カレンダーを取得できない")
+        return got
+
+    # 過去分（実績）と今後分（予定）を、それぞれ小さな窓に区切って取る
+    items = _get_range("finnhub_earnings", today, end, "finnhub_earnings.json")
     try:
-        past = _get("finnhub_earnings_past", start, today, "finnhub_earnings_past.json")
+        past = _get_range("finnhub_earnings_past", start, today, "finnhub_earnings_past.json")
     except RuntimeError as e:
         logger.warning("決算の過去分の取得失敗（予定のみで続行）: %s", e)
         past = []
@@ -1090,7 +1112,8 @@ def sec_news_all(ctx, finnhub_cap, gnews_cap):
             ctx.news_ok[name] = False
             failures[name] = str(e)
     # スコア層（A>=3 → B=1〜2）の順に割り当て、各層内は新しい順
-    ordered = sorted([c for c in cands if c[3] >= 3], key=lambda c: -c[0]) + \
+    # A層はスコアの高い順（同点は新しい順）。テーマ上限で落とすとき、重要な見出しを残すため。B層は新しい順
+    ordered = sorted([c for c in cands if c[3] >= 3], key=lambda c: (-c[3], -c[0])) + \
               sorted([c for c in cands if 0 < c[3] < 3], key=lambda c: -c[0])
     picked = {"news": [], "gnews": []}
     used_keys, theme_total, per_theme = set(), {}, {"news": {}, "gnews": {}}
