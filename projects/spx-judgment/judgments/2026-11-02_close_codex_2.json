@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-01T23:00:43+00:00",
+    "jst_date": "2026-11-02",
+    "slot": "close",
+    "input_file": "2026-11-02_close.md",
+    "input_sha256": "788ae2ce7152bd33131074b61088dbc68beb57708a6004010c8f4a93a7df6061",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 4.7,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-02",
+    "bias": "bearish",
+    "p_up": 0.43,
+    "confidence": 0.58,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：10/30のS&P500は1日-1.26%、20日平均線比-1.9%。直近5日も下落基調",
+      "市場数値：VIXは10/30時点で19.42、前日比+2.22（+11.4%）",
+      "オプション：前回比でATM IV平均+2.9pt、GEX近似-107億、put/call建玉+0.33",
+      "ニュース：11/02 05:12 JSTにホルムズ海峡でタンカー2隻が機雷に接触したとの見出し"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日の通常取引前の価格・市場データはなく、入力の最新市場値は10/30時点",
+      "11/02 AAPL決算は引け後予定のため、当日終値前の結果は不明"
+    ]
+  }
+}
