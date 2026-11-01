@@ -250,6 +250,7 @@ def main():
     ap.add_argument("--input", default=None, help="入力ファイル（省略時は inputs/<今日(JST)>_<slot>.md）")
     ap.add_argument("--tag", default=None, help="保存ファイル名の末尾（省略時はモデル名）")
     ap.add_argument("--agy", default="agy", help="agyコマンドの場所")
+    ap.add_argument("--codex", default="codex", help="codexコマンドの場所")
     ap.add_argument("--model", default=DEFAULT_MODEL, help="agyの --model に渡す。カンマ区切りで複数指定すると、順に実行する")
     ap.add_argument("--effort", default=None, help="agyの --effort に渡す（low|medium|high|xhigh|max）")
     ap.add_argument("--no-quota", action="store_true", help="実行の前後に /quota を読まない")
@@ -351,41 +352,55 @@ def recover_from_raw(args, now, jst_date, in_path, input_text):
 
 def judge_once(args, agy_cmd, model, tag, now, jst_date, in_path, input_text, target, prompt):
     WORK_DIR.mkdir(exist_ok=True)
-    cmd = [agy_cmd, "-p", prompt, "--output-format", "text", "--model", model]
-    if args.effort:
-        cmd += ["--effort", args.effort]
-    if args.sandbox:
-        cmd.append("--sandbox")
+    use_codex = model.startswith("codex:")
+    out_file = WORK_DIR / "codex_last_message.txt"
+    if use_codex:
+        out_file.unlink(missing_ok=True)
+        cmd = [args.codex, "exec", "-m", model[len("codex:"):], "-s", "read-only",
+               "--skip-git-repo-check", "--ephemeral", "--ignore-user-config",
+               "-C", str(WORK_DIR), "-o", str(out_file), "-"]
+        run_kw = {"input": prompt}
+    else:
+        cmd = [agy_cmd, "-p", prompt, "--output-format", "text", "--model", model]
+        if args.effort:
+            cmd += ["--effort", args.effort]
+        if args.sandbox:
+            cmd.append("--sandbox")
+        run_kw = {"stdin": subprocess.DEVNULL}
 
     stem = unique_stem(f"{jst_date}_{args.slot}_{tag}")
-    logger.info("agy実行: 入力=%s 対象日=%s プロンプト%d字 model=%s", in_path.name, target, len(prompt), model)
-    quota_before = None if args.no_quota else read_quota(agy_cmd)
+    logger.info("実行: 入力=%s 対象日=%s プロンプト%d字 model=%s", in_path.name, target, len(prompt), model)
+    skip_quota = args.no_quota or use_codex
+    quota_before = None if skip_quota else read_quota(agy_cmd)
     started = time.time()
     for attempt in range(1, args.retries + 2):
         try:
             res = subprocess.run(cmd, capture_output=True, text=True, timeout=args.timeout,
-                                 cwd=WORK_DIR, stdin=subprocess.DEVNULL)
+                                 cwd=WORK_DIR, **run_kw)
         except subprocess.TimeoutExpired:
-            logger.error("agyが%d秒以内に終わらなかった（model=%s）", args.timeout, model)
+            logger.error("%d秒以内に終わらなかった（model=%s）", args.timeout, model)
             return 3
         except OSError as e:
-            logger.error("agyを実行できない（%s）。--agy でパスを指定する", type(e).__name__)
+            logger.error("コマンドを実行できない（%s）。--agy / --codex でパスを指定する", type(e).__name__)
             return 3
         if res.returncode != 0 and attempt <= args.retries and TRANSIENT.search(res.stderr + res.stdout):
-            logger.warning("agyが一時的なエラー（model=%s）。%d秒後に再試行（%d/%d）", model, args.retry_wait, attempt, args.retries)
+            logger.warning("一時的なエラー（model=%s）。%d秒後に再試行（%d/%d）", model, args.retry_wait, attempt, args.retries)
             time.sleep(args.retry_wait)
             continue
         break
     elapsed = round(time.time() - started, 1)
-    quota_after = None if args.no_quota else read_quota(agy_cmd)
+    quota_after = None if skip_quota else read_quota(agy_cmd)
 
-    raw = res.stdout + ("\n--- stderr ---\n" + res.stderr if res.stderr.strip() else "")
+    answer = res.stdout
+    if use_codex and out_file.exists():
+        answer = out_file.read_text(encoding="utf-8")
+    raw = answer + ("\n--- stderr ---\n" + res.stderr if res.stderr.strip() else "")
     write_atomic(RAW_DIR / f"{stem}.txt", raw)
     if res.returncode != 0:
-        logger.error("agyが異常終了（コード%d）。応答は raw/%s.txt", res.returncode, stem)
+        logger.error("異常終了（コード%d）。応答は raw/%s.txt", res.returncode, stem)
         return 3
 
-    obj, jfix = extract_json(res.stdout)
+    obj, jfix = extract_json(answer)
     if obj is None:
         logger.error("応答からJSONを取り出せなかった。raw/%s.txt を確認する", stem)
         return 1
@@ -408,11 +423,12 @@ def judge_once(args, agy_cmd, model, tag, now, jst_date, in_path, input_text, ta
         "input_sha256": hashlib.sha256(input_text.encode("utf-8")).hexdigest(),
         "prompt_version": PROMPT_VERSION,
         "model": model,
+        "runner": "codex" if use_codex else "agy",
         "effort": args.effort,
         "elapsed_sec": elapsed,
         "quota_before_pct": quota_before,
         "quota_after_pct": quota_after,
-        "quota_used_pct_points": used or None,   # 整数％の差なので、粗い値
+        "quota_used_pct_points": used or None,
         "repaired": repaired,
     }
     write_atomic(OUT_DIR / f"{stem}.json", json.dumps({"meta": meta, "judgment": obj}, ensure_ascii=False, indent=2))
