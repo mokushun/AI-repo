@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-01T22:30:31+00:00",
+    "jst_date": "2026-11-02",
+    "slot": "close",
+    "input_file": "2026-11-02_close.md",
+    "input_sha256": "788ae2ce7152bd33131074b61088dbc68beb57708a6004010c8f4a93a7df6061",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 32.7,
+    "quota_before_pct": {
+      "gemini": 100.0,
+      "claude_gpt": 89.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 89.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-02",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXが19.42（前日比 +2.22／+11.4%）[2026-10-30T16:15:01 ET]と急上昇",
+      "オプション: 前回比でGEX近似が-107億、ATM IV平均が+2.9pt、P/C建玉が+0.33",
+      "価格の動き: S&P500が7,587.2［2026-10-30］で1日-1.26%、20日レンジ17%",
+      "ニュース: ホルムズでタンカー爆発報道［11/02 05:12JST］があり地政学リスク警戒"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "市場数値・価格・オプションが前取引日（2026-10-30）時点で対象日（2026-11-02）の先物・プレ市場データがない"
+    ]
+  }
+}
