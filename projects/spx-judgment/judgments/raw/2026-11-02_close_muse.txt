@@ -1,0 +1,1 @@
+{"bias":"bearish","confidence":0.55,"event_risk":"mid","key_factors":["価格の動き／SPX 1日-1.26%・Nasdaq100 1日-2.33%と下落継続","市場数値／VIX 19.42（前日比+11.4%）へ急上昇","オプション／put/call建玉1.48（前回比+0.33）・ATM IV平均+3.0pt","決算／AMZN EPS予想比-5.6%・売上も予想割れ"],"missing_data":["対象日の米国経済指標発表は入力になし","対象日の寄り付き時点の先物・値動き"],"p_up":0.4,"stand_aside":false,"target_date":"2026-11-02"}
