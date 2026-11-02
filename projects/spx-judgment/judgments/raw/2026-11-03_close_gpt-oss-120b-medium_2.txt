@@ -1,0 +1,1 @@
+{"target_date":"2026-11-03","bias":"bearish","p_up":0.35,"confidence":0.6,"event_risk":"mid","key_factors":["市場数値: VIX 前日比 +8.9% 上昇","オプション: GEX 近似 -127億（最短満期） 負","価格の動き: 5日 -1.59% 20日 -2.88% 下落継続","ニュース: Apple 決算前 不安感高まる"],"stand_aside":false,"missing_data":["Job Openings and Labor Turnover Survey result","SPX actual intraday data for 2026-11-03"]}
