@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-02T22:30:39+00:00",
+    "jst_date": "2026-11-03",
+    "slot": "close",
+    "input_file": "2026-11-03_close.md",
+    "input_sha256": "0e13145c2f6edce23d6653da90dfa3c2e0fb488aff29109eb7906fd7dc294721",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 50.1,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 87.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 100.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": -13.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-03",
+    "bias": "bearish",
+    "p_up": 0.42,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXが21.15（前日比+8.9%）に急伸[2026-11-02T16:15:01 ET]",
+      "オプション: 前回比でGEX近似が-99億、ATM IV平均が+6.5ptとボラ警戒強まる",
+      "価格の動き: S&P500は1日-0.32%で続落、20日レンジ位置10%と軟調",
+      "ニュース: Apple決算は予想超えも、中間選挙前の警戒感が報じられる"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-03通常取引開始前のS&P500先物動向",
+      "決算発表後のApple時間外株価推移",
+      "2026-11-03発表予定のJOLTSの市場予想数値"
+    ]
+  }
+}
