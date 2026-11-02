@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-02T22:32:43+00:00",
+    "jst_date": "2026-11-03",
+    "slot": "close",
+    "input_file": "2026-11-03_close.md",
+    "input_sha256": "e497f44076134b0884b3edd78627699902388edc2725705f4994776b4f8119ce",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-03_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き：SPX5日-1.59%、20日レンジ位置10%で下落基調",
+      "市場数値：VIX21.15（+8.9%）、原油-6.58%・金+1.83%で回避色",
+      "オプション：put/call建玉1.69（前回比+0.21）、IV+6.4pt急上昇",
+      "ニュース：Apple決算が予想上回るもS&Pは下落で上値重い"
+    ],
+    "missing_data": [
+      "JOLTS（2026-11-03予定）の結果",
+      "AAPL決算の詳細数値（見出しのみ）"
+    ],
+    "p_up": 0.4,
+    "stand_aside": false,
+    "target_date": "2026-11-03"
+  }
+}
