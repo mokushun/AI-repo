@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-03T22:32:20+00:00",
+    "jst_date": "2026-11-04",
+    "slot": "close",
+    "input_file": "2026-11-04_close.md",
+    "input_sha256": "dee1c95049443688447c08c80ba6599ea4712021e116299a2b0aa6b7e9b32766",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-04_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bullish",
+    "confidence": 0.35,
+    "event_risk": "low",
+    "key_factors": [
+      "価格の動き：前日+0.29%の小反発も5日-1.85%・20日-3.21%の下降基調",
+      "オプション：11/04満期マックスペイン7,675は現値比+1.4%の上方",
+      "オプション：put/call建玉1.47と高水準だが前回比-0.22で緩和",
+      "市場数値：VIX 20.83は前日比-1.5%と小幅低下"
+    ],
+    "missing_data": [
+      "Google Newsセクションの取得失敗によりニュース網羅性が不足"
+    ],
+    "p_up": 0.55,
+    "stand_aside": false,
+    "target_date": "2026-11-04"
+  }
+}
