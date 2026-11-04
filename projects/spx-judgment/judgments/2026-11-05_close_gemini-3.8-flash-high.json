@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-04T22:30:46+00:00",
+    "jst_date": "2026-11-05",
+    "slot": "close",
+    "input_file": "2026-11-05_close.md",
+    "input_sha256": "003a2515f1ec830ce575a7d803bf1840d057ab5db75f26effd067dcabf2ec11c",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 37.5,
+    "quota_before_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 95.0
+    },
+    "quota_after_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 95.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-05",
+    "bias": "bullish",
+    "p_up": 0.62,
+    "confidence": 0.7,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXは16.61（前日比 -4.22／-20.3%）へ低下［2026-11-04T16:15:01 ET］",
+      "オプション: 前回比でGEX近似の変化+229億、ATM IV変化-8.3ptと改善",
+      "価格の動き: S&P500終値7,712.2、1日+1.68%と上昇［2026-11-04］",
+      "ニュース: 選挙結果による投資家の不透明感解消を受け主要株が上昇"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-05発表予定の新規失業保険申請の市場予想値"
+    ]
+  }
+}

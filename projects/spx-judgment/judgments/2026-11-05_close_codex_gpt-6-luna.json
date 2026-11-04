@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-04T22:30:46+00:00",
+    "jst_date": "2026-11-05",
+    "slot": "close",
+    "input_file": "2026-11-05_close.md",
+    "input_sha256": "003a2515f1ec830ce575a7d803bf1840d057ab5db75f26effd067dcabf2ec11c",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 11.0,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-05",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.36,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：11/04のS&P500は+1.68%だが、5日では-0.25%。対象日の値動きは未確定",
+      "市場数値：VIXは11/04 16:15 ET時点で16.61、前日比-20.3%。2年・10年利回りも低下",
+      "オプション：前回比でATM IV平均-8.3pt、GEX近似+229億。最短満期は11/05",
+      "ニュース：選挙後の株高と、イラン情勢の緊張を示す見出しがある"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "判断対象日の通常取引は入力取得時点で未開始。終値比較に必要な当日データなし",
+      "11/05の失業保険申請は予定のみで結果未発表",
+      "選挙後の上昇を示す見出しの市場反応は11/04終値に反映済みか不明"
+    ]
+  }
+}

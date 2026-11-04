@@ -1,0 +1,1 @@
+{"target_date":"2026-11-05","bias":"bullish","p_up":0.63,"confidence":0.7,"event_risk":"mid","key_factors":["市場数値: VIX 16.61 (‑20.3%) 大幅下落でリスク減少","オプション: GEX近似 +229億 前回比上昇、ATM IV‑8.3pt","ニュース: 民主党が議会掌握で株式上昇期待","価格動向: 5日間の終値上昇トレンド、直近＋1.68%"],"stand_aside":false,"missing_data":["当日のSPX先物または現物のプリアンマー価格","最新の経済指標（CPI等）の結果"]}
