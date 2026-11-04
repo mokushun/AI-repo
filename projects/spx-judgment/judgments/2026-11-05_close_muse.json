@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-04T22:31:53+00:00",
+    "jst_date": "2026-11-05",
+    "slot": "close",
+    "input_file": "2026-11-05_close.md",
+    "input_sha256": "59b1011954abde73966ba74e44bcef97d3b799a3ef44b6740cbdc961a271d3e4",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-05_close_muse.txt"
+  },
+  "judgment": {
+    "target_date": "2026-11-05",
+    "bias": "bullish",
+    "p_up": 0.58,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き：前日+1.68%の反発、20日レンジ内65%で上向き",
+      "市場数値：VIXが前日比-20.3%の16.61へ急低下",
+      "オプション：GEX近似が前回比+224億へ急増、IVは-8.3pt",
+      "ニュース：選挙後の不確実性後退で株高の流れ継続"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "当日（11/05）の失業保険申請件数の結果は未発表",
+      "11/05の寄り付き後の値動きは未確定"
+    ]
+  }
+}
