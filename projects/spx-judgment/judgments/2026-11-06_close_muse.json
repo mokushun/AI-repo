@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-05T22:31:41+00:00",
+    "jst_date": "2026-11-06",
+    "slot": "close",
+    "input_file": "2026-11-06_close.md",
+    "input_sha256": "8b6d4c10a144e421d1ff8b63d0e0dbcdb8311dd1a0757de3ecb391103fa03198",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-06_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：前日S&P500 -4.91%、Nasdaq -7.03%の急落",
+      "市場数値：VIX 28.18、前日比+69.7%に急騰",
+      "オプション：GEX近似 -243億、前回比-264億とマイナス拡大",
+      "経済指標：本日雇用統計発表でイベントリスク高"
+    ],
+    "missing_data": [
+      "本日発表予定の雇用統計の結果"
+    ],
+    "p_up": 0.42,
+    "stand_aside": false,
+    "target_date": "2026-11-06"
+  }
+}
