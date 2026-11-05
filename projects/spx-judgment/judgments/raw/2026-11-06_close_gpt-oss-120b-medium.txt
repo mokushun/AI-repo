@@ -1,0 +1,1 @@
+{"target_date":"2026-11-06","bias":"bearish","p_up":0.25,"confidence":0.75,"event_risk":"mid","key_factors":["(オプション) GEX近似が前回比‑263億、プット/コール比上昇＋0.50、ATM IV＋16.2ptで売り圧力強化","(価格の動き) SPX前日比‑4.91%で20日平均線下、急落傾向が続く","(市場数値) VIX 28.18 前日比＋69.7%で恐怖感が上昇","(ニュース) AI懸念でS&P500が2025年4月以降最大下落、テック株急落"] ,"stand_aside":false,"missing_data":["2026-11-06 Employment Situation（雇用統計）の結果"]}

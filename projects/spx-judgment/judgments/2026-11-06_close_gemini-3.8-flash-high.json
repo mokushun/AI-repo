@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-05T22:30:43+00:00",
+    "jst_date": "2026-11-06",
+    "slot": "close",
+    "input_file": "2026-11-06_close.md",
+    "input_sha256": "943803fe762cc0d8597d5ef690d2c10a422f7ba29b656489d8ecd76c5d3fb7a0",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 42.8,
+    "quota_before_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 92.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 92.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-06",
+    "bias": "bearish",
+    "p_up": 0.4,
+    "confidence": 0.55,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: S&P500終値7,333.8［2026-11-05］1日-4.91%、20日レンジ0%",
+      "市場数値: VIX 28.18（前日比+11.57/+69.7%）[2026-11-05T16:15:01 ET]",
+      "オプション: 前回比でGEX近似変化-263億、ATM IV平均変化+16.2pt［11/05］",
+      "経済指標: 2026-11-06(金)にEmployment Situationの発表予定"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "2026-11-06発表予定のEmployment Situation（雇用統計）の実績値"
+    ]
+  }
+}

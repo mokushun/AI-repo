@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-05T22:30:43+00:00",
+    "jst_date": "2026-11-06",
+    "slot": "close",
+    "input_file": "2026-11-06_close.md",
+    "input_sha256": "943803fe762cc0d8597d5ef690d2c10a422f7ba29b656489d8ecd76c5d3fb7a0",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 53.8,
+    "quota_before_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 92.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 88.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 4.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-06",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.33,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: SPX -4.91%・NDQ -7.03%急落、20日レンジ最下位(0%)で下降圧力継続",
+      "市場数値: VIX +69.7%（28.18）・原油WTI +3.42%・米2年債-0.12%[2026-11-05 ET]",
+      "オプション: GEX変化-263億でネガティブガンマ拡大・put/call建玉比+0.50上昇",
+      "経済指標: 当日Employment Situation発表で高い不確実性、イベントリスク大"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "11/06取引開始前のSPX先物・気配値が不明",
+      "AI急落の具体的なトリガー詳細（ニュース見出しのみで内容不明）",
+      "BoE利上げ（+25bp想定）の米株への波及度が不明"
+    ]
+  }
+}

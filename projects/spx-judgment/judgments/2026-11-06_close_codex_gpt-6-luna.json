@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-05T22:30:43+00:00",
+    "jst_date": "2026-11-06",
+    "slot": "close",
+    "input_file": "2026-11-06_close.md",
+    "input_sha256": "943803fe762cc0d8597d5ef690d2c10a422f7ba29b656489d8ecd76c5d3fb7a0",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.9,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-06",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.75,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: S&P500は11/05に-4.91%、直近5日で-4.56%。20日レンジ下限に位置",
+      "市場数値: VIXは11/05 ETに28.18、前日比+11.57（+69.7%）",
+      "オプション: 前回比でATM IV +16.2pt、GEX近似 -263億、put/call建玉 +0.50",
+      "経済指標: Employment Situationの発表予定日。結果は未発表"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日11/06の通常取引中の価格・終値は未提示",
+      "Employment Situationの結果は未発表",
+      "価格・VIX・オプションのデータは11/05 ET時点で、対象日の取引状況を反映していない"
+    ]
+  }
+}
