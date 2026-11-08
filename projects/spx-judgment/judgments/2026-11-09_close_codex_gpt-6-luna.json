@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-08T22:30:37+00:00",
+    "jst_date": "2026-11-09",
+    "slot": "close",
+    "input_file": "2026-11-09_close.md",
+    "input_sha256": "dff5ba1ff723007c5f494626f4aa5def17bc7156c2b333c4b21cb2bcae61ed83",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.8,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-09",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.32,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: 11/06は+0.70%だが、5日-2.67%、20日-5.61%で平均線を下回る",
+      "市場数値: VIXは11/06時点で25.64、前日比-2.54（-9.9%）と大きく低下",
+      "オプション: 11/05比でATM IVは-6.1pt、GEX近似は-37億、put/call建玉は-0.23",
+      "経済指標: 11/10にCPI予定。翌営業日を前にイベントリスクが高い"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日の通常取引は入力取得時刻より後で、11/09の価格・VIX・オプション実績は未掲載",
+      "VIX・利回り・価格データは11/06時点で、対象日と時点が揃っていない"
+    ]
+  }
+}

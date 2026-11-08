@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-08T22:30:37+00:00",
+    "jst_date": "2026-11-09",
+    "slot": "close",
+    "input_file": "2026-11-09_close.md",
+    "input_sha256": "dff5ba1ff723007c5f494626f4aa5def17bc7156c2b333c4b21cb2bcae61ed83",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 43.1,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 85.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 85.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-09",
+    "bias": "bearish",
+    "p_up": 0.43,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "オプション: GEX近似が-37億変化、下落圧力増大",
+      "市場数値: 2年・10年米国債利回り上昇、株価は下押し材料",
+      "経済指標: 雇用者数増加165千人、失業率4.1%で好調",
+      "オプション: VIXが25.64に9.9%下落、リスク低下でやや買い支え"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日のSPX終値と前日比データが不足"
+    ]
+  }
+}
