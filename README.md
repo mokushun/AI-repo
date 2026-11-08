@@ -9,7 +9,7 @@
 2. `docs/status.md` … 今の状況と次にやること
 3. `docs/infra.md` … VPSの構成・パス・cron
 4. `docs/decisions.md` … 決めたことと理由
-5. 担当プロジェクトの `projects/<name>/README.md`
+5. 担当プロジェクトの README.md（`projects/spx-judgment/README.md` など。README.md がないフォルダもある）
 
 ## 構成
 
@@ -23,8 +23,9 @@ docs/
   decisions.md       決定事項と理由
   infra.md           VPS・cron・ディレクトリ
 projects/
-  spx-judgment/      S&P500のAI判断シミュレーション
-  n225option/        日経225のオプション収集（collect_nkopmini.py など）
+  spx-collector/     SPXオプションの収集（collect_spx.py、check.py）
+  spx-judgment/      S&P500のAI判断シミュレーション（collect_inputs.py、run_judgment.py、evaluate.py）
+n225option/          日経225ミニのオプション収集（collect_nkopmini.py など）。projects/ の外にある
 handoff/             AI同士の引き継ぎメモ（日付_AI名_内容.md）
 ```
 
