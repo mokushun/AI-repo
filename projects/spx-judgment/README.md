@@ -14,6 +14,7 @@ S&P500の「次の米国取引日の終値が前日を上回る確率（p_up）�
 - gemini-3.8-flash-high
 - claude-sonnet-4-6
 - gpt-oss-120b-medium
+- gpt-6-luna（Codex）
 
 ## ファイル・フォルダの意味
 
