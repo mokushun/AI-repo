@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-09T22:30:42+00:00",
+    "jst_date": "2026-11-10",
+    "slot": "close",
+    "input_file": "2026-11-10_close.md",
+    "input_sha256": "920149389e91f6829c680e2f9499aaae36f71073dce2a5ad8bdceff8d2f97919",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.5,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-10",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.31,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: SPX CFDは11/09に+2.41%反発したが、20日比-3.24%で平均線を下回る",
+      "市場数値: VIXは11/09 ETに19.92、前日比-5.72（-22.3%）と大幅低下",
+      "経済指標: CPIが対象日に予定され、結果は未発表",
+      "オプション: 11/06 ET時点でATM IVの前回比-6.1pt、GEX近似の変化-37億。対象日より古い"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日の通常取引前後の価格・オプションデータは未確定または未収録",
+      "SPXオプションの最新値は11/06 ETで、11/09の市場数値・CFD価格と時点が揃っていない",
+      "CPIの発表結果は未発表"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-09T22:30:42+00:00",
+    "jst_date": "2026-11-10",
+    "slot": "close",
+    "input_file": "2026-11-10_close.md",
+    "input_sha256": "920149389e91f6829c680e2f9499aaae36f71073dce2a5ad8bdceff8d2f97919",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 52.3,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-10",
+    "bias": "bullish",
+    "p_up": 0.57,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 2026-11-09 S&P500 が2.41%上昇、20日平均より下回るが中期的に横ばい。",
+      "オプション: GEX 近似が前日比 -37億で減少、プット／コール比 1.49 と売り圧力示す。",
+      "市場数値: VIX が -22.3% 下落し 19.92 に低下、リスク回避姿勢減少。",
+      "ニュース: 原油価格下落と金価格上昇でインフレ懸念緩和、株式へプラス材料。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-10 の S&P500 終値",
+      "2026-11-10 の CPI 実績値"
+    ]
+  }
+}
