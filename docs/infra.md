@@ -3,7 +3,7 @@
 ## VPS
 
 - サービス: WebARENA Indigo（1GB）、OS: Debian 12
-- 接続: SSH鍵のみ（コンソールログイン不可、rootは不可）。基本作業ユーザーは `aitrader`（sudoなし）
+- 接続: SSH鍵のみ（コンソールログイン不可、rootは不可）。ユーザー本人のアカウントは `pi`（sudo付き）。AI CLI（Codex・agy）とSPX関連のcronは、専用の `aitrader`（sudoなし）で動かす
 - ファイアウォールはufwではなくWebArenaコンソール側（インバウンドのみ）
 - Webサーバー: nginx（HTTPS: Let's Encrypt / certbot）
 - AI CLI: Codex CLI、Antigravity CLI（agy）をインストール済み。AI用には専用アカウントを使う方針
@@ -65,4 +65,6 @@
 
 ## Muse VM
 - collect_spx.py: 15分おきに時刻判定スクリプトが起動し、平日22:00〜翌6:59 JSTの間だけ本体を実行（失敗時のみAIを起動して報告）。DBは ~/spx_data（リポジトリ外）
-- 毎朝7:30 JST: git pull → collect_inputs.py（SPX_OPTIONS_DB指定）→判断→チャット報告。リポジトリは読み取り専用
+- 毎朝7:30 JST: git pull → collect_inputs.py（SPX_OPTIONS_DB指定）→判断→チャット報告。判断結果（`projects/spx-judgment/judgments/*_close_muse.json`）は、コミットして push する。コードは読み取り専用で、push するのは判断結果のファイル（git log の「muse judgment」）
+- MuseのVMの時刻はUTCと考えられ、git log では前夜22:30台に見える（JSTの7:30頃）
+- VPSの採点（evaluate.py）への取り込みは、当面手動

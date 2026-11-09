@@ -1,6 +1,6 @@
 # status（現状と次にやること）
 
-最終更新: 2026-11-08
+最終更新: 2026-11-09
 
 ## プロジェクト一覧
 
@@ -27,14 +27,13 @@
 | （基準）常に0.5 | 0.250 |
 
   期間中の上昇日は60%。まだ優劣は言えない
-- Museの試行: 平日7:30（JST）にMuseのVMで collect_inputs.py --slot close を実行し、結果を判断させてチャットに報告させている（初回10/27成功、bullish・p_up=0.55）。Museはリポジトリをcloneしてgitで同期する（読み取り専用）。オプションDBは、MuseのVMで collect_spx.py（projects/spx-collector）を回して持たせる予定で、それまでは7/8セクション。判断結果はMuseのVM内にだけ残り、VPSへの持ち込みは当面手動。オプションが揃うまでは入力条件がVPSの3モデルと違うため、採点では別枠として扱う
+- Museの試行: 平日7:30（JST）にMuseのVMで collect_inputs.py --slot close を実行し、結果を判断させてチャットに報告させている（初回10/27成功、bullish・p_up=0.55）。Museはリポジトリをcloneしてgitで同期する（コードは読み取り専用）。判断結果は `judgments/` に `*_close_muse.json` として push される（10/28以降）。VPSの採点（evaluate.py）への取り込みは当面手動。オプションDBは、MuseのVMで collect_spx.py（projects/spx-collector）を回して持たせる予定で、それまでは7/8セクション。オプションが揃うまでは入力条件がVPSの3モデルと違うため、採点では別枠として扱う
 
 ## 次にやること
 
-1. 10/27: Museの初回実行結果を確認する
-2. 20日分前後たまったら、AIなしの単純な基準との比較を `evaluate.py` に足す
-3. 判断の収集はMuseにやらせ、結果をVPS側で取得する方向を検討
-4. Museの判断結果をVPSの採点（evaluate.py）にどう取り込むか決める（手動コピー → 慣れたらMuseにpushさせる）。MuseのVMでオプション収集が動くか確認する
+1. 20日分前後たまったら、AIなしの単純な基準との比較を `evaluate.py` に足す
+2. 判断の収集はMuseにやらせ、結果をVPS側で取得する方向を検討
+3. Museの判断結果をVPSの採点（evaluate.py）にどう取り込むか決める（いまは手動。Museの結果はリポジトリの `judgments/` に push されている）。MuseのVMでオプション収集が動くか確認する
 
 ## 注意
 
@@ -43,6 +42,7 @@
 
 ## 直近の変更
 
+- 2026-11-09: `docs/infra.md`（基本作業ユーザーに `pi` と `aitrader` の両方を記載、Muse VMの記述を実際の運用に修正）、`docs/status.md`（Museの記述、「次にやること」の整理）、`projects/spx-judgment/README.md`（「今後」と手順3）を、現状に合わせて修正（Claude）
 - 2026-11-08: `docs/infra.md` に「共有作業場所（MCP）」を追記、`CLAUDE.md` をMCP経由の書き込みに合わせて更新、`docs/decisions.md` に共有作業場所・権限・コミット手動の決定を追記（Claude）
 - 2026-11-08: `docs/status.md` の重複を整理（「Museの試行」の重複段落を削除、「次にやること」の3と4を分割）。`README.md` の構成図を実際の配置に合わせた。aitrader側とのstatus.mdの競合を、両方の内容を残して統合した（Claude）
 - 2026-11-02: Codex（gpt-6-luna）を追加。cronの `--model` に `codex:gpt-6-luna` を足し、agyの3モデルと合わせて4系統で毎朝実行（読み取り専用・推論なしの既定。使用量はスクリプトに記録されない）
