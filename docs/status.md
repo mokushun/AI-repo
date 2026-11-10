@@ -17,17 +17,18 @@
   - `collect_spx.py`: CboeのSPXオプションをSQLiteに保存（cron、15分おき、日本時間22〜6時台）
   - `collect_inputs.py` → `run_judgment.py`: 平日7:30（JST）にcronで実行。agyの3モデルと、Codex（gpt-6-luna。11/2から）の4系統で判断
   - `evaluate.py`: 採点（OANDA US500日足、ブライアススコア）。AIなしの基準（A: 常に0.5、B: 期間の上昇日の割合、C: 前日と同じ方向）との比較も出力する（`python3 evaluate.py`。APIキー不要で、何度実行しても枠は減らない）
-- 結果（11/2時点、各10日）
+- 結果（`evaluate.py` の出力。最新の確定日 11/9、採点済み63件。比較できる期間は 10/19〜11/9 の16取引日）
 
-| モデル | 平均ブライアス |
-|---|---|
-| gpt-oss-120b-medium | 0.189 |
-| gemini-3.8-flash-high | 0.200 |
-| claude-sonnet-4-6 | 0.220 |
-| （基準）常に0.5 | 0.250 |
+| モデル | 件数 | 平均ブライアス | 対A（0.5）|
+|---|---|---|---|
+| claude-sonnet-4-6 | 16 | 0.238 | -0.012 |
+| gemini-3.8-flash-high | 16 | 0.241 | -0.009 |
+| muse-spark（Muse） | 9 | 0.245 | -0.005 |
+| gpt-oss-120b-medium | 16 | 0.265 | +0.015 |
+| codex:gpt-6-luna | 6 | 0.266 | +0.016 |
 
-  期間中の上昇日は60%。まだ優劣は言えない。表の数値は、10/26時点（各5日）と同じ値で、更新が追いついていない可能性がある。`python3 evaluate.py` の最新の出力で更新する
-- Museの試行: 平日7:30（JST）にMuseのVMで collect_inputs.py --slot close を実行し、結果を判断させてチャットに報告させている（初回10/27成功、bullish・p_up=0.55）。Museはリポジトリをcloneしてgitで同期する（コードは読み取り専用）。判断結果は `judgments/` に `*_close_muse.json` として push される（10/28以降）。VPSの採点（evaluate.py）への取り込みは当面手動。オプションDBは、MuseのVMで collect_spx.py（projects/spx-collector）を回して持たせる予定で、それまでは7/8セクション。オプションが揃うまでは入力条件がVPSの3モデルと違うため、採点では別枠として扱う
+  基準: A（常に0.5）0.250、B（上昇日の割合を常に答える。結果を見てから決める基準なので有利）0.234、C（前日と同じ方向に0.6/0.4）0.248。期間中の上昇日は10/16（62%）。どのモデルも、基準との差は小さく、件数も少ないため、まだ優劣は言えない（10/26時点では gpt-oss が最良だったが、今は下位。少ない件数で順位が入れ替わる例）。マイナスは基準より良い（対A）。Codex は6日、Muse は9日と、日数が少ない
+- Museの試行: 平日7:30（JST）にMuseのVMで collect_inputs.py --slot close を実行し、結果を判断させてチャットに報告させている（初回10/27成功、bullish・p_up=0.55）。Museはリポジトリをcloneしてgitで同期する（コードは読み取り専用）。判断結果は `judgments/` に `*_close_muse.json` として push される（10/28以降）。VPSの採点（evaluate.py）への取り込みは当面手動。オプションDBは、MuseのVMで collect_spx.py（projects/spx-collector）を回して持たせる予定で、それまでは7/8セクション。オプションが揃うまでは入力条件がVPSの3モデルと違うため、採点では別枠（`muse-spark` の行）として扱う
 
 ## 次にやること
 
@@ -42,7 +43,7 @@
 
 ## 直近の変更
 
-- 2026-11-10: `AGENTS.md` の環境メモに `pi` と `aitrader` の両方を記載、「書き方」にコードブロックのルールを追記、「編集の衝突を避ける」に `git pull` と、編集後すぐの `push` を追記。`docs/status.md` の `evaluate.py` の記述を、実装済みの基準との比較に合わせて修正（Claude）
+- 2026-11-10: 結果の表を、`evaluate.py` の最新の出力（11/9まで、63件）に更新。`AGENTS.md` の環境メモに `pi` と `aitrader` の両方を記載、「書き方」にコードブロックのルールを追記、「編集の衝突を避ける」に `git pull` と、編集後すぐの `push` を追記。`docs/status.md` の `evaluate.py` の記述を、実装済みの基準との比較に合わせて修正（Claude）
 - 2026-11-09: `docs/infra.md`（基本作業ユーザーに `pi` と `aitrader` の両方を記載、Muse VMの記述を実際の運用に修正）、`docs/status.md`（Museの記述、「次にやること」の整理）、`projects/spx-judgment/README.md`（「今後」と手順3）を、現状に合わせて修正（Claude）
 - 2026-11-08: `docs/infra.md` に「共有作業場所（MCP）」を追記、`CLAUDE.md` をMCP経由の書き込みに合わせて更新、`docs/decisions.md` に共有作業場所・権限・コミット手動の決定を追記（Claude）
 - 2026-11-08: `docs/status.md` の重複を整理（「Museの試行」の重複段落を削除、「次にやること」の3と4を分割）。`README.md` の構成図を実際の配置に合わせた。aitrader側とのstatus.mdの競合を、両方の内容を残して統合した（Claude）
