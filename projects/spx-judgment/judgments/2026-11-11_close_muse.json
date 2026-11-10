@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-10T22:31:55+00:00",
+    "jst_date": "2026-11-11",
+    "slot": "close",
+    "input_file": "2026-11-11_close.md",
+    "input_sha256": "64d2690aedbecfca6157ec794ffff70814ccd9c2c842b3f069fc53b1dbb8bf41",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-11_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース：Fed高官が0.5pt利上げの可能性に言及しインフレ懸念",
+      "市場数値：10年債利回り4.98%へ上昇、前日比+0.10",
+      "価格の動き：SPXは20日-3.57%、50日平均線比-1.9%と弱い",
+      "オプション：最短満期のマックスペイン7,580は現値比+0.8%"
+    ],
+    "missing_data": [
+      "米株先物の具体的な水準"
+    ],
+    "p_up": 0.44,
+    "stand_aside": false,
+    "target_date": "2026-11-11"
+  }
+}
