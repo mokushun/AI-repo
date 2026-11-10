@@ -7,7 +7,7 @@ S&P500の「次の米国取引日の終値が前日を上回る確率（p_up）�
 1. `collect_spx.py`（`~/work/spx_codex`）: CboeのSPXオプションをSQLiteに保存
 2. `collect_inputs.py`（`~/work/spx_inputs`）: 8セクションの入力mdを作る
 3. `run_judgment.py`: agyの3モデルとCodex（gpt-6-luna）に判断させ、`judgments/` にJSONで保存（プロンプトv3）
-4. `evaluate.py`: OANDA US500日足で採点（ブライアススコア）
+4. `evaluate.py`: OANDA US500日足で採点（ブライアススコア）。AIなしの基準（A: 常に0.5、B: 期間の上昇日の割合、C: 前日と同じ方向）との比較も出力する
 
 ## モデル
 
@@ -36,7 +36,7 @@ S&P500の「次の米国取引日の終値が前日を上回る確率（p_up）�
 
 ## 今後
 
-- 20日分前後たまったら、AIなしの単純な基準との比較を `evaluate.py` に追加
+- 件数が数十件たまったら、`python3 evaluate.py` の出力（AIなしの基準との比較を含む）で、優劣を判断する
 
 ## 実際のコードについて
 
