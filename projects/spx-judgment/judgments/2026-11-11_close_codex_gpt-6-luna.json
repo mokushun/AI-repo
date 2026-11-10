@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-10T22:30:50+00:00",
+    "jst_date": "2026-11-11",
+    "slot": "close",
+    "input_file": "2026-11-11_close.md",
+    "input_sha256": "5b7cc957e7aa6b8b5044b22824b6860d49bdda6fdca2711a23b7178b452e539d",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.6,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-11",
+    "bias": "bearish",
+    "p_up": 0.43,
+    "confidence": 0.63,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：S&P500は11/10に-0.35%、20日比-3.57%で、20日・50日平均線を下回る",
+      "市場数値：VIXは11/10 ETに19.46（前日比-2.3%）へ低下した一方、2年債利回りは+0.17、10年債は+0.10で4.98%",
+      "ニュース：CPI上振れとFRB高官の利上げ発言を受け、金利懸念が強まったとの見出し",
+      "オプション：前回比でATM IVは-6.1pt、GEX近似は+9億。短期の下方圧力緩和を示唆"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日の通常取引開始前データで、11/11の現物価格・市場数値は未取得",
+      "終値比較の基準となる前取引日のSPX現物終値は未記載。価格系列はOANDA CFD"
+    ]
+  }
+}

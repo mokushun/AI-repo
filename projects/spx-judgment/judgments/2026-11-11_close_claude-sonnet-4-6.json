@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-10T22:30:50+00:00",
+    "jst_date": "2026-11-11",
+    "slot": "close",
+    "input_file": "2026-11-11_close.md",
+    "input_sha256": "5b7cc957e7aa6b8b5044b22824b6860d49bdda6fdca2711a23b7178b452e539d",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 34.2,
+    "quota_before_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-11",
+    "bias": "bearish",
+    "p_up": 0.41,
+    "confidence": 0.35,
+    "event_risk": "mid",
+    "key_factors": [
+      "ニュース: CPI前月比+0.4%（市場予想超え）＋Fed当局者が0.5pt利上げ示唆→引け下落",
+      "市場数値: 米10年債利回り4.98%（+0.10）、5%接近が株式の逆風継続[2026-11-10]",
+      "オプション: 11/11限月マックスペイン7,580（現値比+0.8%上方）・GEX変化+9億で上方引力も",
+      "価格の動き: SPX 20日比-3.57%・20日MA比-1.3%で下降トレンド継続、NQ100も-9.08%"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-11の寄り付き前先物・時間外の動き",
+      "政策金利の現在水準とFOMC次回会合日程",
+      "CPI前月比+0.4%の市場予想値（超過幅の定量評価に不足）"
+    ]
+  }
+}
