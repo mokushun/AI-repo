@@ -48,7 +48,7 @@ def configure_data_dir(data_dir):
                         format="%(asctime)s [%(levelname)s] %(message)s", force=True)
 
 # SPX or SPXW + YYMMDD + C/P + 8 digit strike.
-OPTION_RE = re.compile(r"^(SPXW?)(\d{6})([CP])(\d{8})$")
+OPTION_RE = re.compile(r"^(SPX[WO]?)(\d{6})([CP])(\d{8})$")
 
 
 def fetch_json():
