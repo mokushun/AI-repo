@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-11T22:31:40+00:00",
+    "jst_date": "2026-11-12",
+    "slot": "close",
+    "input_file": "2026-11-12_close.md",
+    "input_sha256": "b215e861cc034b18f565f37ed0451602cb731dbbc5447f4690e3300fd9a2fe8f",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-12_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bullish",
+    "confidence": 0.45,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き：前日+1.19%・Nasdaq+1.92%と反発、20日レンジ66%",
+      "オプション：GEX近似が前回比+161億と急増、IVは-2.9pt低下",
+      "市場数値：VIX 17.49へ-10.1%低下、恐怖後退",
+      "経済指標：CPI上振れで2年債+0.17%・10年債+0.10%と金利上昇"
+    ],
+    "missing_data": [
+      "当日11/12の時間外・寄り付きの動き",
+      "米債利回りの11/11当日分は未公表で11/10値"
+    ],
+    "p_up": 0.56,
+    "stand_aside": false,
+    "target_date": "2026-11-12"
+  }
+}
