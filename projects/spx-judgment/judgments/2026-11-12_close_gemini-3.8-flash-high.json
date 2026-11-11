@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-11T22:30:52+00:00",
+    "jst_date": "2026-11-12",
+    "slot": "close",
+    "input_file": "2026-11-12_close.md",
+    "input_sha256": "06e83c58ce2c83e67eb2b434683886c3cb06b09b35ab2ce471631e4b883b0868",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 37.5,
+    "quota_before_pct": {
+      "gemini": 96.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-12",
+    "bias": "bullish",
+    "p_up": 0.58,
+    "confidence": 0.65,
+    "event_risk": "low",
+    "key_factors": [
+      "市場数値: VIXが17.49（前日比-1.97／-10.1%）に低下［11-11］",
+      "オプション: 前回比でGEX近似+168億、ATM IV平均変化-3.0pt［11-11］",
+      "価格の動き: S&P500は1日+1.19%の7,626.4と反発［11-11］",
+      "経済指標: 2026-11-12に新規失業保険申請の発表を予定"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米2年債利回りおよび米10年債利回りの2026-11-11時点のデータ"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-11T22:30:52+00:00",
+    "jst_date": "2026-11-12",
+    "slot": "close",
+    "input_file": "2026-11-12_close.md",
+    "input_sha256": "06e83c58ce2c83e67eb2b434683886c3cb06b09b35ab2ce471631e4b883b0868",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 11.0,
+    "quota_before_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 91.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-12",
+    "bias": "neutral",
+    "p_up": 0.52,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "【オプション】GEX近似前日比＋168億で買い圧力増（2026-11-11）",
+      "【市場数値】VIX前日比-10.1%でリスク低下（2026-11-11）",
+      "【経済指標】CPI月比+0.4%と雇用増で景気堅調（2026-11-10）",
+      "【価格】Put/Call比1.14>1で弱気だが20日平均線下-0.7%（2026-11-11）"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-12 のS&P500 終値が欠如"
+    ]
+  }
+}

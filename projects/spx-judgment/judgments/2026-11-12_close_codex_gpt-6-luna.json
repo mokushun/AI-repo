@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-11T22:30:52+00:00",
+    "jst_date": "2026-11-12",
+    "slot": "close",
+    "input_file": "2026-11-12_close.md",
+    "input_sha256": "06e83c58ce2c83e67eb2b434683886c3cb06b09b35ab2ce471631e4b883b0868",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 9.9,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-12",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.31,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き：11/11は+1.19%だが、5日・20日ではそれぞれ-1.11%、-1.28%。",
+      "市場数値：VIXは11/11 16:15 ET時点で17.49、前日比-1.97（-10.1%）。低下は支援材料。",
+      "オプション：前回比でATM IV平均-3.0pt、GEX近似+168億。短期の変動警戒は後退。",
+      "経済指標：本日11/12に新規失業保険申請の発表予定。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日の通常取引は未開始で、当日価格の方向を示すデータはない。",
+      "米2年・10年債利回りは11/10観測で、最新の当日値ではない。"
+    ]
+  }
+}

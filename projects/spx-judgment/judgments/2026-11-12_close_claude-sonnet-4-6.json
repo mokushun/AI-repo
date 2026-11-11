@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-11T22:30:52+00:00",
+    "jst_date": "2026-11-12",
+    "slot": "close",
+    "input_file": "2026-11-12_close.md",
+    "input_sha256": "06e83c58ce2c83e67eb2b434683886c3cb06b09b35ab2ce471631e4b883b0868",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 35.6,
+    "quota_before_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-12",
+    "bias": "neutral",
+    "p_up": 0.53,
+    "confidence": 0.42,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIX 17.49、前日比-10.1%（2026-11-11T16:15ET）でリスクオン改善を示す",
+      "オプション: GEX近似+168億増・put/call建玉比-0.20（前日比）でオプション需給が改善",
+      "価格の動き: SPX +1.19%・NQ +1.92%（11/11終値）、CoreWeaveがAI需要懸念を緩和",
+      "市場数値: 米2年債4.73%（+0.17）・10年債4.98%（+0.10）[2026-11-10]が上昇圧力"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "米国債利回りは2026-11-10時点で1営業日古く、11/11分は未確認",
+      "週次失業保険申請（11/12予定）の結果は未発表で、イベント後の値動きが不明"
+    ]
+  }
+}
