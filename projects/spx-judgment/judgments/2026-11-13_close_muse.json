@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-12T22:32:39+00:00",
+    "jst_date": "2026-11-13",
+    "slot": "close",
+    "input_file": "2026-11-13_close.md",
+    "input_sha256": "5ea3dd57afff991720e5c977c81e5838af73ad297b99768c5da269eb2f562f26",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-13_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値：VIX 18.7へ+6.9%上昇、10年債利回り5.1%へ上昇",
+      "オプション：ATM IV +2.1pt上昇、GEX -48億、put/call建玉+0.10と守り",
+      "ニュース：ホルムズ海峡でタンカー4隻爆発、原油WTI +2.6%",
+      "価格の動き：SPX 5日+3.71%の上昇後、前日-0.27%と小反落"
+    ],
+    "missing_data": [
+      "PPI（11/13発表予定）の結果は未発表",
+      "当日11/13の米国市場オープン前の動向"
+    ],
+    "p_up": 0.46,
+    "stand_aside": false,
+    "target_date": "2026-11-13"
+  }
+}
