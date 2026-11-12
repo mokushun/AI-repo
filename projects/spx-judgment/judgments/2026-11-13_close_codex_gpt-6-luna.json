@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-12T22:30:47+00:00",
+    "jst_date": "2026-11-13",
+    "slot": "close",
+    "input_file": "2026-11-13_close.md",
+    "input_sha256": "b6fbc3cf0fb5166790def7903fcdf2d145735f37e580eaf0b24a52f97bb59349",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 9.6,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-13",
+    "bias": "bearish",
+    "p_up": 0.44,
+    "confidence": 0.58,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値：VIXは18.7、前日比+1.21／+6.9%。2年・10年債利回りも前日比上昇。",
+      "オプション：前回比でATM IVは+2.2pt、GEX近似は-53億、put/call建玉は+0.10。",
+      "価格の動き：S&P500 CFDは11/12に-0.27%。5日では+3.71%だが、20日平均線比-0.3%。",
+      "ニュース：ホルムズ海峡でタンカー4隻が爆発に遭ったとの報道。PPI発表予定。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日の通常取引前の価格・オプション・市場数値は未取得。",
+      "PPIは予定のみで結果未発表。"
+    ]
+  }
+}

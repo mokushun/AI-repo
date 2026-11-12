@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-12T22:30:47+00:00",
+    "jst_date": "2026-11-13",
+    "slot": "close",
+    "input_file": "2026-11-13_close.md",
+    "input_sha256": "b6fbc3cf0fb5166790def7903fcdf2d145735f37e580eaf0b24a52f97bb59349",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 30.5,
+    "quota_before_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 91.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-13",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: 11/12のVIXは18.7（前日比+1.21）へ上昇、米10年債利回りも5.1%（前日比+0.12）に上昇。",
+      "オプション: 前回比でGEX近似が-53億と急減し、ATM IV平均も+2.2pt上昇、P/C比は+0.10。",
+      "ニュース: ホルムズ海峡でのタンカー爆発やFRB高官の追加利上げ発言による金利・地政学懸念。",
+      "経済指標: 11/13にPPI（生産者物価指数）の発表が予定されており警戒要因となる。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "11/13発表予定のPPIの市場予想値（コンセンサス）",
+      "11/13取引開始前のS&P500先物・CFDの最新気配値"
+    ]
+  }
+}

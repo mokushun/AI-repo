@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-12T22:30:47+00:00",
+    "jst_date": "2026-11-13",
+    "slot": "close",
+    "input_file": "2026-11-13_close.md",
+    "input_sha256": "b6fbc3cf0fb5166790def7903fcdf2d145735f37e580eaf0b24a52f97bb59349",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 12.0,
+    "quota_before_pct": {
+      "gemini": 94.0,
+      "claude_gpt": 87.0
+    },
+    "quota_after_pct": {
+      "gemini": 94.0,
+      "claude_gpt": 87.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-13",
+    "bias": "bullish",
+    "p_up": 0.58,
+    "confidence": 0.65,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: 5日間で 7,385→7,605 の上昇トレンド",
+      "オプション: 当日満期 GEX +29億（コール優位）",
+      "市場数値: VIX +6.9% 上昇、金利上昇は弱気要因",
+      "経済指標: 雇用増加 +165千、失業率 4.1%（やや強気）"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-13 の取引開始前の価格やボリューム情報",
+      "2026-11-13 の主要経済指標結果（PPI 等）"
+    ]
+  }
+}

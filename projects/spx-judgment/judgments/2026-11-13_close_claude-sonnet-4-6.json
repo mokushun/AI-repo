@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-12T22:30:47+00:00",
+    "jst_date": "2026-11-13",
+    "slot": "close",
+    "input_file": "2026-11-13_close.md",
+    "input_sha256": "b6fbc3cf0fb5166790def7903fcdf2d145735f37e580eaf0b24a52f97bb59349",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 32.8,
+    "quota_before_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 91.0
+    },
+    "quota_after_pct": {
+      "gemini": 95.0,
+      "claude_gpt": 87.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 4.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-13",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.58,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIX +6.9%（18.7）・10年債5.1%（+0.12）が同時上昇、リスクオフ示唆［2026-11-12］",
+      "ニュース: ホルムズ海峡でタンカー攻撃、原油急騰（WTI +2.60%、ブレント +3.32%）で地政学リスク上昇",
+      "オプション: GEX近似 -53億変化・put/call建玉 +0.10・ATM IV +2.2ptでベア方向シグナル",
+      "経済指標: 本日（11/13）PPI発表予定、Fed高官「追加利上げ必要」発言でイベントリスク高"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "11/13当日のプレマーケット・先物動向（入力時点は引け後スナップショットのみ）",
+      "NVDAの具体的な株価水準・騰落率（Huang退任懸念の記事あるが数値なし）"
+    ]
+  }
+}
