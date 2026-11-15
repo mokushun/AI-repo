@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-15T22:30:35+00:00",
+    "jst_date": "2026-11-16",
+    "slot": "close",
+    "input_file": "2026-11-16_close.md",
+    "input_sha256": "51d3b0eff5eaab07d8d6b827b732b09b44747eef8127ebc6248d9b466b1ddbb9",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 14.7,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-16",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.36,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース：湾岸の軍事的緊張とホルムズ海峡の報道が重なり、地政学リスクが高い",
+      "市場数値：VIXは11/13 ET時点で19.3、前日比+0.60（+3.1%）",
+      "価格の動き：S&P500は11/13に-0.82%。直近5日は上昇後に2日続落",
+      "オプション：前回比でGEX近似は-70億、ATM IV平均は-0.4pt"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日11/16の通常取引は入力時点で未開始のため、当日価格・終値は不明",
+      "市場数値・価格・オプションは主に11/13時点で、対象日との時点差がある",
+      "11/17の小売売上高とNVDA決算は予定のみで、結果未発表"
+    ]
+  }
+}

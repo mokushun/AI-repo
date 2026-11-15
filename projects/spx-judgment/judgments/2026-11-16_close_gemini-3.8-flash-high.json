@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-15T22:30:35+00:00",
+    "jst_date": "2026-11-16",
+    "slot": "close",
+    "input_file": "2026-11-16_close.md",
+    "input_sha256": "51d3b0eff5eaab07d8d6b827b732b09b44747eef8127ebc6248d9b466b1ddbb9",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 31.3,
+    "quota_before_pct": {
+      "gemini": 100.0,
+      "claude_gpt": 87.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 87.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-16",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース: イランのバーレーン攻撃やタンカー炎上、フーシ派ミサイル発射等で中東情勢緊迫化",
+      "市場数値: VIXは19.3（前日比 +0.60／+3.1%）［2026-11-13T16:15:01 ET］と上昇",
+      "価格の動き: S&P500終値7,543.6［2026-11-13］は1日 -0.82%、20日線比 -1.0%",
+      "オプション: 前回比でGEX近似変化 -70億、put/call建玉変化 +0.05［2026-11-13］"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "市場数値・価格・オプションが2026-11-13時点であり週末の中東情勢緊迫化を受けた最新動向が未反映"
+    ]
+  }
+}

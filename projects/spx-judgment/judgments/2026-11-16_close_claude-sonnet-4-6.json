@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-15T22:30:35+00:00",
+    "jst_date": "2026-11-16",
+    "slot": "close",
+    "input_file": "2026-11-16_close.md",
+    "input_sha256": "51d3b0eff5eaab07d8d6b827b732b09b44747eef8127ebc6248d9b466b1ddbb9",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 38.9,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 87.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 84.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-16",
+    "bias": "bearish",
+    "p_up": 0.37,
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース: 中東地政学リスク拡大（イラン・バーレーン攻撃、フーシー派リヤド向け弾道ミサイル、ホルムズ海峡タンカー炎上）でリスクオフ圧力",
+      "市場数値: VIX 19.3（前日比+3.1%、日中高値20.92）[2026-11-13]、恐怖感が上昇基調",
+      "価格の動き: SPX -0.82%・NDX -1.68%で弱い引け[2026-11-13]、20日・50日線ともに下方乖離",
+      "ニュース: Fed追加利上げ観測（Schmid発言）＋10年債5.15%（前日比+0.05%）[2026-11-13]で金融引き締め継続示唆"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-14〜15は週末のため市場データなし（VIX・利回り・先物の最新値不明）",
+      "2026-11-16 ET寄り付き前のプレマーケット・先物の動き",
+      "中東情勢が原油価格に与えた週明けの実際の影響"
+    ]
+  }
+}
