@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-15T22:31:45+00:00",
+    "jst_date": "2026-11-16",
+    "slot": "close",
+    "input_file": "2026-11-16_close.md",
+    "input_sha256": "8ac03892fe6d303a0744db8ca72d4bb0718e74e7f9f1966d6fb0167901a6a95c",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-16_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：11/13にSPX-0.82%、Nasdaq-1.68%と下落が続いた",
+      "オプション：GEX近似が前回比-55億と悪化、ATM IV平均+2.2pt上昇",
+      "ニュース：ホルムズ・湾岸の緊張激化で地政学リスクが高まった",
+      "市場数値：VIX19.3へ+3.1%上昇、利上げ観測で金利上昇"
+    ],
+    "missing_data": [
+      "2026-11-16当日の寄り前先物とアジア市場の動き"
+    ],
+    "p_up": 0.44,
+    "stand_aside": false,
+    "target_date": "2026-11-16"
+  }
+}

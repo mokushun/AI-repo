@@ -1,0 +1,1 @@
+{"bias":"bearish","confidence":0.45,"event_risk":"high","key_factors":["価格の動き：11/13にSPX-0.82%、Nasdaq-1.68%と下落が続いた","オプション：GEX近似が前回比-55億と悪化、ATM IV平均+2.2pt上昇","ニュース：ホルムズ・湾岸の緊張激化で地政学リスクが高まった","市場数値：VIX19.3へ+3.1%上昇、利上げ観測で金利上昇"],"missing_data":["2026-11-16当日の寄り前先物とアジア市場の動き"],"p_up":0.44,"stand_aside":false,"target_date":"2026-11-16"}
