@@ -126,7 +126,7 @@ WATCHLIST = ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "AVGO", "TSLA",
              "JPM", "LLY", "WMT", "ORCL"]
 
 # 価格の動き: update.py が出力している日足JSON（自前のVPS・認証なし）
-D1_URL = "https://fx.camelliab1.com/public/d1.json"
+D1_URL = "https://vps.camelliab1.com/public/d1.json"
 # (d1.jsonの銘柄, 表示名, 詳しく出すか)。OANDAのCFD（先物連動）で、指数・商品そのものとは少しずれる。
 # 詳しく出さない銘柄は、終値・1日/5日/20日の変化・現在の足を1行で出す
 D1_SYMBOLS = [

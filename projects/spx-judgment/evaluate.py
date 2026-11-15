@@ -32,7 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 from run_judgment import is_trading_day  # noqa: E402  休場日の判定を共通にする
 
-D1_URL = "https://fx.camelliab1.com/public/d1.json"
+D1_URL = "https://vps.camelliab1.com/public/d1.json"
 ET_TZ = ZoneInfo("America/New_York")
 
 
