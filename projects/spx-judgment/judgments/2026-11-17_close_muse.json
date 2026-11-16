@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-16T22:32:04+00:00",
+    "jst_date": "2026-11-17",
+    "slot": "close",
+    "input_file": "2026-11-17_close.md",
+    "input_sha256": "e17b7c211851fabce032414d1e6ed2ba16904a5e17acf9fc72cdaf45bcaa6ddb",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-17_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.5,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：SPX -1.61%、Nasdaq -2.23%と急落が続く",
+      "市場数値：VIXが前日比+18.7%の22.91へ急騰",
+      "オプション：ATM IVが前回比+10.7pt、GEX近似が-157億と悪化",
+      "ニュース：NVDA決算前のAI不安で株安が広がる"
+    ],
+    "missing_data": [
+      "SPXオプションのスナップショットは2026-11-16 09:39 ETの朝枠で引け時点ではない",
+      "本日発表予定の小売売上高の結果は未発表",
+      "NVDA決算は引け後で結果は未発表"
+    ],
+    "p_up": 0.4,
+    "stand_aside": false,
+    "target_date": "2026-11-17"
+  }
+}
