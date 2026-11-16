@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-16T22:30:53+00:00",
+    "jst_date": "2026-11-17",
+    "slot": "close",
+    "input_file": "2026-11-17_close.md",
+    "input_sha256": "ce3f1d2beba0e8fe7fff380f373b3742b1a789b5d448a79afb3b9377397bd8b6",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 16.8,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 100.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-17",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.62,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き／SPX前日-1.61%・5日-1.86%・20日-3.68%、20日レンジ内25%位置で下落トレンド継続",
+      "市場数値／VIX 22.91（前日比+3.61/+18.7%）[2026-11-16T16:15ET]、当日高値24.52と恐怖感が急拡大",
+      "オプション／GEX近似-68億の変化（ネガティブ方向に拡大）、ATM IVが+9.0pt上昇でプット圧力増",
+      "ニュース／NVDA引け後決算・Anthropic IPO控えAIセクター不安、「AI jitters」がセンチメント悪化の主因"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "NVDA決算の実績（引け後発表のため未取得）",
+      "当日11/17の小売売上高（Retail Sales）の実績",
+      "SPXオプションの11/17取引時間中のGEX・IVリアルタイム値"
+    ]
+  }
+}

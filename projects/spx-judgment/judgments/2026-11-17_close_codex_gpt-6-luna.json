@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-16T22:30:53+00:00",
+    "jst_date": "2026-11-17",
+    "slot": "close",
+    "input_file": "2026-11-17_close.md",
+    "input_sha256": "ce3f1d2beba0e8fe7fff380f373b3742b1a789b5d448a79afb3b9377397bd8b6",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.5,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-17",
+    "bias": "bearish",
+    "p_up": 0.42,
+    "confidence": 0.62,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：S&P500は11/16に-1.61%、直近5日も下落し、20日・50日平均線を下回る",
+      "市場数値：VIXは11/16 ETに22.91、前日比+3.61（+18.7%）",
+      "オプション：前回比でATM IVは+9.0pt、GEX近似は-68億、put/call建玉は+0.03",
+      "ニュース：NVDA決算を控え、AI懸念を背景に株価が大幅安との見出し"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日11/17の取引前後の価格・市場数値は未提示。価格とVIXは11/16時点",
+      "11/17予定の小売売上高は未発表で、発表時刻・結果なし",
+      "NVDA決算は11/17引け後予定のため、通常取引中の結果は不明"
+    ]
+  }
+}

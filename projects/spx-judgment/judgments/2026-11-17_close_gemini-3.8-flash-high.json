@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-16T22:30:53+00:00",
+    "jst_date": "2026-11-17",
+    "slot": "close",
+    "input_file": "2026-11-17_close.md",
+    "input_sha256": "ce3f1d2beba0e8fe7fff380f373b3742b1a789b5d448a79afb3b9377397bd8b6",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 43.9,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 84.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 100.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": -16.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-17",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.65,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIXが22.91（前日比+18.7%）へ急騰し下落警戒感が極めて強い［11/16T16:15ET］",
+      "オプション: 前回比でGEX変化-68億、ATM IV+9.0ptと下落圧力が継続［11/16ET］",
+      "価格の動き: S&P500は前日比-1.61%で20日平均線比-2.4%と軟調推移［11/16］",
+      "ニュース: 引け後のNVDA決算を控えAI関連への警戒感から売り先行の報道［11/17JST］"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "11/17当日のプレマーケット・先物動向",
+      "11/17発表予定の小売売上高の市場予想値"
+    ]
+  }
+}

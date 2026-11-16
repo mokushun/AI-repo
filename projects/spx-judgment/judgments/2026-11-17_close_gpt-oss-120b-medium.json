@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-16T22:30:53+00:00",
+    "jst_date": "2026-11-17",
+    "slot": "close",
+    "input_file": "2026-11-17_close.md",
+    "input_sha256": "ce3f1d2beba0e8fe7fff380f373b3742b1a789b5d448a79afb3b9377397bd8b6",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 11.2,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-17",
+    "bias": "bearish",
+    "p_up": 0.32,
+    "confidence": 0.65,
+    "event_risk": "high",
+    "key_factors": [
+      "オプション: GEX近似-49億、前回比-68億で大幅マイナス、プット/コール比上昇（ベア筋強化）",
+      "市場数値: VIX22.91 前日比+3.61（+18.7%）上昇、ボラティリティ増大",
+      "価格の動き: S&P500 7,422.4で1日-1.61%、20日平均線下、5日連続下落",
+      "ニュース: Nvidia決算前のAIリスクと株価下落懸念、JPMorganバグで金融株不安"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-17 当日のS&P500終値データ",
+      "2026-11-17 の経済指標結果（小売売上、Nvidia決算等）"
+    ]
+  }
+}
