@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-17T22:30:52+00:00",
+    "jst_date": "2026-11-18",
+    "slot": "close",
+    "input_file": "2026-11-18_close.md",
+    "input_sha256": "3b744bf803146095fc7b59373cedf3c7ca2f514d0c17383be5d60d04f5bc72a1",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 29.5,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-18",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.65,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIXが前日比+11.1%の25.46へ急伸［2026-11-17T16:15:01 ET］",
+      "オプション: 前回比でGEX近似-34億、ATM IV平均+4.3ptと下落警戒強化",
+      "価格の動き: S&P500は5日続落、20日レンジ12%で20日平均線比-3.1%",
+      "ニュース: 米軍のイラン攻撃報道やNVDA決算発表前で市場心理が悪化"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "2026-11-17引け後のNVDA決算発表結果",
+      "米軍によるイラン攻撃報道を受けた取引時間外の市場反応"
+    ]
+  }
+}

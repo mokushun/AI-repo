@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-17T22:30:52+00:00",
+    "jst_date": "2026-11-18",
+    "slot": "close",
+    "input_file": "2026-11-18_close.md",
+    "input_sha256": "3b744bf803146095fc7b59373cedf3c7ca2f514d0c17383be5d60d04f5bc72a1",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.0,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-18",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.68,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：SPX CFDは5日連続で下落し、直近5日で-2.45%。20日平均線比-3.1%。",
+      "市場数値：VIXは11/17 ETに25.46、前日比+2.55（+11.1%）。",
+      "オプション：前回比でATM IV平均+4.3pt、GEX近似-34億、put/call建玉+0.10。",
+      "ニュース：米国によるイランのミサイル発射拠点攻撃報道があり、地政学リスクが高い。"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日の通常取引開始前の価格・ニュースは未取得。入力は11/17引け後時点で、対象日の値動きは未確定。",
+      "NVDA決算は予定として記載されているが、結果は未発表。"
+    ]
+  }
+}

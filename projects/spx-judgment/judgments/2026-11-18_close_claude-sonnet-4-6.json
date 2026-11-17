@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-17T22:30:52+00:00",
+    "jst_date": "2026-11-18",
+    "slot": "close",
+    "input_file": "2026-11-18_close.md",
+    "input_sha256": "3b744bf803146095fc7b59373cedf3c7ca2f514d0c17383be5d60d04f5bc72a1",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 18.2,
+    "quota_before_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-18",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.55,
+    "event_risk": "high",
+    "key_factors": [
+      "ニュース: 米軍がイランのケシュム島のミサイル発射拠点を攻撃（11/18 04:40JST）、中東地政学リスクが急上昇",
+      "市場数値: VIX 25.46（前日比+11.1%）[2026-11-17T16:15ET]、オプション市場が急速に不安心理を織り込み",
+      "価格の動き: SPX 7,352.4、5日-2.45%・20日-5.13%、20日レンジ内の位置12%と底値圏で下落トレンド継続",
+      "オプション: ATM IV前日比+4.3pt、GEX近似-34億変化、put/call建玉+0.10と警戒ポジション増加"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "NVDA引け後決算の実績（結果未発表のため市場への影響が不明）",
+      "Anthropic IPOの初値・市場反応（本日予定だが結果未入力）",
+      "米軍・イラン衝突後の市場の即時反応（取得時刻が引け前のため当日反応を確認できず）"
+    ]
+  }
+}

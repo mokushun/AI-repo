@@ -1,0 +1,1 @@
+{"target_date":"2026-11-18","bias":"bearish","p_up":0.34,"confidence":0.72,"event_risk":"mid","key_factors":["市場数値: VIX 25.46 (+11.1%)でリスク回避姿勢強化","オプション: GEX-470億、プット/コール比1.41・1.64でプット偏重","価格の動き: 5日連続下落、20日レンジ下位12%で下落トレンド","ニュース: Nvidia決算前やAnthropic IPOなど不安材料多数"],"stand_aside":false,"missing_data":["2026-11-18 の実際のS&P500終値が未取得"]}
