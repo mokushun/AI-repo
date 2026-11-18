@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-18T22:31:42+00:00",
+    "jst_date": "2026-11-19",
+    "slot": "close",
+    "input_file": "2026-11-19_close.md",
+    "input_sha256": "203165383a5a1b2201c420f2e90c031ed787e43e6336f3d3bfd3392e9848c312",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-19_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.55,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：5日連続下落・5日-3.92%、20日レンジ内7%と下値圏",
+      "ニュース：FOMC議事要旨で追加利上げ観測、タカ派色が強い",
+      "オプション：ATM IVが+5.0pt上昇、GEXマイナスで変動増幅",
+      "ニュース：イラン攻撃で地政学リスク、VIXは-3.5%も24.56と高水準"
+    ],
+    "missing_data": [
+      "SPXオプションの集計時点が11/18 09:39 ETと引け時点より古い"
+    ],
+    "p_up": 0.43,
+    "stand_aside": false,
+    "target_date": "2026-11-19"
+  }
+}

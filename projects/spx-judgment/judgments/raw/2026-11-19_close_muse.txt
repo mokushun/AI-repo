@@ -1,0 +1,1 @@
+{"bias":"bearish","confidence":0.55,"event_risk":"high","key_factors":["価格の動き：5日連続下落・5日-3.92%、20日レンジ内7%と下値圏","ニュース：FOMC議事要旨で追加利上げ観測、タカ派色が強い","オプション：ATM IVが+5.0pt上昇、GEXマイナスで変動増幅","ニュース：イラン攻撃で地政学リスク、VIXは-3.5%も24.56と高水準"],"missing_data":["SPXオプションの集計時点が11/18 09:39 ETと引け時点より古い"],"p_up":0.43,"stand_aside":false,"target_date":"2026-11-19"}
