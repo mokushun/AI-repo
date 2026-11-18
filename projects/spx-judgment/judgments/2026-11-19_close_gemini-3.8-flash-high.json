@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-18T22:31:08+00:00",
+    "jst_date": "2026-11-19",
+    "slot": "close",
+    "input_file": "2026-11-19_close.md",
+    "input_sha256": "41cc62ef51680c6a4a1720acbb079c50e736835122c745086a2d1aec971e9c5a",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 39.5,
+    "quota_before_pct": {
+      "gemini": 100.0,
+      "claude_gpt": 100.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 100.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-19",
+    "bias": "bearish",
+    "p_up": 0.42,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: S&P500は5日続落で20日線比-3.1%、20日レンジ7%と下落基調［11/18］",
+      "ニュース: FOMC議事録で追加利上げ懸念が示され、NVDA決算後も株価軟調が報道",
+      "市場数値: VIXは24.56（前日比-0.90／-3.5%）と低下［18日16:15 ET］",
+      "オプション: 前回比でGEX近似が-17億と縮小継続、ATM IVは-2.2pt低下［11/18］"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日11/19発表予定の新規失業保険申請件数およびWMT決算の結果"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-18T22:31:08+00:00",
+    "jst_date": "2026-11-19",
+    "slot": "close",
+    "input_file": "2026-11-19_close.md",
+    "input_sha256": "41cc62ef51680c6a4a1720acbb079c50e736835122c745086a2d1aec971e9c5a",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 11.5,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-19",
+    "bias": "bearish",
+    "p_up": 0.42,
+    "confidence": 0.62,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：SPX CFDは5日続落、5日 -3.92%、20日 -5.65%。",
+      "ニュース：米株はNVDA決算後に軟調との見出し、FOMC議事要旨は追加利上げ懸念。",
+      "市場数値：VIXは11/18 ETに24.56、前日比 -0.90（-3.5%）と高水準ながら低下。",
+      "オプション：ATM IVは前回比 -2.2pt、GEX近似は前回比 -17億。"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日の通常取引開始前の価格・オプション情報はなく、入力は11/18引け後まで。",
+      "11/19の失業保険申請とWMT決算は予定のみで、結果未発表。",
+      "SPX現物・オプションは11/18 ET時点、CFD・利回りも11/18観測で時点にずれがある。"
+    ]
+  }
+}

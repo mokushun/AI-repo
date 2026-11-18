@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "created_utc": "2026-11-18T22:31:08+00:00",
+    "jst_date": "2026-11-19",
+    "slot": "close",
+    "input_file": "2026-11-19_close.md",
+    "input_sha256": "41cc62ef51680c6a4a1720acbb079c50e736835122c745086a2d1aec971e9c5a",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 38.1,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 100.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-19",
+    "bias": "bearish",
+    "p_up": 0.39,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "ニュース: FOMC議事録がさらなる利上げ示唆・AI起因インフレ懸念を明記、債券市場の警戒継続",
+      "価格の動き: SPX 5日-3.92%/20日-5.65%の下落トレンド継続、20日レンジ下位7%・MA大幅乖離",
+      "市場数値: 10年債利回り5.07%高止まり、GEX近似が前日比-17億とネガティブ方向に拡大",
+      "ニュース: NVDAが予想超過決算もラリー不発（株価反応鈍化）、イラン攻撃で中東地政学リスク上昇"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日2026-11-19のSPX引け値（取得時刻07:30 JSTで市場未開始）",
+      "WMT寄り前決算の実績（未発表）",
+      "週次失業保険申請の実績（2026-11-19予定、未発表）",
+      "VIX・利回りデータは前日2026-11-18時点のため当日分と時点がずれている"
+    ]
+  }
+}
