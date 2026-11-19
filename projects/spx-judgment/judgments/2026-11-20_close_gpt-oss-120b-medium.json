@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T22:30:52+00:00",
+    "jst_date": "2026-11-20",
+    "slot": "close",
+    "input_file": "2026-11-20_close.md",
+    "input_sha256": "dd833412ee938f5a9971562cd2f0b241478ee654ab58ce5896c413035b862954",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 10.9,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-20",
+    "bias": "bearish",
+    "p_up": 0.25,
+    "confidence": 0.65,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIX 28.44 (+15.8%) 上昇で恐怖感増",
+      "オプション: Put/Call 1.80、GEX -457億→-369億で下向き",
+      "価格の動き: 前日比 -2.15%、20日低位付近で弱含み",
+      "ニュース: AI株下落・S&P6日連続下落など悪材料多数"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-20のS&P500終値"
+    ]
+  }
+}

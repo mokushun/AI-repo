@@ -1,0 +1,1 @@
+{"target_date":"2026-11-20","bias":"bearish","p_up":0.25,"confidence":0.65,"event_risk":"high","key_factors":["市場数値: VIX 28.44 (+15.8%) 上昇で恐怖感増","オプション: Put/Call 1.80、GEX -457億→-369億で下向き","価格の動き: 前日比 -2.15%、20日低位付近で弱含み","ニュース: AI株下落・S&P6日連続下落など悪材料多数"],"stand_aside":false,"missing_data":["2026-11-20のS&P500終値"]}

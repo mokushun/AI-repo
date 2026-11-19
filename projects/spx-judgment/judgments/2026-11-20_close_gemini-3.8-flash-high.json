@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T22:30:52+00:00",
+    "jst_date": "2026-11-20",
+    "slot": "close",
+    "input_file": "2026-11-20_close.md",
+    "input_sha256": "dd833412ee938f5a9971562cd2f0b241478ee654ab58ce5896c413035b862954",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 43.3,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-20",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.7,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIX 28.44で前日比+3.88（+15.8%）［2026-11-19T16:15:01 ET］",
+      "オプション: 前回スナップショット比でGEX近似-42億、ATM IV+3.8pt",
+      "価格の動き: S&P500は1日-2.15%の7,169.8、20日レンジ位置2%［2026-11-19］",
+      "ニュース: Wall Street ends sharply lowerなどの下落報道"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-20当日の経済指標発表予定"
+    ]
+  }
+}

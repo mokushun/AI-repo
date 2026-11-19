@@ -1,0 +1,1 @@
+{"target_date":"2026-11-20","bias":"bearish","p_up":0.35,"confidence":0.7,"event_risk":"mid","key_factors":["市場数値: VIX 28.44で前日比+3.88（+15.8%）［2026-11-19T16:15:01 ET］","オプション: 前回スナップショット比でGEX近似-42億、ATM IV+3.8pt","価格の動き: S&P500は1日-2.15%の7,169.8、20日レンジ位置2%［2026-11-19］","ニュース: Wall Street ends sharply lowerなどの下落報道"],"stand_aside":false,"missing_data":["2026-11-20当日の経済指標発表予定"]}

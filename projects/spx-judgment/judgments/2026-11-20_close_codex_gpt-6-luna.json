@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T22:30:52+00:00",
+    "jst_date": "2026-11-20",
+    "slot": "close",
+    "input_file": "2026-11-20_close.md",
+    "input_sha256": "dd833412ee938f5a9971562cd2f0b241478ee654ab58ce5896c413035b862954",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 9.0,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-20",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.76,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：11/19のS&P500は-2.15%、5日連続で下落し、5日で-5.73%。",
+      "市場数値：VIXは11/19 ETに28.44、前日比+3.88（+15.8%）。",
+      "オプション：前回比でATM IVは+3.8pt、put/call建玉は+0.40。",
+      "ニュース：11/20 06:38JSTのReuters見出しは、AI株安を受け米株が大幅安で終了と報道。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日の通常取引はこれからで、当日の価格・ニュースは未確定。入力の価格とVIXは11/19 ET時点。"
+    ]
+  }
+}

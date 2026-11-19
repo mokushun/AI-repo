@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-19T22:30:52+00:00",
+    "jst_date": "2026-11-20",
+    "slot": "close",
+    "input_file": "2026-11-20_close.md",
+    "input_sha256": "dd833412ee938f5a9971562cd2f0b241478ee654ab58ce5896c413035b862954",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 16.6,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-20",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.62,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き／SPX 5日-5.73%・20日-6.55%の連続下落、20日レンジ内2%と下端付近",
+      "市場数値／VIX 28.44（前日比+15.8%）[2026-11-19T16:15 ET]でリスク回避急伸",
+      "ニュース／AnthropicのNasdaq上場がAI株売りの口実となりWall Street大幅安（Reuters）",
+      "オプション／GEX近似-42億の変化・put/call建玉+0.40と下向き圧力継続"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日2026-11-20の寄り前・場中データ（取得時刻は引け前07:30 JST）",
+      "SPX先物の夜間動向（入力なし）",
+      "当日の経済指標発表予定なし（次の主要指標は11/25）"
+    ]
+  }
+}
