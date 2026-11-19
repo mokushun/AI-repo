@@ -31,6 +31,10 @@ RETRY_SECONDS = 10
 TIMEOUT_SECONDS = 30
 MAX_EXPIRATIONS = 5
 ET = ZoneInfo("America/New_York")
+# 引け枠の窓（ET、0時からの秒数）。1発勝負にならないよう、後ろを 17:15 ET まで取る
+# （2026-11-19: 夜に取得しても引け時点のチェーンが返ることを確認済み）。
+CLOSE_START = 16 * 3600 + 30 * 60
+CLOSE_END = 17 * 3600 + 15 * 60
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +52,7 @@ def configure_data_dir(data_dir):
                         format="%(asctime)s [%(levelname)s] %(message)s", force=True)
 
 # SPX or SPXW + YYMMDD + C/P + 8 digit strike.
-OPTION_RE = re.compile(r"^(SPX[WO]?)(\d{6})([CP])(\d{8})$")
+OPTION_RE = re.compile(r"^(SPXW?)(\d{6})([CP])(\d{8})$")
 
 
 def fetch_json():
@@ -341,7 +345,7 @@ def save(data):
 def in_market_hours(now=None):
     now = (now or datetime.now(timezone.utc)).astimezone(ET)
     clock = now.hour * 3600 + now.minute * 60 + now.second
-    return now.weekday() < 5 and 9 * 3600 + 30 * 60 <= clock <= 16 * 3600 + 45 * 60
+    return now.weekday() < 5 and 9 * 3600 + 30 * 60 <= clock <= CLOSE_END
 
 
 def current_slot(now=None):
@@ -350,9 +354,9 @@ def current_slot(now=None):
     if now.weekday() >= 5:
         return None
     seconds = now.hour * 3600 + now.minute * 60 + now.second
-    if 9 * 3600 + 45 * 60 <= seconds < 16 * 3600 + 30 * 60:
+    if 9 * 3600 + 45 * 60 <= seconds < CLOSE_START:
         return now.date().isoformat(), "morning"
-    if 16 * 3600 + 30 * 60 <= seconds <= 16 * 3600 + 45 * 60:
+    if CLOSE_START <= seconds <= CLOSE_END:
         return now.date().isoformat(), "close"
     return None
 
