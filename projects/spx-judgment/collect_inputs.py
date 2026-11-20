@@ -676,6 +676,16 @@ def sec_options(ctx):
     except ValueError:
         pass
     lines = [f"SPX現値 {_fmt(s['current_price'], ',.1f')}｜データ時点 {asof}（ET）｜取得 {s['fetched_at_utc']}{note}"]
+    # 引け枠（16:30〜 ET の取得）のスナップショットが無く、朝枠などが最新になっているときは警告する
+    # （2026-11-19: 引け枠が欠けても、朝枠の値が「現値」として引け値のように読まれた）
+    try:
+        asof_dt = datetime.fromisoformat(asof)
+        if asof_dt.hour * 60 + asof_dt.minute < 16 * 60:
+            lines.append("※最新のスナップショットは引け枠ではなく、データ時点が引け（16:00 ET）より前です。"
+                         "この現値・マックスペイン・GEXは引け値ではありません。"
+                         "「価格の動き」の終値とは時点が違います")
+    except (TypeError, ValueError):
+        pass
 
     def gex(v):
         return "—" if v is None else f"{v / 1e8:+,.0f}億"
