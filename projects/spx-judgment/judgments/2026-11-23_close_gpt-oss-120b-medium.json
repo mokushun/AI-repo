@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-22T22:30:34+00:00",
+    "jst_date": "2026-11-23",
+    "slot": "close",
+    "input_file": "2026-11-23_close.md",
+    "input_sha256": "46d192f9fb9df9fdf03cf9ce84c6f54ddf83ee8252b45a4ae488b3bca9e9f842",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 10.9,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 91.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-23",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.4,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIX上昇 (+20.8%)でリスク増大",
+      "オプション: GEX近似 -41億で弱気圧力示唆",
+      "経済指標: 失業保険申請増 (203k→200k)で景気懸念",
+      "ニュース: ヤーメンがサウジ油精製所攻撃で不安感"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-23 S&P500 closing price"
+    ]
+  }
+}

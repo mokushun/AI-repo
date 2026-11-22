@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-22T22:30:34+00:00",
+    "jst_date": "2026-11-23",
+    "slot": "close",
+    "input_file": "2026-11-23_close.md",
+    "input_sha256": "46d192f9fb9df9fdf03cf9ce84c6f54ddf83ee8252b45a4ae488b3bca9e9f842",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 17.6,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-23",
+    "bias": "bearish",
+    "p_up": 0.33,
+    "confidence": 0.62,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き／SPX直近5日で一貫した下落、1日-3.00%・5日-7.81%・20日レンジ内8%と売られ過ぎ圏だが下落継続",
+      "市場数値／VIX 35.89（前日比+7.45、+20.8%）と急騰、恐怖感が高まり売り圧力が強い状態［2026-11-20T16:15 ET］",
+      "オプション／ATM IV前回比+11.8pt急上昇・put/call建玉全満期合算+2.30と急拡大、GEX近似も低下でネガティブセンチメント優位",
+      "ニュース／NasdaqがYear-to-Dateでマイナス転落（WSJ）、Wall St.ストラテジストがベアマーケット否定も目標値引下げ継続"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日2026-11-23の当日価格・VIXデータが未取得（入力データは2026-11-20が最新）",
+      "対象日の株価先物・夜間取引の動きが不明",
+      "対象日に予定される主要経済指標・イベントが入力にない（11/25分は記載あるが11/23分なし）"
+    ]
+  }
+}

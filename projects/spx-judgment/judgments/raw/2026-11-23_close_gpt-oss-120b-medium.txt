@@ -1,0 +1,1 @@
+{"target_date":"2026-11-23","bias":"bearish","p_up":0.35,"confidence":0.4,"event_risk":"mid","key_factors":["市場数値: VIX上昇 (+20.8%)でリスク増大","オプション: GEX近似 -41億で弱気圧力示唆","経済指標: 失業保険申請増 (203k→200k)で景気懸念","ニュース: ヤーメンがサウジ油精製所攻撃で不安感"],"stand_aside":false,"missing_data":["2026-11-23 S&P500 closing price"]}

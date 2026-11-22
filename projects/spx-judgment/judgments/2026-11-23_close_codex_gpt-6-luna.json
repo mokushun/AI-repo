@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-22T22:30:34+00:00",
+    "jst_date": "2026-11-23",
+    "slot": "close",
+    "input_file": "2026-11-23_close.md",
+    "input_sha256": "46d192f9fb9df9fdf03cf9ce84c6f54ddf83ee8252b45a4ae488b3bca9e9f842",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.3,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-23",
+    "bias": "bearish",
+    "p_up": 0.36,
+    "confidence": 0.67,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：11/20のS&P500は1日-3.00%、5日-7.81%。直近5日連続で下落",
+      "市場数値：VIXは11/20 ETに35.89、前日比+7.45（+20.8%）と急上昇",
+      "オプション：前回比でATM IV平均+11.8pt、put/call建玉+2.30。GEX近似の変化は-2億",
+      "ニュース：11/23 02:52 JST、フーシ派がサウジのラービグ製油所を攻撃したと表明"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日の通常取引前の価格・市場データはなく、価格と市場数値は11/20時点",
+      "11/23の経済指標・企業決算の結果は未発表。11/25予定の指標は対象日より後"
+    ]
+  }
+}
