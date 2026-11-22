@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-22T22:31:40+00:00",
+    "jst_date": "2026-11-23",
+    "slot": "close",
+    "input_file": "2026-11-23_close.md",
+    "input_sha256": "1e465c9ff24b48d41ac9c5c663133fceaca13311c5fde4669abbb7628da04e55",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-23_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bearish",
+    "confidence": 0.55,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：5日連続安で20日-8.97%、レンジ位置8%の急落基調",
+      "市場数値：VIX 35.89、前日比+20.8%の急騰",
+      "オプション：put/call建玉4.10、GEX-168億、マックスペイン現値比+7.2%",
+      "ニュース：フーシ派がサウジ製油所攻撃、地政学リスク"
+    ],
+    "missing_data": [
+      "前回オプション比較が11/18朝枠のため引け同士の比較ではない",
+      "月曜寄り前の先物・市場動向なし"
+    ],
+    "p_up": 0.4,
+    "stand_aside": false,
+    "target_date": "2026-11-23"
+  }
+}
