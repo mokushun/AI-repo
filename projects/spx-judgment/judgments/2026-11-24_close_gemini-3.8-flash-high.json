@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-23T22:30:43+00:00",
+    "jst_date": "2026-11-24",
+    "slot": "close",
+    "input_file": "2026-11-24_close.md",
+    "input_sha256": "c405fe49d42a74adb5f797dacee26242ec499858779922dac78a964c4fed843c",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 37.0,
+    "quota_before_pct": {
+      "gemini": 100.0,
+      "claude_gpt": 91.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-24",
+    "bias": "bullish",
+    "p_up": 0.58,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIXが前日比-9.27（-25.8%）の26.62と急低下し警戒感が大幅に後退［2026-11-23 ET］",
+      "価格の動き: S&P500は前日終値比+4.41%と急反発したが20日線比-3.0%で戻り売りも警戒",
+      "オプション: 前回比でGEX近似が+43億、ATM IV平均変化-9.1ptと需給環境が急速に好転",
+      "ニュース: Nvidia主導の急反発が好感される一方、中東等の地政学リスク報道が継続"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "対象日（2026-11-24）の米株先物動向"
+    ]
+  }
+}

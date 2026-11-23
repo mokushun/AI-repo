@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-23T22:30:43+00:00",
+    "jst_date": "2026-11-24",
+    "slot": "close",
+    "input_file": "2026-11-24_close.md",
+    "input_sha256": "c405fe49d42a74adb5f797dacee26242ec499858779922dac78a964c4fed843c",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 11.1,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-24",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.29,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：SPX CFDは11/23に+4.41%反発したが、5日では-2.17%、20日では-5.52%。",
+      "市場数値：VIXは11/23 ETに26.62、前日比-9.27（-25.8%）と大きく低下したが、なお高い変動を示す。",
+      "オプション：前回比でATM IVは-9.1pt、GEX近似は+43億、put/call建玉は-2.81。短期の警戒緩和を示す変化。",
+      "ニュース：Williams氏はインフレ対応で時間をかけた利上げの可能性に言及。翌11/25にGDP・個人所得支出などの発表予定。"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日11/24の通常取引中の価格・市場データは未提示。",
+      "オプション・VIXは11/23 ET時点で、対象日の取引開始前の情報。"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "created_utc": "2026-11-23T22:30:43+00:00",
+    "jst_date": "2026-11-24",
+    "slot": "close",
+    "input_file": "2026-11-24_close.md",
+    "input_sha256": "c405fe49d42a74adb5f797dacee26242ec499858779922dac78a964c4fed843c",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 10.2,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 86.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 86.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-24",
+    "bias": "neutral",
+    "p_up": 0.45,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "[市場数値] VIX 前日比 -25.8%で低下、リスク低下",
+      "[オプション] Put/Call比 1.56、GEX -37億で売り圧力",
+      "[価格] 前日終値 +4.41%だが20日・50日平均下回り",
+      "[ニュース] Fed・Williams氏が利上げ継続示唆、株調整懸念"
+    ],
+    "stand_aside": false,
+    "missing_data": []
+  }
+}

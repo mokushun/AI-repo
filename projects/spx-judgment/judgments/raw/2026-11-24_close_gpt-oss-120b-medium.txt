@@ -1,0 +1,1 @@
+{"target_date":"2026-11-24","bias":"neutral","p_up":0.45,"confidence":0.6,"event_risk":"mid","key_factors":["[市場数値] VIX 前日比 -25.8%で低下、リスク低下","[オプション] Put/Call比 1.56、GEX -37億で売り圧力","[価格] 前日終値 +4.41%だが20日・50日平均下回り","[ニュース] Fed・Williams氏が利上げ継続示唆、株調整懸念"],"stand_aside":false,"missing_data":[]}
