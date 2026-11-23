@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-23T22:31:25+00:00",
+    "jst_date": "2026-11-24",
+    "slot": "close",
+    "input_file": "2026-11-24_close.md",
+    "input_sha256": "722a83748131add4ae30daf5126f2d9646ae34bd2f54d77c8cb1b33b169706a5",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-24_close_muse.txt"
+  },
+  "judgment": {
+    "target_date": "2026-11-24",
+    "bias": "bullish",
+    "p_up": 0.58,
+    "confidence": 0.55,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き：前日+4.41%の大幅反発、VIXは-25.8%急落",
+      "価格の動き：Nasdaq+6.23%も5日-2.17%で戻り途上",
+      "オプション：GEXは前回比+134億、マックスペインは現値比+1.1%",
+      "市場数値：VIX 26.62と高水準、20日線比-3.0%"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "オプションのスナップショットが2026-11-23 09:31 ETと古く引け値ではない",
+      "10年債利回りが2026-11-20時点と古い"
+    ]
+  }
+}
