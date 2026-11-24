@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T22:30:39+00:00",
+    "jst_date": "2026-11-25",
+    "slot": "close",
+    "input_file": "2026-11-25_close.md",
+    "input_sha256": "6f6acccd3b4a31ab1a4029a9d15f2ded0d1243d63e7d65838f758436ee07e309",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 34.2,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 100.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 100.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-25",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.55,
+    "event_risk": "high",
+    "key_factors": [
+      "経済指標: 2026-11-25にGDPや個人所得・支出など主要指標の発表が集中",
+      "価格の動き: S&P500は1日-0.86%、20日線比-3.5%と下落基調が継続",
+      "オプション: 前回比でGEX近似変化-40億、P/C建玉変化+0.03と下押し圧力増",
+      "市場数値: VIXは26.36[11-24]と前日比-1.0%だが高水準で推移"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "2026-11-25発表予定のGDPや個人所得・支出などの経済指標結果"
+    ]
+  }
+}

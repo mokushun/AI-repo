@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T22:30:39+00:00",
+    "jst_date": "2026-11-25",
+    "slot": "close",
+    "input_file": "2026-11-25_close.md",
+    "input_sha256": "6f6acccd3b4a31ab1a4029a9d15f2ded0d1243d63e7d65838f758436ee07e309",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 9.7,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-25",
+    "bias": "bearish",
+    "p_up": 0.43,
+    "confidence": 0.61,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き: S&P500は前日比-0.86%、5日-2.09%、20日平均線比-3.5%（11/24）",
+      "市場数値: VIXは26.36、前日比-0.26（11/24 ET）。高水準で推移",
+      "ニュース: Nvidia rally fadesとの見出しや新関税案が報じられた",
+      "経済指標: GDP、個人所得・支出、失業保険申請が対象日に予定され、結果は未発表"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日の通常取引開始前の価格・市場データは未提示",
+      "対象日予定の経済指標は未発表",
+      "データ時点は主に11/24引けで、対象日の市場状況と揃っていない"
+    ]
+  }
+}

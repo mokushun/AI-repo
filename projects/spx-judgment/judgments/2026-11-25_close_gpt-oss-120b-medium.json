@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T22:30:39+00:00",
+    "jst_date": "2026-11-25",
+    "slot": "close",
+    "input_file": "2026-11-25_close.md",
+    "input_sha256": "6f6acccd3b4a31ab1a4029a9d15f2ded0d1243d63e7d65838f758436ee07e309",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 10.2,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-25",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.6,
+    "event_risk": "mid",
+    "key_factors": [
+      "オプション: GEX近似が前回比-40億で悪化、put/call 1.32と弱気",
+      "価格: 5日間の終値は下降トレンド・20日平均線比-5.5%で下落基調",
+      "市場数値: VIXは前日比-1.0%で26.36、やや低下だが依然高止まり",
+      "ニュース: Microsoftの大規模障害や新関税発表等、リスク要因多数"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-25の終値",
+      "当日 intraday の価格変動",
+      "2026-11-25 の経済指標結果"
+    ]
+  }
+}
