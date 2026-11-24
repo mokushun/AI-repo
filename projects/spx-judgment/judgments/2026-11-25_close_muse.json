@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-24T22:32:23+00:00",
+    "jst_date": "2026-11-25",
+    "slot": "close",
+    "input_file": "2026-11-25_close.md",
+    "input_sha256": "28e7dd26e63204e43628280e4ef43788c8362a7cf4a76d080ecd063fbbe6a273",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-25_close_muse.txt"
+  },
+  "judgment": {
+    "target_date": "2026-11-25",
+    "bias": "bearish",
+    "p_up": 0.42,
+    "confidence": 0.5,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：SPX 20日-6.85%、直近5日も-2.09%と下落基調",
+      "ニュース：新関税の浮上とNvidia失速でNasdaqが-2.21%",
+      "オプション：プット/コール建玉1.32、GEX-142億で下方向に増幅",
+      "経済指標：11/25にGDP・個人所得・失業保険申請と指標集中"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "引け後の時間外の値動き"
+    ]
+  }
+}
