@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-25T22:31:18+00:00",
+    "jst_date": "2026-11-26",
+    "slot": "close",
+    "input_file": "2026-11-26_close.md",
+    "input_sha256": "cb6687fc2d6306466bfe0ab39dff395d493192f67145460b7ad1d28ef2613428",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-26_close_muse.txt"
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "bearish",
+    "p_up": 0.45,
+    "confidence": 0.5,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き：S&P500は20日-7.18%、50日線比-5.7%と下降基調",
+      "市場数値：VIX 28.29、前日比+7.3%とボラティリティ上昇",
+      "ニュース：AI関連の売りと新たな関税懸念でセンチメント悪化",
+      "経済指標：実質GDP+4.3%と失業保険申請の改善は下支え"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "11月25日以降の市場データが入力にない"
+    ]
+  }
+}
