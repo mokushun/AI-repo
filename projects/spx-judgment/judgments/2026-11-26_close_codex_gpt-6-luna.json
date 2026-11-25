@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "created_utc": "2026-11-25T22:30:51+00:00",
+    "jst_date": "2026-11-26",
+    "slot": "close",
+    "input_file": "2026-11-26_close.md",
+    "input_sha256": "21af3baffb45745959d4c6d71e56723eaaad02b364b508ed078afcfc18fcf125",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 10.3,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "bearish",
+    "p_up": 0.43,
+    "confidence": 0.57,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：S&P500は20日比-7.18%、20日平均線比-3.4%。直近5日も不安定",
+      "市場数値：VIXは11/25に28.29、前日比+1.93（+7.3%）",
+      "オプション：ATM IV平均は前回比+2.0pt。11/27満期の期待変動は±128点",
+      "ニュース：AI懸念や関税不安の見出しが続き、Nasdaq先物は2%超下落と報道"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "11/27の米国通常取引は祝日翌日で短縮取引となるが、当日の価格・出来高は未取得",
+      "市場数値と価格・オプションは11/25時点で、対象日直前の最新状況が揃っていない"
+    ]
+  }
+}

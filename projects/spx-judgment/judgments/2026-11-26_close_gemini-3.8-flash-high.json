@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-25T22:30:51+00:00",
+    "jst_date": "2026-11-26",
+    "slot": "close",
+    "input_file": "2026-11-26_close.md",
+    "input_sha256": "21af3baffb45745959d4c6d71e56723eaaad02b364b508ed078afcfc18fcf125",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 45.9,
+    "quota_before_pct": {
+      "gemini": 98.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 97.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "neutral",
+    "p_up": 0.49,
+    "confidence": 0.35,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIXは28.29（前日比 +1.93／+7.3%）［2026-11-25T16:15:01 ET］",
+      "価格の動き: S&P500終値7,176.6で20日線比-3.4%、5日-2.06%と下落傾向［2026-11-25］",
+      "オプション: 前回比でATM IV平均+2.0pt、put/call建玉+0.04と警戒感継続",
+      "ニュース: AI懸念や関税で下落も押し目買いで安値から下げ渋る［2026-11-26JST］"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日2026-11-27の前日となる2026-11-26の市場・価格データ（提供データは2026-11-25時点）"
+    ]
+  }
+}

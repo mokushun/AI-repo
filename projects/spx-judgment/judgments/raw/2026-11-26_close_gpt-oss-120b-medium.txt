@@ -1,0 +1,1 @@
+{"target_date":"2026-11-27","bias":"bearish","p_up":0.35,"confidence":0.45,"event_risk":"high","key_factors":["市場数値: VIX +7.3% (2026-11-25T16:15 ET)","オプション: Put/Call比 1.41↑ (2026-11-25) 売り圧力示す","価格の動き: SPX -0.31% (2026-11-25) 下降トレンド","ニュース: AI株下落・関税懸念 (2026-11-25) 市場リスク上昇"],"stand_aside":false,"missing_data":["2026-11-26 SPX 終値が未提供"]}

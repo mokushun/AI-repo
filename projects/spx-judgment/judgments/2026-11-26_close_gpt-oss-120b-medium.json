@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-25T22:30:51+00:00",
+    "jst_date": "2026-11-26",
+    "slot": "close",
+    "input_file": "2026-11-26_close.md",
+    "input_sha256": "21af3baffb45745959d4c6d71e56723eaaad02b364b508ed078afcfc18fcf125",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 11.2,
+    "quota_before_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "bearish",
+    "p_up": 0.35,
+    "confidence": 0.45,
+    "event_risk": "high",
+    "key_factors": [
+      "市場数値: VIX +7.3% (2026-11-25T16:15 ET)",
+      "オプション: Put/Call比 1.41↑ (2026-11-25) 売り圧力示す",
+      "価格の動き: SPX -0.31% (2026-11-25) 下降トレンド",
+      "ニュース: AI株下落・関税懸念 (2026-11-25) 市場リスク上昇"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-26 SPX 終値が未提供"
+    ]
+  }
+}

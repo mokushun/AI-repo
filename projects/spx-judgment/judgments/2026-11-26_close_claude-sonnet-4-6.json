@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "created_utc": "2026-11-25T22:30:51+00:00",
+    "jst_date": "2026-11-26",
+    "slot": "close",
+    "input_file": "2026-11-26_close.md",
+    "input_sha256": "21af3baffb45745959d4c6d71e56723eaaad02b364b508ed078afcfc18fcf125",
+    "prompt_version": "v3",
+    "model": "claude-sonnet-4-6",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 18.1,
+    "quota_before_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 97.0
+    },
+    "quota_after_pct": {
+      "gemini": 97.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 3.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "bearish",
+    "p_up": 0.38,
+    "confidence": 0.52,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き／NQ100が20日-12.4%・SPX20日-7.2%と下落トレンド継続、レンジ内位置SPX34%・NQ22%と弱い",
+      "市場数値／VIX 28.29（前日比+7.3%、2026-11-25T16:15ET）、日中高値34.95と警戒水準、ボラ拡大継続",
+      "ニュース／NvidiaのHuang復帰ラリー失速・Anthropic株軟調でAI懸念再燃、新規対ブラジル関税提案も重し",
+      "オプション／最短満期11-27のATM IV 24.1%・期待変動±128pt、GEX近似前日比+3億と微増でガンマ環境は依然弱気寄り"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "11-26（対象日前日）の価格動向・終値が未取得（CFD現在値は微小変化のみ）",
+      "11-27の経済指標・イベント予定が入力にない（感謝祭週の可能性含む）"
+    ]
+  }
+}
