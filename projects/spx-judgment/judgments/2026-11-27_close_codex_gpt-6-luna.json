@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "created_utc": "2026-11-26T22:30:44+00:00",
+    "jst_date": "2026-11-27",
+    "slot": "close",
+    "input_file": "2026-11-27_close.md",
+    "input_sha256": "c98f423a8626070aeac08f7ea37e443216b51f4932252dcf9219c347cbe7b04d",
+    "prompt_version": "v3",
+    "model": "codex:gpt-6-luna",
+    "runner": "codex",
+    "effort": null,
+    "elapsed_sec": 11.6,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.22,
+    "event_risk": "high",
+    "key_factors": [
+      "価格の動き：直近のCFD終値は+0.66%だが、20日では-6.00%。対象日の通常取引終値は未確定。",
+      "市場数値：VIXは11/26 11:30 ET時点で26.8、前日比-5.3%。日中は26.57〜34.95と変動が大きい。",
+      "オプション：11/25 ET時点でATM IV平均変化は+2.6pt、GEX近似の前回比は-1億。データは対象日より古い。",
+      "ニュース：サウジの製油所攻撃で一部操業停止。OPEC+会合前の原油供給懸念も報じられている。"
+    ],
+    "stand_aside": true,
+    "missing_data": [
+      "対象日の通常取引前の価格・市場データがなく、直近の価格は11/26のCFD終値。",
+      "SPXオプションの最新値は11/25 ETで、11/26以降の更新がない。",
+      "対象日は米国の感謝祭翌日で通常取引時間が短縮されるが、入力に当日の取引時間の記載がない。"
+    ]
+  }
+}

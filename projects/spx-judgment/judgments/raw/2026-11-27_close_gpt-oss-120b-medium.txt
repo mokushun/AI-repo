@@ -1,0 +1,1 @@
+{"target_date":"2026-11-27","bias":"neutral","p_up":0.48,"confidence":0.35,"event_risk":"mid","key_factors":["市場数値: VIX 26.8（-5.3%）で低下、リスク低減","オプション: GEX -44億、put/call 1.41で売り圧力強化","価格の動き: S&P500 7223.7(+0.66%)、20日レンジ下位","ニュース: Hawkish Fed示唆で金利上昇懸念、株式弱気"],"stand_aside":false,"missing_data":["2026-11-27 SPX closing price"]}

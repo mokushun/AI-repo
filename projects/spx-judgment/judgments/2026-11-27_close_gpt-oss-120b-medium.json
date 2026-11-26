@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "created_utc": "2026-11-26T22:30:44+00:00",
+    "jst_date": "2026-11-27",
+    "slot": "close",
+    "input_file": "2026-11-27_close.md",
+    "input_sha256": "c98f423a8626070aeac08f7ea37e443216b51f4932252dcf9219c347cbe7b04d",
+    "prompt_version": "v3",
+    "model": "gpt-oss-120b-medium",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 12.0,
+    "quota_before_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 91.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 91.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 0.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "neutral",
+    "p_up": 0.48,
+    "confidence": 0.35,
+    "event_risk": "mid",
+    "key_factors": [
+      "市場数値: VIX 26.8（-5.3%）で低下、リスク低減",
+      "オプション: GEX -44億、put/call 1.41で売り圧力強化",
+      "価格の動き: S&P500 7223.7(+0.66%)、20日レンジ下位",
+      "ニュース: Hawkish Fed示唆で金利上昇懸念、株式弱気"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-27 SPX closing price"
+    ]
+  }
+}

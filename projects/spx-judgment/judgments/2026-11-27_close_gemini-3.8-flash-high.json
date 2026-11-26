@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "created_utc": "2026-11-26T22:30:44+00:00",
+    "jst_date": "2026-11-27",
+    "slot": "close",
+    "input_file": "2026-11-27_close.md",
+    "input_sha256": "c98f423a8626070aeac08f7ea37e443216b51f4932252dcf9219c347cbe7b04d",
+    "prompt_version": "v3",
+    "model": "gemini-3.8-flash-high",
+    "runner": "agy",
+    "effort": null,
+    "elapsed_sec": 40.4,
+    "quota_before_pct": {
+      "gemini": 100.0,
+      "claude_gpt": 94.0
+    },
+    "quota_after_pct": {
+      "gemini": 99.0,
+      "claude_gpt": 94.0
+    },
+    "quota_used_pct_points": {
+      "gemini": 1.0,
+      "claude_gpt": 0.0
+    },
+    "repaired": []
+  },
+  "judgment": {
+    "target_date": "2026-11-27",
+    "bias": "neutral",
+    "p_up": 0.5,
+    "confidence": 0.35,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: S&P500は11/26に+0.66%反発も、20日線比-2.5%で下落基調継続。",
+      "市場数値: VIXは26.8で前日比-5.3%低下も依然26台の高水準（11/26 11:30 ET）。",
+      "ニュース: AI株反発報道がある一方、中東製油所攻撃など地政学リスクも混在。",
+      "オプション: 11/25時点でGEX変化-1億、PCR建玉+0.04と下落警戒。"
+    ],
+    "stand_aside": false,
+    "missing_data": [
+      "2026-11-26の米2年債・10年債利回り",
+      "2026-11-26のSPXオプションデータ（入力は11/25時点）",
+      "2026-11-26のVIX終値（入力は11:30 ET時点）"
+    ]
+  }
+}
