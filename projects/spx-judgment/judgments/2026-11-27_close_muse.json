@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "created_utc": "2026-11-26T22:31:46+00:00",
+    "jst_date": "2026-11-27",
+    "slot": "close",
+    "input_file": "2026-11-27_close.md",
+    "input_sha256": "58ba299edd542be5d4fbdcfc98aca2c64d9c52060369c90c452cef503faa8614",
+    "prompt_version": "v3",
+    "model": "muse-spark",
+    "effort": null,
+    "elapsed_sec": null,
+    "quota_before_pct": null,
+    "quota_after_pct": null,
+    "quota_used_pct_points": null,
+    "repaired": [],
+    "recovered_from_raw": "2026-11-27_close_muse.txt"
+  },
+  "judgment": {
+    "bias": "bullish",
+    "confidence": 0.5,
+    "event_risk": "mid",
+    "key_factors": [
+      "価格の動き: S&P500は11/26に+0.66%、VIXは-5.3%と恐怖後退",
+      "経済指標: GDP+4.3%、新規失業保険申請189千件へ改善",
+      "オプション: ATM IVが+2.6pt上昇、put/call建玉1.37とヘッジ需要",
+      "ニュース: Nvidiaの悪材料と中東の地政学リスクが重し"
+    ],
+    "missing_data": [
+      "オプションの最新スナップショットは2026-11-25分（11/26は感謝祭で休場）"
+    ],
+    "p_up": 0.55,
+    "stand_aside": false,
+    "target_date": "2026-11-27"
+  }
+}
